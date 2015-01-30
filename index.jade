@@ -1,0 +1,48 @@
+doctype html
+html
+	head 
+		title Bill Tracking System
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, user-scalable=no")
+		link(rel="stylesheet" type="text/css" href="stylesheets/main.css")
+	body
+		.container
+			.top
+				h1 Welcome to South Carolina Youth In Government
+				h2 Submit Your Bill
+			.billForm
+				.identification
+					input(type="text", placeholder="Your Name")
+					input(type="text", placeholder="Your Last Name")
+					select.schools
+						option Select Your School
+						option Riverside
+						option Southside
+						option Eastside
+						option Christ Church
+						option Porter Gaud
+						option Mauldin
+						option Blufton
+				.billTitle
+					h3
+						A Bill to
+						input(type="text", placeholder="Action Word")
+						input(type="text", placeholder="Article")
+						input(type="text", placeholder="Object")
+						to
+						input(type="text", placeholder="Specific Summary of Solution")
+					h4 BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
+				.billText
+					label Section 1 
+					textarea(placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")
+					label Section 2 
+					textarea(placeholder="Define any ambiguous terms inherent in the first section.")
+					label Section 3 
+					textarea(placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")
+					label Section 4 
+					textarea(placeholder="Explain what impacts you expect would come once the bill is implemented")
+					label Section 5 
+					p When signed into law, the bill will first take place 
+					input(type="text", placeholder="Indicate the implementation data/timeframe")
+
+
