@@ -22,6 +22,11 @@ $(document).ready(function() {
                     $("button").attr("type", "submit");
                     $("button").addClass("btn btn-default");
                     $("button").attr("id", "seeBill");
+
+                    $("#seeBill").click(function() {
+                        var billInfo = ($(this).closest("div").find("p").text());
+                        alert(billInfo);
+                    });
                 });
             });
         });

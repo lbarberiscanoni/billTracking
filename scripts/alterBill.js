@@ -6,7 +6,7 @@ $(document).ready(function() {
         var school = $("#school").val();
         var schoolList = new Firebase(fireData + "/" + school);
 
-        $("body").append("<select>" + "</select>");
+        $("div.container").append("<select>" + "</select>");
         $("select:last-of-type").attr("id", "authorName");
 
         schoolList.orderByValue().on("value", function(snapshot) {
@@ -23,7 +23,7 @@ $(document).ready(function() {
             var authorName = $("#authorName").val();
             var billInfo = new Firebase(fireData + "/" + school + "/" + authorName);
 
-            $("body").append("<select>" + "</select>");
+            $("div.container").append("<select>" + "</select>");
             $("select:last-of-type").attr("id", "billInfo");
 
             billInfo.orderByValue().on("value", function(snapshot) {
@@ -40,12 +40,12 @@ $(document).ready(function() {
 
                var billInfo = $("#billInfo").val();
 
-               $("body").append("<input>" + "</input>");
+               $("div.container").append("<input>" + "</input>");
                $("input").attr("type", "text");
                $("input").attr("placeholder", "enter new " + billInfo);
                $("input").attr("id", "dataChange");
                 
-               $("body").append("<input>" + "</input>");
+               $("div.container").append("<input>" + "</input>");
                $("input:last-of-type").attr("type", "button");
                $("input:last-of-type").attr("value", "submit change");
                $("input:last-of-type").attr("id", "submitChange");
