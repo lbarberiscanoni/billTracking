@@ -57,6 +57,7 @@ $(document).ready(function() {
                                         school: school,
                                         title: billTitle,
                                     });
+                                    $(this).parent().hide();
                                 });
                             });
                        };

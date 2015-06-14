@@ -1,62 +1,66 @@
 doctype html
+html
 head
     title Bill Tracker
     link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+
+    // Responsive Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //jQuery
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    
+    //Firebase
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
+    h1.text-center Submit Your Bill
+        a(href="index.html").btn.btn-default HOME  
     .container
-        h1 Create a New Bill
-        .row.form-inline
-            .form-group
-                label Name
-                input.form-control(type="text", placeholder="Your Name")#name
-            .form-group
-                label Last Name
-                input.form-control(type="text", placeholder="Your Last Name")#lastName
-            select.selectpicker#school
-                option Select Your School
-                option Riverside
-                option Southside
-                option Eastside
-                option Christ-Church
-                option Porter-Gaud
-                option Mauldin
-                option Blufton
         .row
-            .billTitle
-                form.form-inline
-                    .form-group
-                        h4 A Bill to
-                        input.form-control(type="text", placeholder="Action Word")#actionWord
-                        input.form-control(type="text", placeholder="Article")#article
-                        input.form-control(type="text", placeholder="Object")#object
-                        | to
-                        input.form-control(type="text", placeholder="Specific Summary of Solution")#solutionSummary
+            form.form-inline.col-sm-12
+                .form-group.col-sm-3.form-inline
+                    label.col-sm-3 Name
+                    input.form-control(type="text", placeholder="Enter First Name")#name
+                .form-group.col-sm-3.form-inline
+                    label.col-sm-3 Last Name
+                    input.form-control(type="text", placeholder="Enter Last Name")#lastName
+                select.form-control#school
+                    option Select Your School
+                    option Riverside
+                    option Southside
+                    option Eastside
+                    option Christ-Church
+                    option Porter-Gaud
+                    option Mauldin
+                    option Blufton
+        .row
+            form.form-horizontal
+                .form-group.col-sm-8
+                    label.control-label.col-sm-2 A Bill to
+                    .col-sm-8
+                        input(type="text", placeholder="Enter Bill Title").form-control
         .row
             h5 BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
-            .billText
-                .row
-                    label Section 1
-                        textarea.form-control(rows=3, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
-                .row
-                    label Section 2
-                        textarea.form-control(rows=3, placeholder="Define any ambiguous terms inherent in the first section.")#section2
- 
-                .row
-                    label Section 3
-                        textarea.form-control(rows=3, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
-                .row
-                    label Section 4
-                        textarea.form-control(rows=3, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
-                .row
-                    form.form-inline
-                        .form-group
-                            label Section 5
-                        .form-group
-                            p When signed into law, the bill will first take place
-                                input.form-control(type="text", placeholder="Indicate the implementation data/timeframe")#section5
+            .row
+                label Section 1
+                textarea.form-control(rows=3, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
+            .row
+                label Section 2
+                textarea.form-control(rows=3, placeholder="Define any ambiguous terms inherent in the first section.")#section2
+            .row 
+                label Section 3
+                textarea.form-control(rows=3, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
+            .row 
+                label Section 4
+                textarea.form-control(rows=3, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
+            .row
+                label Section 5
+                .form-group.form-inline
+                    p When signed into law, the bill will first take place
+                    input.form-control(type="date", placeholder="Indicate the implementation data/timeframe")#section5
                 .row
                     button(type="submit")#makeBill.btn.btn-primary.btn-lg Submit Bill
     script(src="scripts/makeBill.js")

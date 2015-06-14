@@ -1,4 +1,5 @@
 doctype html
+html
 head
     title Bill Tracker
     link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
@@ -7,7 +8,6 @@ head
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
     .container
-        h1 Manage Bills
-            a(href="index.html").btn.btn-default HOME  
-        a(href="sort.html").btn.btn-default Sort Bills
-        a(href="tracker.html").btn.btn-default Track Bills
+      h1 Track Bills
+        a(href="index.html").btn.btn-default HOME
+    script(src="scripts/tracking.js")

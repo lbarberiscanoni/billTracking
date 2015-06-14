@@ -9,13 +9,8 @@ $(document).ready(function() {
         var authorID = name + "-" + lastName;
         
         //bill title
-        var actionWord = $("#actionWord").val();
-        var article = $("#article").val();
-        var object = $("#object").val();
-        var article = $("#article").val();
-        var solutionSummary = $("#solutionSummary").val();
-        var article = $("#article").val();
-        var billTitle = "a-bill-to-" + actionWord + "-" + article + "-" + object + "-to-" + solutionSummary;
+        var title = $("title").val();
+        var billTitle = "a-bill-to-" + title;
 
         //bill text 
         var section1 = $("#section1").val();
