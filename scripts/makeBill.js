@@ -9,8 +9,8 @@ $(document).ready(function() {
         var authorID = name + "-" + lastName;
         
         //bill title
-        var title = $("title").val();
-        var billTitle = "a-bill-to-" + title;
+        var mission = $("#title").val();
+        var billTitle = "a-bill-to-" + mission;
 
         //bill text 
         var section1 = $("#section1").val();
@@ -19,15 +19,22 @@ $(document).ready(function() {
         var section4 = $("#section4").val();
         var section5 = $("#section5").val();
 
-        alert("You are about to add [" + authorID + "] to [" + school + "]");
+        alert("You are about to add [" + billTitle + "]");
         //adding data to the Firebase database
-        fireData.child(school).child(authorID).set({
+        var bill = fireData.push({
+            authorID,
+            school,
             billTitle,
             section1,
             section2,
             section3,
             section4,
             section5,
+        });
+
+        var billID = bill.key();
+        bill.update({
+            "id": billID,
         });
     });
 });
