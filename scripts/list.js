@@ -1,7 +1,18 @@
-var fireData = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var fireData = new Firebase("https://yig-bill-tracker2.firebaseio.com");
 
 $(document).ready(function() {
-    fireData.orderByValue().on("value", function(snapshot) {
+    //create sections based on the schools
+    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton"];
+    for (var i = 0; i < schoolList.length; i++) {
+        $(".container").append("<div>" + "</div>");
+        $("div:last").addClass("row");
+        $(".row:last").append("<h3>" + schoolList[i] + "</h3>");
+        $(".row:last").append("<div>" + "</div>");
+        $("div:last").addClass(schoolList[i]);
+    };
+
+    fireData.on("child_added", function(snapshot) {
+        var bill = snapshot.val();
         snapshot.forEach(function(data) {
             school = data.key()
             billList = new Firebase(fireData + "/" + school);

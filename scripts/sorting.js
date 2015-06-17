@@ -7,64 +7,67 @@ billList.on("value", function(snapshot) {
 });
 
 $(document).ready(function() {
-    sortedBills.orderByValue().on("value", function(snapshot) {
-        snapshot.forEach(function(data) {
-            school = data.key()
-            billList = new Firebase(sortedBills + "/" + school);
+    //create sections based on the schools
+    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton"];
+    for (var i = 0; i < schoolList.length; i++) {
+        $(".container").append("<div>" + "</div>");
+        $("div:last").addClass("row");
+        $(".row:last").append("<h3>" + schoolList[i] + "</h3>");
+        $(".row:last").append("<div>" + "</div>");
+        $("div:last").addClass(schoolList[i]);
+    };
 
-            billList.orderByValue().on("value", function(snapshot) {
-                snapshot.forEach(function(data) {
-                    author = data.key();
-                    billTitle = data.val().billTitle;
+    //adding bills based on the school
+    sortedBills.on("child_added", function(snapshot) {
+        var bill = snapshot.val();
+        $("div." + bill.school).append("<button>" + bill.billTitle + "</button>");
+        $("button:last").addClass("btn btn-default " + bill.id);
 
-                    //Setting up the container
-                    $("div.container").append("<h3>" + school + "</h3>");
-                    $("div.container").append("<div>" + "</div>");
-                    $("div.container div:last-of-type").addClass(school);
+        //show bill when button is clicked
+        var showBill = function(a) {
+            billInfo = new Firebase(sortedBills + "/" + a);
+            billInfo.on("value", function(snapshot) {
+                //variables to build the html file
+                var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
+                var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
+                var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
+                var bootstrap = "<link rel=" + "stylesheet" + "," + " href=" + "stylesheets/bootstrap/bootstrap.min.css" + ">";
+                var bill = snapshot.val();
+                var page = window.open();
+                page.document.write(
+                    "<!DOCTYPE html><html><head>" + 
+                    jquery1 + jquery2 + firebase + bootstrap + 
+                    "</head><body>" +
+                    "<div class=" + "container" + ">" + 
+                    "<h1 class=" + "text-center" + ">" + bill.billTitle + "</h1>" +
+                    "<br>" +
+                    "<h3 class=" + "text-center" + ">" + "BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA" + "</h3>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 1" + "</h4>" + 
+                    "<p>" + bill.section1 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 2" + "</h4>" + 
+                    "<p>" + bill.section2 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 3" + "</h4>" + 
+                    "<p>" + bill.section3 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 4" + "</h4>" + 
+                    "<p>" + bill.section4 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 5" + "</h4>" + 
+                    "<p>" + "When signed into law, the bill will first take place on " + bill.section5 + "</p></div>" +
+                    "</div></body></html>"
+                );
+            });
+        };
 
-                    //Adding the bill info
-                    $("div." + school).append("<p>" + author + ": " + billTitle + "</p>");
-                    $("div." + school).append("<select>" + "Select a Chamber" + "</select>");
-
-                    //Making the chamber selection
-                    $("select:last").addClass("selectpicker chamber");
-                    $("select.chamber:last").append("<option>" + "Select a Chamber" + "</option>");
-                    $("select.chamber:last").append("<option>" + "Premier" + "</option>");
-                    $("select.chamber:last").append("<option>" + "Upper" + "</option>");
-
-                    var makeChangeCallback = function(school) {
-                        return function() {
-                            $(this.closest("div")).append("<select>" + "Select a Comittee" + "</select>");
-                            $("select:last-of-type").addClass("selectpicker committee");
-
-                            var committeeList = ["Select a Committee", "Criminal Justice", "Education", "Envirorment", "Healthcare", "Transportation", "General Issues"];
-                            for (var i = 0;  i < committeeList.length; i++) {
-                                $("select.committee").append("<option>" + committeeList[i] + "</option>");
-                            };
-
-                            $("select.committee").change(function() {
-                                var chamber = $(this).parent().find("select.chamber").val();
-                                var committee = $(this).val();
-                                $(this.closest("div")).append("<button>" + "Send to " + chamber + " " + committee + "</button>");
-                                $("button").addClass("btn btn-default");
-
-                                $("button").click(function() {
-                                    var bill = $(this).parent().find("p").text();
-                                    var name = bill.split(":")[0];
-                                    var billTitle = bill.split(":")[1];
-                                    chamberDockets.child(chamber).child(committee).set({
-                                        author: name,
-                                        school: school,
-                                        title: billTitle,
-                                    });
-                                    $(this).parent().hide();
-                                });
-                            });
-                       };
-                    };
-                    
-                    $("select.chamber:last").change(makeChangeCallback(school));
-                });
+        //open bill when clicking on button
+        $("button").click(function() {
+            sortedBills.on("child_added", function(snapshot) {
+                var bill = snapshot.val();
+                var thisBillID = bill.id;
+                showBill(thisBillID);
             });
         });
     });
