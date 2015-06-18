@@ -1,4 +1,9 @@
-var fireData = new Firebase("https://yig-bill-tracker2.firebaseio.com");
+var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
+
+//I took this off bc it kept overidding the new change made by the bill sorting form
+//billList.on("value", function(snapshot) {
+//    sortedBills.update(snapshot.val());
+//});
 
 $(document).ready(function() {
     //create sections based on the schools
@@ -11,36 +16,63 @@ $(document).ready(function() {
         $("div:last").addClass(schoolList[i]);
     };
 
-    fireData.on("child_added", function(snapshot) {
+    //adding bills based on the school
+    sortedBills.on("child_added", function(snapshot) {
         var bill = snapshot.val();
-        snapshot.forEach(function(data) {
-            school = data.key()
-            billList = new Firebase(fireData + "/" + school);
+        $("div." + bill.school).append("<div class=" + bill.billTitle + "></div>");
+        $("div." + bill.billTitle).append("<button>" + bill.billTitle + "</button>");
+        $("div." + bill.billTitle + " button").addClass("btn btn-default " + bill.billTitle);
 
-            billList.orderByValue().on("value", function(snapshot) {
-                snapshot.forEach(function(data) {
-                    author = data.key();
-                    billTitle = data.val().billTitle;
+        //show bill when button is clicked
+        var showBill = function(a) {
+            billInfo = new Firebase(sortedBills + "/" + a);
+            billInfo.on("value", function(snapshot) {
+                //variables to build the html file
+                var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
+                var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
+                var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
+                var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "stylesheets/bootstrap/bootstrap.min.css" + ">";
+                var bill = snapshot.val();
+                var page = window.open();
+                page.document.write(
+                    "<!DOCTYPE html><html><head>" + 
+                    jquery1 + jquery2 + firebase + bootstrap + 
+                    "</head><body>" +
+                    "<div class=" + "container" + ">" + 
+                    "<h1 class=" + "text-center" + ">" + bill.billTitle + "</h1>" +
+                    "<h3 class=" + "text-center" + ">" + "BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA" + "</h3>" +
+                    "<div class=" + "container" + ">" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 1" + "</h4>" + 
+                    "<p>" + bill.section1 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 2" + "</h4>" + 
+                    "<p>" + bill.section2 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 3" + "</h4>" + 
+                    "<p>" + bill.section3 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 4" + "</h4>" + 
+                    "<p>" + bill.section4 + "</p></div>" +
+                    "<div class=" + "row" + ">" +
+                    "<h4>" + "Section 5" + "</h4>" + 
+                    "<p>" + "When signed into law, the bill will first take place on " + bill.section5 + "</p></div>" +
+                    "</div></div></body></html>"
+                );
+            });
+        };
 
-                    //Setting up the container
-                    $("div.container").append("<h3>" + school + "</h3>");
-                    $("div.container").append("<div>" + "</div>");
-                    $("div.container div:last-of-type").addClass(school);
-
-                    //Adding the bill info
-                    $("div." + school).append("<p>" + author + ": " + billTitle + "</p>");
-                    $("div." + school).append("<button>" + "See Bill" + "</button>");
-                    $("button").attr("type", "submit");
-                    $("button").addClass("btn btn-default");
-                    $("button").attr("id", "seeBill");
-
-                    $("#seeBill").click(function() {
-                        var billInfo = ($(this).closest("div").find("p").text());
-                        alert(billInfo);
-                    });
-                });
+        //open bill when clicking on button
+        $("button." + bill.billTitle).click(function() {
+            var billClicked = $(this).text();
+            sortedBills.on("child_added", function(snapshot) {
+                var bill = snapshot.val();
+                var thisBillID = bill.id;
+                if (billClicked == bill.billTitle) {
+                    alert("This bill is " + bill.billStatus + " in " + bill.billLocation);
+                    showBill(thisBillID);
+                };
             });
         });
     });
 });
-

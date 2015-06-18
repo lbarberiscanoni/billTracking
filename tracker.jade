@@ -1,5 +1,4 @@
 doctype html
-html
 head
     title Bill Tracker
     link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
@@ -7,7 +6,12 @@ head
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    .container
-      h1 Track Bills
-        a(href="index.html").btn.btn-default HOME
+    .container.text-center
+        h1 Track Bills
+            a(href="index.html").btn.btn-default HOME
+        a(href="chambers/committees.html").btn.btn-default Committees
+        a(href="chambers/premier-house.html").btn.btn-default Premier House
+        a(href="chambers/premier-senate.html").btn.btn-default Premier Senate
+        a(href="chambers/senate.html").btn.btn-default Senate
+        a(href="chambers/house.html").btn.btn-default House
     script(src="scripts/tracking.js")

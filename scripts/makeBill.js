@@ -30,8 +30,8 @@ $(document).ready(function() {
             section3,
             section4,
             section5,
-            billLocation: "",
-            billStatus: "",
+            billLocation: "not yet sorted",
+            billStatus: "not yet sorted",
         });
 
         var billID = bill.key();
