@@ -9,7 +9,7 @@ $(document).ready(function() {
         var authorID = name + "-" + lastName;
         
         //bill title
-        var mission = $("#title").val();
+        var mission = $("#title").val().replace(/\s/g, "-");
         var billTitle = "a-bill-to-" + mission;
 
         //bill text 
@@ -30,6 +30,8 @@ $(document).ready(function() {
             section3,
             section4,
             section5,
+            billLocation: "",
+            billStatus: "",
         });
 
         var billID = bill.key();

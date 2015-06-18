@@ -1,10 +1,4 @@
-var billList = new Firebase("https://yig-bill-tracker.firebaseio.com");
-var sortedBills = new Firebase("https://yig-bill-tracker2.firebaseio.com");
-var chamberDockets = new Firebase("https://yig-bill-tracker3.firebaseio.com");
-
-billList.on("value", function(snapshot) {
-    sortedBills.update(snapshot.val());
-});
+var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
 
 $(document).ready(function() {
     //create sections based on the schools
@@ -20,54 +14,45 @@ $(document).ready(function() {
     //adding bills based on the school
     sortedBills.on("child_added", function(snapshot) {
         var bill = snapshot.val();
-        $("div." + bill.school).append("<button>" + bill.billTitle + "</button>");
-        $("button:last").addClass("btn btn-default " + bill.id);
+        $("div." + bill.school).append("<div class=" + bill.billTitle + "></div>");
+        $("div." + bill.billTitle).append("<button>" + bill.billTitle + "</button>");
+        $("div." + bill.billTitle + " button").addClass("btn btn-default " + bill.billTitle);
 
-        //show bill when button is clicked
-        var showBill = function(a) {
-            billInfo = new Firebase(sortedBills + "/" + a);
-            billInfo.on("value", function(snapshot) {
-                //variables to build the html file
-                var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
-                var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
-                var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
-                var bootstrap = "<link rel=" + "stylesheet" + "," + " href=" + "stylesheets/bootstrap/bootstrap.min.css" + ">";
-                var bill = snapshot.val();
-                var page = window.open();
-                page.document.write(
-                    "<!DOCTYPE html><html><head>" + 
-                    jquery1 + jquery2 + firebase + bootstrap + 
-                    "</head><body>" +
-                    "<div class=" + "container" + ">" + 
-                    "<h1 class=" + "text-center" + ">" + bill.billTitle + "</h1>" +
-                    "<br>" +
-                    "<h3 class=" + "text-center" + ">" + "BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA" + "</h3>" +
-                    "<div class=" + "row" + ">" +
-                    "<h4>" + "Section 1" + "</h4>" + 
-                    "<p>" + bill.section1 + "</p></div>" +
-                    "<div class=" + "row" + ">" +
-                    "<h4>" + "Section 2" + "</h4>" + 
-                    "<p>" + bill.section2 + "</p></div>" +
-                    "<div class=" + "row" + ">" +
-                    "<h4>" + "Section 3" + "</h4>" + 
-                    "<p>" + bill.section3 + "</p></div>" +
-                    "<div class=" + "row" + ">" +
-                    "<h4>" + "Section 4" + "</h4>" + 
-                    "<p>" + bill.section4 + "</p></div>" +
-                    "<div class=" + "row" + ">" +
-                    "<h4>" + "Section 5" + "</h4>" + 
-                    "<p>" + "When signed into law, the bill will first take place on " + bill.section5 + "</p></div>" +
-                    "</div></body></html>"
-                );
-            });
-        };
+        $("button." + bill.billTitle).click(function() {
+            
+            //create an option to sort the bill to the right committee
+            $("<select>" + "</select>").insertAfter("button." + bill.billTitle);
+            $("div." + bill.billTitle + " select").addClass("committee");
+            $("div." + bill.billTitle + " select.committee").append("<option>" + "Select a Committee" + "</option>");
 
-        //open bill when clicking on button
-        $("button").click(function() {
-            sortedBills.on("child_added", function(snapshot) {
-                var bill = snapshot.val();
-                var thisBillID = bill.id;
-                showBill(thisBillID);
+            committeList = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];
+            for (var i = 0; i < committeList.length; i++) {
+                $("div." + bill.billTitle + " select.committee").append("<option>" + committeList[i] + "</option>");
+            };
+
+            //create a submit button
+            $("select.committee").change(function() {
+                committee = $("select.committee").val().replace(/\s/g, "-");
+                $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select");
+                $("div." + bill.billTitle + " button:last").addClass("btn btn-primary submit");
+                $("button.submit").click(function() {
+                    billClicked = $(this).parent().text().split("Se")[0];
+                    sortedBills.on("child_added", function(snapshot) {
+                        var bill = snapshot.val();
+                        var thisBillID = bill.id;
+
+                        if (billClicked == bill.billTitle) {
+                            alert("You are moving [" + billClicked + "] in [" + committee + "]");
+
+                            //build a new instance of firebase specifically for this bill using its unique ID
+                            //billInfo = new Firebase(sortedBills + "/" + thisBillID);
+                            sortedBills.child(thisBillID).update({
+                                "billLocation": committee,
+                                "billStatus": "on the docket",
+                            });
+                        };
+                    });
+                });
             });
         });
     });
