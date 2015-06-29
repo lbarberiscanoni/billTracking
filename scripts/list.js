@@ -7,7 +7,7 @@ var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
 
 $(document).ready(function() {
     //create sections based on the schools
-    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton"];
+    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton", "JL-Mann"];
     for (var i = 0; i < schoolList.length; i++) {
         $(".container").append("<div>" + "</div>");
         $("div:last").addClass("row");

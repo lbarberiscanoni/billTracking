@@ -2,7 +2,9 @@ var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
 
 $(document).ready(function() {
     //getting the chamber the user is looking at 
-    var chamberName = $(this).text().replace(/\s/g, "-").replace("BACK", "").split("Tracker")[1];
+    //var chamberName = $(this).text().replace(/\s/g, "-").replace("BACK", "").split("Tracker")[1];
+    var chamberName = $(this).text().replace("BACK", "").split("Tracker")[1];
+    console.log(chamberName);
 
     sortedBills.on("child_added", function(snapshot) {
         //running through all the bills to find their location
@@ -17,12 +19,10 @@ $(document).ready(function() {
             $("div.container").append("<button>" + bill.billTitle + "</button><br>");
             $("button:last").addClass("btn btn-default ").attr("id", "bill"); 
 
-            $("button#bill").click(function() {
+            $("button#bill:last").click(function() {
                 $(this).addClass("form-inline");
-                $("<button>" + "Passed" + "</button>").insertAfter($(this));
-                $("button:last").addClass("btn btn-success");
-                $("<button>" + "Failed" + "</button>").insertAfter($("button.btn-success"));
-                $("button:last").addClass("btn btn-danger");
+                $("<button>" + "Passed" + "</button>").insertAfter($(this)).addClass("btn btn-success");
+                $("<button>" + "Failed" + "</button>").insertAfter("button.btn-success").addClass("btn btn-danger");
 
                 //after making buttons changing the bill status based on which button was clicked
                 $("button.btn-success").click(function() {
@@ -41,7 +41,7 @@ $(document).ready(function() {
                         });
                     } else if (bill.billLocation == "Senate" || bill.billLocation == "Premier Senate") {
                         sortedBills.child(thisBillID).update({
-                            billLocation: "Governor's Desk",
+                            billLocation: "Governor Desk",
                         });
                     } else {
                         if (bill.division == "Premier") {
@@ -74,18 +74,16 @@ $(document).ready(function() {
 
                     window.location.reload();
                 });
-                
-                //can't change bills now
-                //$(this).addClass("disabled");
-
             });
         } else {
             if (bill.billStatus == passStatus) {
-                $("button#bill:last").addClass("disabled");
-                $("button#bill:last").append(document.createTextNode(" [passed]"));
+                $("div.container").append("<button>" + bill.billTitle + "</button><br>");
+                $("button:last").addClass("btn btn-default disabled");
+                $("button:last").append(document.createTextNode(" [passed]"));
             } if (bill.billStatus == failedStatus) {
-                $("button#bill:last").addClass("disabled");
-                $("button#bill:last").append(document.createTextNode(" [failed]"));
+                $("div.container").append("<button>" + bill.billTitle + "</button><br>");
+                $("button:last").addClass("btn btn-default disabled");
+                $("button:last").append(document.createTextNode(" [failed]"));
             } else {
                 return false
             };

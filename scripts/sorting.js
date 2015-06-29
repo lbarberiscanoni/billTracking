@@ -2,7 +2,7 @@ var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
 
 $(document).ready(function() {
     //create sections based on the schools
-    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton"];
+    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton", "JL-Mann"];
     for (var i = 0; i < schoolList.length; i++) {
         $(".container").append("<div>" + "</div>");
         $("div:last").addClass("row");
@@ -43,7 +43,7 @@ $(document).ready(function() {
 
                     //create a submit button
                     $("select.committee").change(function() {
-                        var committee = $("select.committee").val().replace(/\s/g, "-");
+                        var committee = $("select.committee").val()
                         var division = $("select.division").val();
                         $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee");
                         $("div." + bill.billTitle + " button:last").addClass("btn btn-primary submit");
