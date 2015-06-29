@@ -69,7 +69,7 @@ $(document).ready(function() {
                 var bill = snapshot.val();
                 var thisBillID = bill.id;
                 if (billClicked == bill.billTitle) {
-                    alert("This bill is " + bill.billStatus + " in " + bill.billLocation);
+                    alert("This bill is " + bill.billStatus + " and is now in " + bill.billLocation);
                     showBill(thisBillID);
                 };
             });

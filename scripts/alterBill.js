@@ -38,55 +38,57 @@ $(document).ready(function() {
 
             $("#billInfo").change(function() {
 
-               var billInfo = $("#billInfo").val();
+                  var billInfo = $("#billInfo").val();
 
-               $("div.container").append("<input>" + "</input>");
-               $("input").attr("type", "text");
-               $("input").attr("placeholder", "enter new " + billInfo);
-               $("input").attr("id", "dataChange");
-                
-               $("div.container").append("<input>" + "</input>");
-               $("input:last-of-type").attr("type", "button");
-               $("input:last-of-type").attr("value", "submit change");
-               $("input:last-of-type").attr("id", "submitChange");
+                  $("div.container").append("<input>" + "</input>");
+                  $("input").attr("type", "text");
+                  $("input").attr("placeholder", "enter new " + billInfo);
+                  $("input").attr("id", "dataChange");
 
-               $("#submitChange").click(function() {
+                  $("div.container").append("<input>" + "</input>");
+                  $("input:last-of-type").attr("type", "button");
+                  $("input:last-of-type").attr("value", "submit change");
+                  $("input:last-of-type").attr("id", "submitChange");
 
-                   var school = $("#school").val();
-                   var authorName = $("#authorName").val();
-                   var firstPath = fireData.child(school)
-                   var billInfo = $("#billInfo").val();
-                   var change = $("#dataChange").val();
-                
-                   alert("You are changing the [" + billInfo + "] of [" + authorName + "] to [" + change + "]");
+                  $("#submitChange").click(function() {
 
-                   if (billInfo == "billTitle") {
-                       firstPath.child(authorName).update({
-                           billTitle: change
-                       });
-                   } else if (billInfo == "section1") {
-                       firstPath.child(authorName).update({
-                           section1: change
-                       });
-                    } else if (billInfo == "section2") {
-                       firstPath.child(authorName).update({
-                           section2: change
-                       });
-                    } else if (billInfo == "section3") {
-                       firstPath.child(authorName).update({
-                           section3: change
-                       });
-                    } else if (billInfo == "section4") {
-                       firstPath.child(authorName).update({
-                           section4: change
-                       });
-                    } else if (billInfo == "section5") {
-                       firstPath.child(authorName).update({
-                           section5: change
-                       });
-                    } else {
-                        alert("ERROR!!!!")
-                    }
+                  var school = $("#school").val();
+                  var authorName = $("#authorName").val();
+                  var firstPath = fireData.child(school)
+                  var billInfo = $("#billInfo").val();
+                  var change = $("#dataChange").val();
+
+                  alert("You are changing the [" + billInfo + "] of [" + authorName + "] to [" + change + "]");
+
+                  if (billInfo == "billTitle") {
+                    firstPath.child(authorName).update({
+                    billTitle: change
+                  });
+                  } else if (billInfo == "section1") {
+                    firstPath.child(authorName).update({
+                    section1: change
+                  });
+                  } else if (billInfo == "section2") {
+                    firstPath.child(authorName).update({
+                    section2: change
+                  });
+                  } else if (billInfo == "section3") {
+                    firstPath.child(authorName).update({
+                    section3: change
+                  });
+                  } else if (billInfo == "section4") {
+                    firstPath.child(authorName).update({
+                    section4: change
+                  });
+                  } else if (billInfo == "section5") {
+                    firstPath.child(authorName).update({
+                    section5: change
+                  });
+                  } else {
+                    alert("ERROR!!!!")
+                  };
+
+                   window.location.reload();
                 });
             });
         });

@@ -32,11 +32,14 @@ $(document).ready(function() {
             section5,
             billLocation: "not yet sorted",
             billStatus: "not yet sorted",
+            division: "not yet sorted",
         });
 
         var billID = bill.key();
         bill.update({
             "id": billID,
         });
+
+        window.location.reload();
     });
 });
