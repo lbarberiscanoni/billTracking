@@ -6,7 +6,20 @@ head
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    .container.text-center
-        h1 Governor Desk
+    .container
+        h1.text-center Governor Desk
             a(href="../tracker.html").btn.btn-default BACK
-    script(src="../scripts/tracking.js")
+        .col-md-1
+        .col-md-4#past
+            h2.text-center Done
+            .row#toSign
+                h3 To Sign
+            .row#signed
+                h3 Signed into Law
+            .row#vetoed
+                h3 Vetoed
+        .col-md-6#realTime.text-center
+            h2 To Evaluate
+            .row
+        .col-md-1
+    script(src="../scripts/governor.js")
