@@ -22,11 +22,11 @@ body
             form.form-inline.col-sm-12
                 .form-group.col-sm-3.form-inline
                     label.col-sm-3 Name
-                    input.form-control(type="text", placeholder="Enter First Name")#name
+                    input.form-control(name="firstName", type="text", placeholder="Enter First Name")#name
                 .form-group.col-sm-3.form-inline
                     label.col-sm-3 Last Name
-                    input.form-control(type="text", placeholder="Enter Last Name")#lastName
-                select.form-control#school
+                    input.form-control(name="lastName", type="text", placeholder="Enter Last Name")#lastName
+                select(name="school").form-control#school
                     option Select Your School
                     option Riverside
                     option Southside
@@ -41,26 +41,26 @@ body
                 .form-group.col-sm-8
                     label.control-label.col-sm-2 A Bill to
                     .col-sm-8
-                        input(type="text", placeholder="Enter Bill Title")#title.form-control
+                        input(name="billTitle", type="text", placeholder="Enter Bill Title")#title.form-control
         .row
             h5 BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
             .row
                 label Section 1
-                textarea.form-control(rows=3, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
+                textarea.form-control(name="section1", rows=3, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
             .row
                 label Section 2
-                textarea.form-control(rows=3, placeholder="Define any ambiguous terms inherent in the first section.")#section2
+                textarea.form-control(name="section2", rows=3, placeholder="Define any ambiguous terms inherent in the first section.")#section2
             .row 
                 label Section 3
-                textarea.form-control(rows=3, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
+                textarea.form-control(name="section3", rows=3, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
             .row 
                 label Section 4
-                textarea.form-control(rows=3, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
+                textarea.form-control(name="section4", rows=3, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
             .row
                 label Section 5
                 .form-group.form-inline
                     p When signed into law, the bill will first take place
-                    input.form-control(type="date", placeholder="Indicate the implementation data/timeframe")#section5
+                    input.form-control(name="section5", type="date", placeholder="Indicate the implementation data/timeframe")#section5
                 .row
                     button(type="submit")#makeBill.btn.btn-primary.btn-lg Submit Bill
     script(src="scripts/makeBill.js")
