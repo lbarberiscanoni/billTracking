@@ -1,0 +1,39 @@
+doctype html
+head
+    title Bill List
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/autocomplete.css")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+body
+    .container
+        h1.text-center Advisors' Chill Place
+            a(href="index.html").btn.btn-default HOME
+        .row
+            .col-md-2
+                select.form-control#schoolName
+                    option Select Your School
+                    option Riverside
+                    option Southside
+                    option Eastside
+                    option Christ-Church
+                    option Porter-Gaud
+                    option Mauldin
+                    option Blufton
+                    option JL-Mann
+        .row
+            #search-form 
+            #message
+        .row
+            .col-md-1
+            .col-md-5
+                h2.text-center To be Debated
+                #toBeDebated
+            .col-md-5
+                h2.text-center Passed / Failed
+                #passedFailed
+            .col-md-1
+    script(src="scripts/list.js")
+    script(src="scripts/autocomplete.js")
+    script(src="scripts/typehead.js")
