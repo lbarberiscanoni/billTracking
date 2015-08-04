@@ -5,18 +5,39 @@ $(document).ready(function() {
         var schoolSelected = $("#schoolName").val();
         //changing the name of the header based on the school to make it feel personal 
         $("h1.text-center").html(schoolSelected + " info");
+        $("h1:first").append("<a>" + "HOME" + "</a>");
+        $("h1:first a").addClass("btn btn-default").attr("href", "index.html");
+        
+        //Meta-data for bills
+        var numberOfBillsToBeDebated = 0;
+        var numberOfBillsPassed = 0;
+        var numberOfBillsFailed = 0;
+
         //adding bills based on the school
         sortedBills.on("child_added", function(snapshot) {
             var bill = snapshot.val();
+            var billStatus = bill.billStatus.split(" ")[0];
             if (bill.school == schoolSelected) {
-                if (bill.billStatus == "on the docket") {
-                    $("#toBeDebated").append("<button>" + bill.billTitle + "</button>");
+                if (billStatus == "on") {
+                    $("#toBeDebated").append("<button>Author: " + bill.authorID + "<br>Title: " + bill.billTitle + "<br>Location: " + bill.billLocation + "</button>");
                     $("#toBeDebated button:last").addClass("btn btn-default");
+                    numberOfBillsToBeDebated += 1
+                } else if (billStatus == "passed") {
+                    $("#passed").append("<button>Author: " + bill.authorID + "<br>Title: " + bill.billTitle + "<br>Location: " + bill.billLocation + "</button>");
+                    $("#passed button:last").addClass("btn btn-default");
+                    numberOfBillsPassed += 1;
+                } else if (billStatus == "failed") {
+                    $("#failed").append("<button>Author: " + bill.authorID + "<br>Title: " + bill.billTitle + "<br>Location: " + bill.billLocation + "</button>");
+                    $("#failed button:last").addClass("btn btn-default");
+                    numberOfBillsFailed += 1;
                 } else {
-                    $("#passedFailed").append("<button>" + bill.billTitle + "</button>");
-                    $("#passedFailed button:last").addClass("btn btn-default");
+                    console.log("neither passed or failed");
                 };
             };
+
+            $("div.col-md-4:nth-of-type(1) h2.text-center").html("Yet to be Debated [" + numberOfBillsToBeDebated + "]");
+            $("div.col-md-4:nth-of-type(2) h2.text-center").html("Passed [" + numberOfBillsPassed + "]");
+            $("div.col-md-4:nth-of-type(3) h2.text-center").html("Failed [" + numberOfBillsFailed + "]");
 
             //show bill when button is clicked
             var showBill = function(a) {
@@ -58,7 +79,7 @@ $(document).ready(function() {
             };
 
             //open bill when clicking on button
-            $("button." + bill.billTitle).click(function() {
+            $("button:last").click(function() {
                 var billClicked = $(this).text();
                 sortedBills.on("child_added", function(snapshot) {
                     var bill = snapshot.val();

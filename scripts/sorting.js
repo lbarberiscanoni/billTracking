@@ -4,52 +4,57 @@ $(document).ready(function() {
     //create sections based on the schools
     schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton", "JL-Mann"];
     for (var i = 0; i < schoolList.length; i++) {
-        $(".container").append("<div>" + "</div>");
-        $("div:last").addClass("row");
-        $(".row:last").append("<h3>" + schoolList[i] + "</h3>");
-        $(".row:last").append("<div>" + "</div>");
-        $("div:last").addClass(schoolList[i]);
+        $("#toSort").append("<div>" + "</div>");
+        $("#toSort div:last").addClass("row " + schoolList[i]);
+        $("#toSort .row:last").append("<h3>" + schoolList[i] + "</h3>");
+
+        //same thing but for the sorted side
+        $("#sorted").append("<div>" + "</div>");
+        $("#sorted div:last").addClass("row " + schoolList[i]);
+        $("#sorted .row:last").append("<h3>" + schoolList[i] + "</h3>");
     };
+
+    var numberOfBillsToSort = 0; 
+    var numberOfBillsSorted = 0;
 
     //adding bills based on the school
     sortedBills.on("child_added", function(snapshot) {
         var bill = snapshot.val();
-        $("div." + bill.school).append("<div class=" + bill.billTitle + "></div>");
-        $("div." + bill.billTitle).append("<button>" + bill.billTitle + "</button>");
-        $("div." + bill.billTitle + " button").addClass("btn btn-default " + bill.billTitle);
-
         //if the bill has been sorted show it but don't let it do anything else
         if (bill.billLocation == "not yet sorted") {
-            $("button." + bill.billTitle).click(function() {
+            numberOfBillsToSort += 1;
+            $("div#toSort div.row." + bill.school).append("<button>" + bill.billTitle + "</button>");
+            $("div#toSort button").addClass("btn btn-default");
+
+            $("div#toSort button:last").click(function() {
                 
-                //creat an option to put a bill either in Upper or Premier
-                $("<select>" + "</select>").insertAfter("button." + bill.billTitle);
-                $("div." + bill.billTitle + " select").addClass("division");
-                $("div." + bill.billTitle + " select.division").append("<option>" + "Select a Division" + "</option>");
-                $("div." + bill.billTitle + " select.division").append("<option>" + "Upper" + "</option>");
-                $("div." + bill.billTitle + " select.division").append("<option>" + "Premier" + "</option>");
+                //create an option to put a bill either in Upper or Premier
+                $("<select>" + "</select>").insertAfter(this).addClass("division");
+                $("select.division").append("<option>" + "Select a Division" + "</option>");
+                $("select.division").append("<option>" + "Upper" + "</option>");
+                $("select.division").append("<option>" + "Premier" + "</option>");
 
                 $("select.division").change(function() {
                     
                     //create an option to sort the bill to the right committee
                     $("<select>" + "</select>").insertAfter("select.division");
-                    $("div." + bill.billTitle + " select:last").addClass("committee");
-                    $("div." + bill.billTitle + " select.committee").append("<option>" + "Select a Committee" + "</option>");
+                    $("select:last").addClass("committee");
+                    $("select.committee").append("<option>" + "Select a Committee" + "</option>");
 
                     committeList = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];
                     for (var i = 0; i < committeList.length; i++) {
-                        $("div." + bill.billTitle + " select.committee").append("<option>" + committeList[i] + "</option>");
+                        $("select.committee").append("<option>" + committeList[i] + "</option>");
                     };
 
                     //create a submit button
                     $("select.committee").change(function() {
                         var committee = $("select.committee").val()
                         var division = $("select.division").val();
-                        $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee");
-                        $("div." + bill.billTitle + " button:last").addClass("btn btn-primary submit");
+                        $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee").addClass("btn btn-primary submit");
 
                         $("button.submit").click(function() {
-                            billClicked = $(this).parent().text().split("Se")[0];
+                            billClicked = "a-bill-to" + $(this).parent().text().split("a-bill-to")[1].split("Select")[0];
+                            alert(billClicked);
                             sortedBills.on("child_added", function(snapshot) {
                                 var bill = snapshot.val();
                                 var thisBillID = bill.id;
@@ -74,8 +79,13 @@ $(document).ready(function() {
                 });
             });
         } else {
-            $("button." + bill.billTitle).addClass("disabled");
-            $("button." + bill.billTitle).append(document.createTextNode(" [sorted]"));
+            numberOfBillsSorted += 1;
+            $("div#sorted div.row." + bill.school).append("<button>" + bill.billTitle + "</button>");
+            $("div#sorted button").addClass("btn btn-default disabled");
         };
+
+        //updating the number of bills taken care of
+        $("div.col-md-5:first h2").html("To Sort [" + numberOfBillsToSort + "]");
+        $("div.col-md-5:last h2").html("Sorted [" + numberOfBillsSorted + "]");
     });
 });
