@@ -7,12 +7,13 @@ head
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
     .container.text-center
-        h1 Track Bills
-            a(href="index.html").btn.btn-default HOME
-        a(href="chambers/committees.html").btn.btn-default Committees
-        a(href="chambers/premier-house.html").btn.btn-default Premier House
-        a(href="chambers/premier-senate.html").btn.btn-default Premier Senate
-        a(href="chambers/senate.html").btn.btn-default Senate
-        a(href="chambers/house.html").btn.btn-default House
-        a(href="chambers/governorDesk.html").btn.btn-default Governor Desk
-    script(src="scripts/tracking.js")
+        .row
+            h1 Track Bills
+                a(href="index.html").btn.btn-default HOME
+            button.btn.btn-default#committees Committees
+            button.btn.btn-default#premierChambers Premier Chambers
+            button.btn.btn-default#upperChambers Upper Chambers
+            a(href="chambers/governorDesk.html").btn.btn-default Governor Desk
+        .row#chamberSelection
+        script(src="scripts/tracking.js")
+    script(src="scripts/clerk.js")
