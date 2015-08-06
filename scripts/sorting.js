@@ -26,7 +26,7 @@ $(document).ready(function() {
             $("div#toSort div.row." + bill.school).append("<button>" + bill.billTitle + "</button>");
             $("div#toSort button").addClass("btn btn-default");
 
-            $("div#toSort button:last").click(function() {
+            $("div#toSort button").click(function() {
                 
                 //create an option to put a bill either in Upper or Premier
                 $("<select>" + "</select>").insertAfter(this).addClass("division");
@@ -62,8 +62,6 @@ $(document).ready(function() {
                                 if (billClicked == bill.billTitle) {
                                     alert("You are moving [" + billClicked + "] in [" + committee + "]");
 
-                                    //build a new instance of firebase specifically for this bill using its unique ID
-                                    //billInfo = new Firebase(sortedBills + "/" + thisBillID);
                                     sortedBills.child(thisBillID).update({
                                         "billLocation": committee,
                                         "billStatus": "on the docket",

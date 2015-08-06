@@ -13,6 +13,59 @@ billList.on("child_added", function(snapshot) {
             $(".container").append("<div class='row'><h4>" + sectionsOfThisBill[2 * i] + "</h4><p class='amendable'>" + sectionsOfThisBill[(2 * i) + 1] + "</p></div>");
         };
 
+        var chamber = bill.billLocation;
+        var passedStatus = "passed " + chamber;
+        var failedStatus = "failed in " + chamber;
+        //let's add a way to pass bills from this window
+        $(".container:last").append("<button id='passed'>" + "Passed" + "</button>");
+        $("#passed").addClass("btn btn-success");
+        $("#passed").click(function() {
+            alert(passedStatus);
+            billList.child(thisBillID).update({
+                "billStatus": passedStatus,
+            });
+            
+            //let's move the bill in the appropriate chamber
+            if (bill.billLocation == "Premier House") {
+                billList.child(thisBillID).update({
+                    billLocation: "Premier Senate",
+                });
+            } else if (bill.billLocation == "House") {
+                billList.child(thisBillID).update({
+                    billLocation: "Senate",
+                });
+            } else if (bill.billLocation == "Senate" || bill.billLocation == "Premier Senate") {
+                billList.child(thisBillID).update({
+                    billLocation: "Governor Desk",
+                });
+            } else {
+                if (bill.division == "Premier") {
+                    billList.child(thisBillID).update({
+                        billLocation: "Premier House",
+                    });
+                } else if (bill.division == "Upper") {
+                    billList.child(thisBillID).update({
+                        billLocation: "House",
+                    });
+                } else {
+                    alert("problem with bill location");
+                };
+            };
+
+            window.location.reload();
+        });
+
+        //let's add a way to fail bills from this window
+        $(".container:last").append("<button id='failed'>" + "Failed" + "</button>");
+        $("#failed").addClass("btn btn-danger");
+        $("#failed").click(function() {
+            alert(failedStatus);
+            billList.child(thisBillID).update({
+                "billStatus": failedStatus,
+            });
+            window.location.reload();
+        });
+
         //let's add the amendment capabilities
         $(".container:last").append("<button id='amend'>" + "Amend Bill" + "</button>");
         $("#amend").addClass("btn btn-default");
@@ -71,7 +124,8 @@ billList.on("child_added", function(snapshot) {
                     //let's go back to normal
                     $(".amendable").attr("contenteditable", "false");
                     alert("amendment made");
-                    window.close();
+                    window.location.reload();
+                    //window.close();
                 });
             });
         });
