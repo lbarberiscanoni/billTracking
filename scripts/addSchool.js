@@ -11,6 +11,9 @@ $(document).ready(function() {
         var newSchool = $("#newSchool").val();
         listOfSchools.push({
             "name": newSchool,
+            "passed": 0,
+            "failed": 0,
+            "yetToDo": 0,
         });
 
         window.location.reload();

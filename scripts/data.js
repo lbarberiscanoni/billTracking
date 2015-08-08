@@ -1,81 +1,50 @@
-var data = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var billList = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var listOfSchools = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList");
 
 $(document).ready(function() {
     //let's make sections for each school that will display data
-    schoolList = {
-        "Riverside": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Southside": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Eastside": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Christ Church": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Porter Gaud": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Mauldin": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "Blufton": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        }, 
-        "JL Mann": {
-            passed: 0,
-            failed: 0,
-            yetToDo: 0,
-        },
-    };
+    listOfSchools.on("child_added", function(snapshot) {
+        var school = snapshot.val();
+        var schoolName = school.name;
+        var schoolID = snapshot.key();
+        
+        $("#schools").append("<h3>" + schoolName + "</h3>");
+        $("#schools h3:last").attr("id", schoolName);
 
-    var showSchool = function() {
-        console.log(schoolList);
-        var finalStr = ''
-        for (school in schoolList) {
-            var s = schoolList[school];
-            console.log(s)
-            console.log(s.passed);
-            console.log(schoolList[school]['failed']);
-            finalStr = finalStr + "<div class='row'>" + "<h3>" + school + " P[" + schoolList[school]['passed'] + "] F[" + schoolList[school]['failed'] + "] TD[" + schoolList[school]['yetToDo'] + "]</h3></div>";
+        billList.on("child_added", function(snapshot) {
+            var bill = snapshot.val();
 
-           $("#schools").append("<div class='row'>" + "<h3>" + school + " P[" + schoolList[school]['passed'] + "] F[" + schoolList[school]['failed'] + "] TD[" + schoolList[school]['yetToDo'] + "]</h3></div>");
-        }
-        //console.log(finalStr);
-        //console.log('gg')
+            var billsPassed = 0;
+            var billsFailed = 0;
+            var billsYetToDo = 0;
 
-        //$("#schools").append(finalStr);
-    };
+            if (bill.school == school.name) {
+                console.log(bill.school);
+                if (bill.billStatus.indexOf("on the docket") != -1) {
+                    var billsYetToDo = billsYetToDo + 1;
+                    listOfSchools.child(schoolID).update({
+                        "yetToDo": billsYetToDo,
+                    });
+                } else if (bill.billStatus.indexOf("passed") != -1) {
+                    var billsPassed = billsPassed + 1;
+                    listOfSchools.child(schoolID).update({
+                        "passed": billsPassed,
+                    });
+                } else if (bill.billStatus.indexOf("failed") != -1) {
+                    var billsFailed = billsFailed + 1;
+                    listOfSchools.child(schoolID).update({
+                        "failed": billsFailed,
+                    });
+                } else {
+                    console.log(bill.billStatus);
+                };
 
-    $.when(data.on("child_added", function(snapshot) {
-        var thisBill = snapshot.val();
-        var statusOfBill = thisBill.billStatus;
-        if (schoolList[thisBill.school]) {
-            if (statusOfBill.indexOf("passed") != -1) {
-                schoolList[thisBill.school].passed += 1;
-            } else if (statusOfBill.indexOf("failed") != -1) {
-                schoolList[thisBill.school].failed += 1;
-            } else if (statusOfBill.indexOf("docket") != -1) {
-                schoolList[thisBill.school].yetToDo += 1;
+                var currentStatus = $("#schools #" + schoolName).html();
+                var updatedStatus = currentStatus + " P[" + billsPassed + "] F[" + billsFailed + "] TD[" + billsYetToDo + "]";
+                $("#schools #" + schoolName).html(updatedStatus);
             };
-        };
-    })).then(showSchool());
+        });
+    });
 
     //let's make sections for each committee that will display data
     committeList = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];

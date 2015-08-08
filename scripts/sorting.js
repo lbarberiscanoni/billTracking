@@ -31,7 +31,8 @@ $(document).ready(function() {
             $("div#toSort div.row." + bill.school).append("<button>" + bill.billTitle + "</button>");
             $("div#toSort button").addClass("btn btn-default");
 
-            $("div#toSort button").click(function() {
+            $("div#toSort button:last").click(function() {
+                var billClickedNow = $(this);
                 
                 //create an option to put a bill either in Upper or Premier
                 $("<select>" + "</select>").insertAfter(this).addClass("division");
@@ -58,8 +59,7 @@ $(document).ready(function() {
                         $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee").addClass("btn btn-primary submit");
 
                         $("button.submit").click(function() {
-                            billClicked = "A Bill to " + $(this).parent().text().split("A Bill to")[1].split("Select")[0];
-                            alert(billClicked);
+                            var billClicked = billClickedNow.text();
                             sortedBills.on("child_added", function(snapshot) {
                                 var bill = snapshot.val();
                                 var thisBillID = bill.id;
