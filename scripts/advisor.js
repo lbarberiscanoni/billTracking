@@ -1,6 +1,14 @@
-var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var schoolListFromDB = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList");
 
 $(document).ready(function() {
+    schoolListFromDB.on("child_added", function(snapshot) {
+        var school = snapshot.val();
+        var schoolName = school.name;
+
+        $("#schoolName").append("<option>" + schoolName + "</option>");
+    });
+    
     $("#schoolName").change(function(){
         var schoolSelected = $("#schoolName").val();
         //changing the name of the header based on the school to make it feel personal 

@@ -1,0 +1,26 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    .container
+        h1.text-center Data Visualization
+            a(href="index.html").btn.btn-default HOME
+        .row
+            h1.text-center Snapshot
+            #snapshot
+        .row
+            h1.text-center Broad Look
+            .col-md-4
+                h2.text-center Schools
+                #schools
+            .col-md-4
+                h2.text-center Committees
+                #committees
+            .col-md-4
+                h2.text-center Chambers
+                #chambers
+    script(src="scripts/data.js")

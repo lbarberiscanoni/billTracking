@@ -1,4 +1,4 @@
-var bills = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var bills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
 
 $(document).ready(function() {
     $("#schoolName").change(function() {

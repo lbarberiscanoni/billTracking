@@ -1,6 +1,13 @@
-var fireData = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var fireData = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var listOfSchoolsFromDB = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList");
 
 $(document).ready(function() {
+    listOfSchoolsFromDB.on("child_added", function(snapshot) {
+        var school = snapshot.val();
+        var schoolName = school.name;
+
+        $("#school").append("<option>" + schoolName + "</option>");
+    });
 
     $("#school").change(function() {
         var school = $("#school").val();

@@ -1,4 +1,4 @@
-var billList = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var billList = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
 //first, let's figure which bill we are dealing with
 var thisBillTitle = $("h1").text();
 

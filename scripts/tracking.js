@@ -1,4 +1,4 @@
-var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
 
 $(document).ready(function() {
     //getting the chamber the user is looking at 

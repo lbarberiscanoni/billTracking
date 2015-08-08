@@ -1,16 +1,26 @@
-var fireData = new Firebase("https://yig-bill-tracker.firebaseio.com/");
+var fireData = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var schoolListFromDB = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList");
 
 $(document).ready(function() {
+    //add schools based on the DB
+    schoolListFromDB.on("child_added", function(snapshot) {
+        var school = snapshot.val();
+        var schoolName = school.name;
+
+        $("#school").append("<option>" + schoolName + "</option>");
+    });
+
     $("#makeBill").click(function() {
+
         //author
         var school = $("#school").val();
         var name = $("#name").val();
         var lastName = $("#lastName").val();
-        var authorID = name + "-" + lastName;
+        var authorID = name + " " + lastName;
         
         //bill title
-        var mission = $("#title").val().replace(/\s/g, "-");
-        var billTitle = "a-bill-to-" + mission;
+        var mission = $("#title").val();
+        var billTitle = "A Bill to " + mission;
 
         //bill text 
         var section1 = $("#section1").val();

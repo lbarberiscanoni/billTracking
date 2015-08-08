@@ -1,0 +1,23 @@
+doctype html
+head
+    title Bill List
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/autocomplete.css")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+body
+    .container
+        h1.text-center Add a School
+            a(href="index.html").btn.btn-default HOME
+        .row
+            .col-md-6
+                h1 Current Schools
+                #currentSchools
+            .col-md-6
+                h1 Add Schools
+                #addSchool
+                    input(type="text", placeholder="Add a School and Capitalize the first letter").form-control#newSchool
+                    button.btn.btn-default#submit Add New School
+    script(src="scripts/addSchool.js")
+ 

@@ -1,18 +1,23 @@
-var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com");
+var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
 
 $(document).ready(function() {
     //create sections based on the schools
-    schoolList = ["Riverside", "Southside", "Eastside", "Christ-Church", "Porter-Gaud", "Mauldin", "Blufton", "JL-Mann"];
-    for (var i = 0; i < schoolList.length; i++) {
+    //schoolList = ["Riverside", "Southside", "Eastside", "Christ Church", "Porter Gaud", "Mauldin", "Blufton", "JL Mann"];
+    //for (var i = 0; i < schoolList.length; i++) {
+    schoolList = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList"); 
+    schoolList.on("child_added", function(snapshot) {
+        var school = snapshot.val();
+        var schoolName = school.name;
+
         $("#toSort").append("<div>" + "</div>");
-        $("#toSort div:last").addClass("row " + schoolList[i]);
-        $("#toSort .row:last").append("<h3>" + schoolList[i] + "</h3>");
+        $("#toSort div:last").addClass("row " + schoolName);
+        $("#toSort .row:last").append("<h3>" + schoolName + "</h3>");
 
         //same thing but for the sorted side
         $("#sorted").append("<div>" + "</div>");
-        $("#sorted div:last").addClass("row " + schoolList[i]);
-        $("#sorted .row:last").append("<h3>" + schoolList[i] + "</h3>");
-    };
+        $("#sorted div:last").addClass("row " + schoolName);
+        $("#sorted .row:last").append("<h3>" + schoolName + "</h3>");
+    });
 
     var numberOfBillsToSort = 0; 
     var numberOfBillsSorted = 0;
@@ -53,7 +58,7 @@ $(document).ready(function() {
                         $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee").addClass("btn btn-primary submit");
 
                         $("button.submit").click(function() {
-                            billClicked = "a-bill-to" + $(this).parent().text().split("a-bill-to")[1].split("Select")[0];
+                            billClicked = "A Bill to " + $(this).parent().text().split("A Bill to")[1].split("Select")[0];
                             alert(billClicked);
                             sortedBills.on("child_added", function(snapshot) {
                                 var bill = snapshot.val();
