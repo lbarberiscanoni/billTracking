@@ -1,0 +1,21 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.min.css")
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    .container
+        h1.text-center Governor Desk
+            a(href="governorDesk.html").btn.btn-default BACK
+        .row
+            .col-md-1
+            .col-md-5
+                h1.text-center To Evaluate
+                #toEvaluate
+            .col-md-5
+                h1.text-center Evaluated
+                #evaluated
+            .col-md-1
+    script(src="scripts/govEval.js")

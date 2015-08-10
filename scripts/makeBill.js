@@ -43,6 +43,7 @@ $(document).ready(function() {
             billLocation: "not yet sorted",
             billStatus: "not yet sorted",
             division: "not yet sorted",
+            governorEvaluation: "not yet evaluated",
         });
 
         var billID = bill.key();
