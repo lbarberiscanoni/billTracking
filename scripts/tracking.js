@@ -14,10 +14,14 @@ $(document).ready(function() {
         passStatus += chamberName;
         var failedStatus = "failed in " 
         failedStatus += chamberName;
-       
+
         if (bill.billLocation == chamberName) {
             if (bill.billStatus != failedStatus) {
-                $("div.container").append("<button>" + bill.billTitle + "</button><br>");
+                if (bill.rocketDocketStatus == "yes") {
+                    $("div.container").append("<button>" + bill.billTitle + ' {Rocket Docket}' + "</button><br>");
+                } else if (bill.rocketDocketStatus == "no") {
+                    $("div.container").append("<button>" + bill.billTitle + "</button><br>");
+                };
                 $("button:last").addClass("btn btn-default ").attr("id", "bill"); 
 
                 $("button#bill:last").click(function() {
@@ -26,6 +30,18 @@ $(document).ready(function() {
                     $("<button>" + "Failed" + "</button>").insertAfter("button.btn-success").addClass("btn btn-danger");
                     $("<button>" + "Read" + "</button>").insertAfter("button.btn-danger").addClass("btn btn-default").attr("id", "read");
 
+                    //let's take care of the rocket docket situation as well
+                    var listOfCommittees = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];
+                    if (listOfCommittees.indexOf(bill.billLocation) >= 0 && bill.rocketDocketStatus == "no") {
+                        $("<button>" + "Rocket Docket" + "</button>").insertAfter("button#read").addClass("btn btn-default").attr("id", "rocketDocket");
+                        $("#rocketDocket").click(function() {
+                            sortedBills.child(bill.id).update({
+                                "rocketDocketStatus": "yes",
+                            });
+
+                            window.location.reload();
+                        });
+                    };
 
                     //after making buttons changing the bill status based on which button was clicked
                     $("button.btn-success").click(function() {

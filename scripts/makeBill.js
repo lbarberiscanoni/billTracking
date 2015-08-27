@@ -44,6 +44,7 @@ $(document).ready(function() {
             billStatus: "not yet sorted",
             division: "not yet sorted",
             governorEvaluation: "not yet evaluated",
+            "rocketDocketStatus": "no",
         });
 
         var billID = bill.key();
