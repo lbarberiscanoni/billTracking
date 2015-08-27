@@ -16,7 +16,7 @@ $(document).ready(function() {
         var vetoedStatus = "Vetoed by the Governor";
        
         if (bill.billLocation == chamberName) {
-            $("#realTime").append("<button>" + bill.billTitle + "</button><br>");
+            $("#realTime").append("<button>" + bill.billTitle + " {" + bill.governorEvaluation + "}" + "</button><br>");
             $("button:last").addClass("btn btn-default ").attr("id", "bill"); 
 
             $("button#bill:last").click(function() {
