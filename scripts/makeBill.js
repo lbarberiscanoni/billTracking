@@ -40,6 +40,7 @@ $(document).ready(function() {
             section3,
             section4,
             section5,
+            authorLocation: "not yet assigned",
             billLocation: "not yet sorted",
             billStatus: "not yet sorted",
             division: "not yet sorted",
