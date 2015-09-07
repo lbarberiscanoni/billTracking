@@ -1,0 +1,63 @@
+body {
+  background-color: #B7D1DE;
+  color: #485866; }
+  body .card {
+    width: 70%;
+    border: 1px solid black;
+    margin: 0 auto;
+    background-color: #FFFFFF; }
+    body .card .header {
+      width: 100%;
+      padding: 1px 0;
+      background-color: #4E6E7D; }
+      body .card .header h1 {
+        text-align: center;
+        color: white; }
+    body .card .authorInfo {
+      width: 85%;
+      margin: 20px auto; }
+      body .card .authorInfo input, body .card .authorInfo .billContent textarea, body .card .billContent .authorInfo textarea {
+        width: 40%;
+        padding: 14px;
+        border: 1px solid #4E6E7D;
+        border-radius: 3px; }
+      body .card .authorInfo input:nth-of-type(1), body .card .authorInfo .billContent textarea:nth-of-type(1), body .card .billContent .authorInfo textarea:nth-of-type(1) {
+        margin-right: 45px; }
+      body .card .authorInfo input:nth-of-type(2), body .card .authorInfo .billContent textarea:nth-of-type(2), body .card .billContent .authorInfo textarea:nth-of-type(2) {
+        margin-left: 45px; }
+      body .card .authorInfo select#school {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #FFFFFF;
+        padding: 14px;
+        width: 100%;
+        border: 1px solid #4E6E7D;
+        border-radius: 3px;
+        margin: 20px auto; }
+    body .card .billContent {
+      width: 85%;
+      margin: 0 auto; }
+      body .card .billContent input, body .card .billContent textarea {
+        background-color: #FFFFFF;
+        width: 100%;
+        padding: 14px 0;
+        border: 1px solid #4E6E7D;
+        border-radius: 3px; }
+    body .card button#makeBill {
+      margin: 30px 30%;
+      background-color: #EF8170;
+      padding: 20px 0;
+      width: 40%;
+      border: 2px solid white;
+      border-radius: 5px;
+      color: white;
+      font-size: 1.5em; }
+    body .card button#makeBill:hover {
+      border: 5px solid grey; }
+    body .card p.warning {
+      text-align: center;
+      margin: 0 auto 20px auto;
+      width: 50%; }
+
+/*# sourceMappingURL=student.css.map */

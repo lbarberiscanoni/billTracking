@@ -1,8 +1,8 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
-    link(rel="stylesheet", href="stylesheets/makeBill.css")
+    //link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/student.css")
 
     // Responsive Tags
     meta(charset="utf-8")
@@ -16,57 +16,38 @@ head
     //Firebase
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    h1.text-center Submit Your Bill
-        a(href="index.html").btn.btn-default HOME  
     .container
-        .row
-            fieldset.form-group.form-inline
-                p.col-md-2
-                    label.slide First Name
-                    br
-                    input(name="firstName", type="text", placeholder="First Name").in.form-control#name
-                p.col-md-2
-                    label.slide Last Name
-                    br
-                    input(name="lastName", type="text", placeholder="Last Name").in.form-control#lastName
-                p.col-md-2
-                    label.slide School
-                    br
-                    select(name="school").in.form-control#school
-                        option Select a School
-        .row
-            fieldset.form-group.form-inline
-                p.col-md-8
-                    label.slide Bill Title
-                    br
-                    input(name="billTitle", type="text", placeholder="Enter Bill Title")#title.in.form-control
-        .row
-            h5 BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
-            .row.col-md-8
-                p
-                    label.slide Section 1
-                    br
-                    textarea.in.form-control(name="section1", rows=4, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
-            .row.col-md-8
-                p
-                    label.slide Section 2
-                    br
-                    textarea.in.form-control(name="section2", rows=4, placeholder="Define any ambiguous terms inherent in the first section.")#section2
-            .row.col-md-8
-                p
-                    label.slide Section 3
-                    br
-                    textarea.in.form-control(name="section3", rows=4, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
-            .row.col-md-8
-                p
-                    label.slide Section 4
-                    br
-                    textarea.in.form-control(name="section4", rows=4, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
-            .row.col-md-8
-                .form-group.form-inline
-                    p When signed into law, the bill will first take place
-                    input.form-control(name="section5", type="date", placeholder="Indicate the implementation data/timeframe")#section5
-                .row
-                    button(type="submit")#makeBill.btn.btn-primary.btn-lg Submit Bill
+            a(href="index.html").btn.btn-default HOME  
+        .card
+            .header
+                h1 Submit Your Bill
+            .authorInfo
+                input(type="text", placeholder="First Name")#name
+                input(type="text", placeholder="Last Name")#lastName
+                select#school
+                    option Select a School
+            .billContent
+                .section
+                    h3.sectionLabel A BILL TO
+                    input(type="text", placeholder="Enter Bill Title")#title
+                .section
+                    h3.sectionLabel SECTION 1
+                    textarea(rows=8, placeholder="State the new policy in a brief declarative sentence, or in as few sentences as possible.")#section1
+                .section
+                    h3.sectionLabel SECTION 2
+                    textarea(rows=8, placeholder="Define any ambiguous terms inherent in the first section.")#section2
+                .section
+                    h3.sectionLabel SECTION 3
+                    textarea(rows=8, placeholder="Name the government agency that will oversee the enforcement of the bill along with the specific enforcement mechanism.")#section3
+                .section
+                    h3.sectionLabel SECTION 4
+                    textarea(rows=8, placeholder="Explain what impacts you expect would come once the bill is implemented")#section4
+                .section
+                    h3.sectionLabel SECTION 5
+                    .date
+                        p When signed into law, this bill will be enacted upon:
+                        input(type="date", placeholder="Indicate the implementation data/timeframe")#section5
+            button(type="submit")#makeBill Submit Bill
+            p.warning Important! Once you submit your bill, any changes must be made at the conference through the amendment process.
     script(src="scripts/makeBill.js")
     script(src="scripts/makeBillFormStyling.js")
