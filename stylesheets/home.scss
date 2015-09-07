@@ -1,0 +1,32 @@
+@import "reset";
+
+body {
+    background-image: url("../assets/sc_stateHouse2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    height: 500px;
+    
+    .headerWrap {
+        color: white;
+        width: 64%;
+        font-size: 2.5em;
+        margin: 250px auto 50px auto;
+    };
+
+    .nav {
+        width: 68%;
+        margin: 0 auto;
+
+        .navButton {
+            text-decoration: none;
+            color: #5C5C5C;
+            font-weight: 500;
+            font-size: 1.2em;
+            background-color: white;
+            padding: 1.3% 3%;
+            margin: 2%;
+            border-radius: 3px;
+        };
+    };
+};

@@ -1,25 +1,16 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
-    script("https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    link(rel="stylesheet", href="stylesheets/home.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script("https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    .container
-        h1.text-center Welcome to South Carolina Youth in Government
-        .row
-            h2.text-center Who are you?
-            .row.text-center
-                .col-md-3
-                .col-md-1
-                    a(href="director.html").btn.btn-default Director
-                .col-md-1
-                    a(href="student.html").btn.btn-default Student
-                .col-md-1
-                    a(href="advisor.html").btn.btn-default Advisor
-                .col-md-1
-                    a(href="clerk.html").btn.btn-default Clerk
-                .col-md-1
-                    a(href="governorDesk.html").btn.btn-default Governor
-                .col-md-3
+    .headerWrap
+        h1 Welcome to South Carolina Youth in Government
+    .nav
+        a(href="director.html").navButton DIRECTOR
+        a(href="student.html").navButton STUDENT
+        a(href="advisor.html").navButton ADVISOR
+        a(href="clerk.html").navButton CLERK
+        a(href="governorDesk.html").navButton GOVERNOR
