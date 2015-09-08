@@ -1,0 +1,115 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #B7D1DE; }
+  body .nav {
+    width: 80%;
+    margin: 0 auto 30px auto; }
+    body .nav a {
+      margin: 20px 45px;
+      padding: 0.7% 2%;
+      font-size: 1em; }
+    body .nav h1 {
+      font-size: 3em;
+      text-align: center;
+      color: white; }
+  body .content .toSort, body .content .sorted {
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 40%; }
+  body .content .toSort {
+    float: left;
+    margin-left: 6%; }
+    body .content .toSort .headerWrap {
+      padding: 20px 0;
+      background-color: #FAC97E;
+      color: white;
+      font-size: 1.8em;
+      text-align: center; }
+    body .content .toSort h3 {
+      width: 95%;
+      font-size: 1em; }
+    body .content .toSort .legislation {
+      width: 100%;
+      min-height: 100px;
+      background-color: #F2F2F2; }
+      body .content .toSort .legislation .billInfoTrigger {
+        padding: 2% 12%;
+        margin: 10px 10%; }
+      body .content .toSort .legislation .division {
+        width: 77%;
+        margin: 0 10% 0 10%; }
+        body .content .toSort .legislation .division button {
+          padding: 2% 15%;
+          font-size: 1em; }
+        body .content .toSort .legislation .division button:nth-of-type(1) {
+          float: left; }
+        body .content .toSort .legislation .division button:nth-of-type(2) {
+          float: right; }
+      body .content .toSort .legislation .committee {
+        width: 77%;
+        margin: 10px 5% 10px 10%;
+        height: 40px; }
+      body .content .toSort .legislation button.submit {
+        width: 77%;
+        height: 40px;
+        font-size: 1em;
+        margin: 0 10% 10px 10%; }
+  body .content .sorted {
+    float: right;
+    margin-right: 6%; }
+    body .content .sorted .headerWrap {
+      padding: 20px 0;
+      background-color: #70BA86;
+      color: white;
+      font-size: 1.8em;
+      text-align: center; }
+    body .content .sorted .sortedBill {
+      width: 100%; }
+
+/*# sourceMappingURL=director.css.map */

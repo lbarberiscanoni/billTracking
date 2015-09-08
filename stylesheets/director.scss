@@ -1,0 +1,115 @@
+@import "reset";
+
+$yellow:  #FAC97E;
+$lightBlue: #B7D1DE;
+$green: #70BA86;
+$darkGrey: #C9C5C5;
+$lightGrey: #F2F2F2;
+
+body {
+    background-color: $lightBlue;
+
+    .nav {
+        width: 80%;
+        margin: 0 auto 30px auto;
+        
+        a {
+            margin: 20px 45px;
+            padding: 0.7% 2%;
+            font-size: 1em;
+        };
+        
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            color: white;
+        };
+    };
+
+    .content {
+
+        .toSort, .sorted {
+            border: 2px solid white;
+            border-radius: 5px;
+            width: 40%;
+        };
+
+        .toSort {
+            float: left;
+            margin-left: 6%;
+
+            .headerWrap {
+                padding: 20px 0;
+                background-color: $yellow;
+                color: white;
+                font-size: 1.8em;
+                text-align: center;
+            };
+
+            h3 {
+                width: 95%;
+                font-size: 1em;
+            };
+
+            .legislation {
+                width: 100%;
+                min-height: 100px;
+                background-color: $lightGrey;
+
+                .billInfoTrigger {
+                    padding: 2% 12%;
+                    margin: 10px 10%;
+                }
+
+                .division {
+                    width: 77%;
+                    margin: 0 10% 0 10%;
+
+                    button {
+                        padding: 2% 15%;    
+                        font-size: 1em;
+                    }
+
+                    button:nth-of-type(1) {
+                        float: left;
+                    }
+
+                    button:nth-of-type(2) {
+                        float: right;
+                    }
+                }
+
+                .committee {
+                    width: 77%;
+                    margin: 10px 5% 10px 10%;
+                    height: 40px;
+                }
+
+                button.submit {
+                    width: 77%;
+                    height: 40px;
+                    font-size: 1em;
+                    margin: 0 10% 10px 10%;
+                }
+            }
+        };
+
+        .sorted {
+            float: right;
+            margin-right: 6%;
+
+            .headerWrap {
+                padding: 20px 0;
+                background-color: $green;
+                color: white;
+                font-size: 1.8em;
+                text-align: center;
+
+            };
+
+            .sortedBill {
+                width: 100%;
+            }
+        };
+    };
+};
