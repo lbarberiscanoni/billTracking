@@ -1,4 +1,5 @@
 @import "reset";
+@import "bootstrap-buttons";
 
 $yellow:  #FAC97E;
 $lightBlue: #B7D1DE;
@@ -51,14 +52,19 @@ body {
                 font-size: 1em;
             };
 
-            .legislation {
+            .legislation, .chamberAssignment {
                 width: 100%;
                 min-height: 100px;
                 background-color: $lightGrey;
 
-                .billInfoTrigger {
+                .billInfoTrigger, {
                     padding: 2% 12%;
                     margin: 10px 10%;
+                }
+
+                .chamberAssignmentTrigger {
+                    padding: 2% 12%;
+                    margin: 10px 30%;
                 }
 
                 .division {
@@ -79,7 +85,7 @@ body {
                     }
                 }
 
-                .committee {
+                .committee, #chamber {
                     width: 77%;
                     margin: 10px 5% 10px 10%;
                     height: 40px;
@@ -107,7 +113,7 @@ body {
 
             };
 
-            .sortedBill {
+            .sortedBill, .assignedDelegate {
                 width: 100%;
             }
         };

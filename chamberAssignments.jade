@@ -1,15 +1,22 @@
 doctype html
 head
     title Chamber Assignments
-    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/director.css")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 body
     .container
-        .row
+        a(href="director.html").btn.btn-default BACK
+        .nav
             h1.text-center Assign People to Chambers
-                a(href="director.html").btn.btn-default BACK
-        .row
-            #peopleToBeAssigned
-    script(src="scripts/chamberAssignments.js")
+        .content
+            .toSort
+                .headerWrap
+                    h2 TO ASSIGN
+                #peopleToBeAssigned
+            .sorted
+                .headerWrap
+                    h2 ASSIGNED
+                #assigned
+    script(src="scripts/chamberAssignments2.js")

@@ -1,8 +1,8 @@
 var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
+var schoolList = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList"); 
 
 $(document).ready(function() {
     //create sections based on the schools
-    schoolList = new Firebase("https://yig-bill-tracker.firebaseio.com/schooList"); 
     schoolList.on("child_added", function(snapshot) {
         var school = snapshot.val();
         var schoolName = school.name;
@@ -17,9 +17,7 @@ $(document).ready(function() {
             var schoolClicked = $(this);
             var legislation = schoolClicked.parent().find(".legislation");
             legislation.toggle(400);
-        })
-
-
+        });
     });
 
     var numberOfBillsToSort = 0; 

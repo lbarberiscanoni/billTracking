@@ -1,8 +1,25 @@
 @import "reset";
+@import "bootstrap-buttons";
 
 body {
     background-color: #B7D1DE;
     color: #485866;
+
+    input::-webkit-input-placeholder { 
+        font-size: 1.2em; 
+    };
+
+    input::-moz-placeholder { 
+        font-size: 1.2em; 
+    }; /* firefox 19+ */
+
+    input:-ms-input-placeholder { 
+        font-size: 1.2em; 
+    }; /* ie */
+
+    input:-moz-placeholder { 
+        font-size: 1.2em; 
+    };
 
     .card {
         width: 70%;
@@ -12,12 +29,13 @@ body {
 
         .header {
             width: 100%;
-            padding: 1px 0;
+            padding: 2% 0;
             background-color: #4E6E7D;
 
             h1 {
                 text-align: center;
                 color: white;
+                font-size: 2em;
             };
         };
 
@@ -68,22 +86,33 @@ body {
             textarea {
                 @extend input;
             };
+
+            .sectionLabel {
+                font-size: 1.5em;
+                margin: 20px 0;
+            };
         };
 
         button#makeBill {
-            margin: 30px 30%;
+            margin: 30px 34%;
+            padding: 2% 10%;
+            font-size: 1.4em;
             background-color: #EF8170;
-            padding: 20px 0;
-            width: 40%;
-            border: 2px solid white;
-            border-radius: 5px;
             color: white;
-            font-size: 1.5em;
         };
 
         button#makeBill:hover {
-            border: 5px solid grey;
+            opacity: 0.3%;
+            padding: 2% 8%;
+            font-size: 1.8em;
         };
+
+        button#makeBill {
+            -webkit-transition: all .4s ease-in-out;
+            -moz-transition: all .4s ease-in-out;
+            -o-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
 
         p.warning {
             text-align: center;

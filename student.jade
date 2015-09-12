@@ -1,7 +1,6 @@
 doctype html
 head
     title Bill Tracker
-    //link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
     link(rel="stylesheet", href="stylesheets/student.css")
 
     // Responsive Tags
@@ -47,7 +46,7 @@ body
                     .date
                         p When signed into law, this bill will be enacted upon:
                         input(type="date", placeholder="Indicate the implementation data/timeframe")#section5
-            button(type="submit")#makeBill Submit Bill
+            button(type="submit").btn.btn-default#makeBill Submit Bill
             p.warning Important! Once you submit your bill, any changes must be made at the conference through the amendment process.
     script(src="scripts/makeBill.js")
     script(src="scripts/makeBillFormStyling.js")
