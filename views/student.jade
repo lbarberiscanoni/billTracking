@@ -1,7 +1,7 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="stylesheets/student.css")
+    link(rel="stylesheet", href="../stylesheets/student.css")
 
     // Responsive Tags
     meta(charset="utf-8")
@@ -16,7 +16,7 @@ head
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
     .container
-            a(href="index.html").btn.btn-default HOME  
+            a(href="../index.html").btn.btn-default HOME  
         .card
             .header
                 h1 Submit Your Bill
@@ -48,5 +48,5 @@ body
                         input(type="date", placeholder="Indicate the implementation data/timeframe")#section5
             button(type="submit").btn.btn-default#makeBill Submit Bill
             p.warning Important! Once you submit your bill, any changes must be made at the conference through the amendment process.
-    script(src="scripts/makeBill.js")
-    script(src="scripts/makeBillFormStyling.js")
+    script(src="../scripts/makeBill.js")
+    script(src="../scripts/makeBillFormStyling.js")
