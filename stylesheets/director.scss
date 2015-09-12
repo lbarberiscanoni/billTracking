@@ -1,11 +1,4 @@
-@import "reset";
-@import "bootstrap-buttons";
-
-$yellow:  #FAC97E;
-$lightBlue: #B7D1DE;
-$green: #70BA86;
-$darkGrey: #C9C5C5;
-$lightGrey: #F2F2F2;
+@import "importsAndColors";
 
 body {
     background-color: $lightBlue;

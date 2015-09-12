@@ -18,9 +18,17 @@ $(document).ready(function() {
             bills.on("child_added", function(snapshot) {
                 person = snapshot.val();
                 if (person.authorID == authorSearched) {
-                    $("#message").html("<h3>" + authorSearched.split("-").join(" ") + "'s bill is: </h3><blockquote> Status: " + person.billStatus + "<br> Location: " + person.billLocation + "</blockquote>");
-                    $("h3:last").addClass("text-center");
-                    $("blockquote").addClass("text-center");
+                    $("#message").html("<div class='searchedAuthor'><h3>" + authorSearched.split("-").join(" ") + "'s bill</h3></div><div class='searchedAuthorInfo'><h5> STATUS: " + person.billStatus + "</h5><h5> LOCATION: " + person.billLocation + "</h5></div>");
+                    //add a class to change the color of the header depending on the status of the bill
+                    if ((person.billStatus).indexOf("on") > -1) {
+                        $(".searchedAuthor").addClass("onDocket");
+                    } else if ((person.billStatus).indexOf("passed") > -1) {
+                        $(".searchedAuthor").addClass("passed");
+                    } else if ((person.billStatus).indexOf("failed") > -1) {
+                        $(".searchedAuthor").addClass("failed");
+                    } else {
+                        console.log("error the person searched's bill is neither on the docket, passed or failed. Maybe on Governor's desk?");
+                    };
                 };
             });
         };

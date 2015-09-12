@@ -1,0 +1,103 @@
+@import "importsAndColors";
+
+body {
+    background-color: $lightBlue;
+
+    .header {
+        width: 30%;
+        margin: 0 auto;
+        
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: white;
+        };
+
+        #schoolName {
+            margin: 10px 0;
+        };
+    };
+
+    .searchBar #message {
+        border-radius: 5px;
+        width: 30%;
+        margin: 20px auto;
+        background-color: $lightGrey;
+
+        .searchedAuthor {
+            border-radius: 5px 5px 0 0;
+            background-color: $darkGrey;
+            padding: 2% 0;
+
+            h3 {
+                font-size: 1.8em;
+                color: white;
+                text-align: center;
+            };
+        };
+
+        .onDocket {
+            background-color: $yellow;
+        };
+
+        .passed {
+            background-color: $green;
+        };
+
+        .failed {
+            background-color: $dimRed;
+        };
+
+        .searchedAuthorInfo {
+            padding-bottom: 10px;
+
+            h5 {
+                margin: 10px;
+                font-size: 1.2em;
+                text-align: center;
+            };
+        };
+    };
+
+    .content {
+
+        .card {
+            width: 25%;
+            margin: 0 4%;
+            display: inline-block;
+            border: 1px solid white;
+
+            .headerWrap {
+                padding: 2.5% 0;
+                
+                h2 {
+                    font-size: 1.3em;
+                    text-align: center;
+                    color: white;
+                };
+            };
+        };
+
+        .card:nth-of-type(1) .headerWrap {
+            background-color: $yellow;
+        };
+
+        .card:nth-of-type(2) .headerWrap {
+                background-color: $green;
+        };
+
+        .card:nth-of-type(3) .headerWrap {
+            background-color: $dimRed;
+        };
+
+        #toBeDebated, #passed, #failed {
+            background-color: $lightGrey;
+
+            button {
+                width: 100%;
+            };
+        };
+    };
+};
+
+

@@ -1,32 +1,33 @@
 doctype html
 head
     title Bill List
-    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="stylesheets/advisor.css")
     link(rel="stylesheet", href="stylesheets/autocomplete.css")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 body
-    .container
-        h1.text-center Advisors' Chill Place
-            a(href="index.html").btn.btn-default HOME
-        .row
-            .col-md-2
-                select.form-control#schoolName
-                    option Select Your School
-        .row
-            #search-form 
-            #message
-        .row
-            .col-md-4
-                h2.text-center Yet to be Debated
-                #toBeDebated
-            .col-md-4
-                h2.text-center Passed
-                #passed
-            .col-md-4 
-                h2.text-center Failed
-                #failed
+    a(href="index.html").btn.btn-default HOME
+    .header
+        h1 Advisors' Chill Place
+        select.form-control#schoolName
+            option Select Your School
+    .searchBar
+        #search-form 
+        #message
+    .content
+        .card
+            .headerWrap
+                h2 YET TO BE DEBATED
+            #toBeDebated
+        .card
+            .headerWrap
+                h2 PASSED
+            #passed
+        .card
+            .headerWrap
+                h2 FAILED
+            #failed
     script(src="scripts/advisor.js")
     script(src="scripts/autocomplete.js")
     script(src="scripts/typehead.js")
