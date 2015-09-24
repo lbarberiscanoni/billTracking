@@ -1,0 +1,50 @@
+@import "reset";
+@import "bootstrap-buttons";
+@import "importsAndColors";
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+};
+
+.content {
+
+    .toScreen, .screened {
+        border-radius: 5px;
+        float: left;
+        width: 40%;
+        margin: 20px 4%;
+        background-color: $lightGrey;
+
+        .headerWrap {
+            padding: 2%;
+
+            h2 {
+                font-size: 1.6em;
+                text-align: center;
+                color: white;
+            };
+        };
+
+        #inFavor, #inOpposition {
+            border: 1px solid white;
+            float: left;
+            width: 49%;
+
+            h3 {
+                font-size: 1.3em;
+                text-align: center;
+                margin: 10px 0;
+            };
+        };
+    };
+
+    .toScreen .headerWrap {
+        background-color: $yellow;
+    };
+
+    .screened .headerWrap {
+        background-color: $lightBlue;
+    };
+
+};

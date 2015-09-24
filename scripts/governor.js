@@ -17,7 +17,7 @@ $(document).ready(function() {
        
         if (bill.billLocation == chamberName) {
             $("#realTime").append("<button>" + bill.billTitle + " {" + bill.governorEvaluation + "}" + "</button><br>");
-            $("button:last").addClass("btn btn-default ").attr("id", "bill"); 
+            $("button:last").addClass("btn btn-default").attr("id", "bill"); 
 
             $("button#bill:last").click(function() {
                 $(this).addClass("form-inline");

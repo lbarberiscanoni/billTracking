@@ -1,0 +1,58 @@
+@import "reset";
+@import "bootstrap-buttons";
+@import "importsAndColors";
+
+.headerWrap {
+    
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    };
+};
+
+.content {
+    #past, #realTime {
+        border-radius: 5px;
+        float: left;
+        width: 40%;
+        margin: 20px 5%;
+        background-color: $lightGrey;
+    
+        .sectionWrap {
+            padding: 2%;
+
+            h2 {
+                font-size: 1.6em;
+                text-align: center;
+                color: white;
+            };
+        };
+
+
+        h3 {
+            margin: 10px auto;
+            font-size: 1.4em;
+            text-align: center;
+        };
+
+        #toSign {
+            border: 1px solid white;
+        };
+
+        .takenCareOf {
+            #signed, #vetoed {
+                width: 49.6%;
+                float: left;
+                border: 1px solid white;
+            };
+        };
+    };
+
+    #past .sectionWrap {
+        background-color: $lightBlue;
+    };
+
+    #realTime .sectionWrap {
+        background-color: $yellow;
+    };
+};
