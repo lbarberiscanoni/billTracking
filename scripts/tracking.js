@@ -18,22 +18,28 @@ $(document).ready(function() {
         if (bill.billLocation == chamberName) {
             if (bill.billStatus != failedStatus) {
                 if (bill.rocketDocketStatus == "yes") {
-                    $("div.container").append("<button>" + bill.billTitle + ' {Rocket Docket}' + "</button><br>");
+                    $("div.billList").append("<button class='btn btn-default' id='bill'>" + bill.billTitle + ' {Rocket Docket}' + "</button><br>");
                 } else if (bill.rocketDocketStatus == "no") {
-                    $("div.container").append("<button>" + bill.billTitle + "</button><br>");
+                    $("div.billList").append("<button class='btn btn-default' id='bill'>" + bill.billTitle + "</button><br>");
                 };
-                $("button:last").addClass("btn btn-default ").attr("id", "bill"); 
 
                 $("button#bill:last").click(function() {
+                    //remove duplicates
+                    $(this).removeClass("form-inline");
+                    $(".btn-success").remove();
+                    $(".btn-danger").remove();
+                    $("#read").remove();
+                    
+                    //add buttons to pass/fail/read the bill
                     $(this).addClass("form-inline");
-                    $("<button>" + "Passed" + "</button>").insertAfter($(this)).addClass("btn btn-success");
-                    $("<button>" + "Failed" + "</button>").insertAfter("button.btn-success").addClass("btn btn-danger");
-                    $("<button>" + "Read" + "</button>").insertAfter("button.btn-danger").addClass("btn btn-default").attr("id", "read");
+                    $("<button class='btn btn-success'>" + "Passed" + "</button>").insertAfter($(this));
+                    $("<button class='btn btn-danger'>" + "Failed" + "</button>").insertAfter("button.btn-success");
+                    $("<button class='btn btn-default' id='read'>" + "Read" + "</button>").insertAfter("button.btn-danger");
 
                     //let's take care of the rocket docket situation as well
                     var listOfCommittees = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];
                     if (listOfCommittees.indexOf(bill.billLocation) >= 0 && bill.rocketDocketStatus == "no") {
-                        $("<button>" + "Rocket Docket" + "</button>").insertAfter("button#read").addClass("btn btn-default").attr("id", "rocketDocket");
+                        $("<button class='btn btn-default' id='rocketDocket'>" + "Rocket Docket" + "</button>").insertAfter("button#read");
                         $("#rocketDocket").click(function() {
                             sortedBills.child(bill.id).update({
                                 "rocketDocketStatus": "yes",
@@ -133,14 +139,12 @@ $(document).ready(function() {
                     });
                 });
             } else {
-                $("div.container").append("<button>" + bill.billTitle + "</button><br>");
-                $("button:last").addClass("btn btn-default disabled");
+                $("div.billList").append("<button class='btn btn-default disabled'>" + bill.billTitle + "</button><br>");
                 $("button:last").append(document.createTextNode(" [failed]"));
             };
         } else {
             if (bill.billStatus == passStatus) {
-                $("div.container").append("<button>" + bill.billTitle + "</button><br>");
-                $("button:last").addClass("btn btn-default disabled");
+                $("div.billList").append("<button class'btn btn-default disabled'>" + bill.billTitle + "</button><br>");
                 $("button:last").append(document.createTextNode(" [passed]"));
             } else {
                 return false

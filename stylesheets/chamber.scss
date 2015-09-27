@@ -1,0 +1,29 @@
+@import "reset";
+@import "importsAndColors";
+@import "bootstrap-buttons";
+
+body {
+    background-color: $lightGrey;
+    
+    .header {
+        text-align: center;
+        font-size: 2em;
+        margin: 20px 0;
+    };
+
+    .docket {
+        border: 2px solid $green;
+        border-radius: 5px;
+        width: 40%;
+        margin: 0 auto;
+
+        .btn {
+            width: 100%;
+            font-size: 1em;
+        };
+
+        #read, .btn-success, .btn-danger {
+            width: 33%;
+        };
+    };
+};

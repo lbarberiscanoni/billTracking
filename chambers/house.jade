@@ -1,12 +1,14 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="../stylesheets/chamber.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    .container.text-center
+    .header
         h1 House
-            a(href="../clerk.html").btn.btn-default BACK
+            a(href="../../views/clerk.html").btn.btn-default BACK
+    .docket
+        .billList
     script(src="../scripts/tracking.js")
