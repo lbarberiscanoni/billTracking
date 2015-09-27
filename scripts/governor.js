@@ -1,9 +1,6 @@
 var sortedBills = new Firebase("https://yig-bill-tracker.firebaseio.com/bills");
 
 $(document).ready(function() {
-    //getting the chamber the user is looking at 
-    //var chamberName = $(this).text().replace(/\s/g, "-").replace("BACK", "").split("Tracker")[1];
-    //var chamberName = $(this).text().replace("BACK", "").split("Tracker")[1];
     var chamberName = "Governor Desk";
     console.log(chamberName);
 
@@ -16,14 +13,13 @@ $(document).ready(function() {
         var vetoedStatus = "Vetoed by the Governor";
        
         if (bill.billLocation == chamberName) {
-            $("#realTime").append("<button>" + bill.billTitle + " {" + bill.governorEvaluation + "}" + "</button><br>");
-            $("button:last").addClass("btn btn-default").attr("id", "bill"); 
+            $("#realTime").append("<button class='btn btn-default' id='bill'>" + bill.billTitle + " {" + bill.governorEvaluation + "}" + "</button><br>");
 
             $("button#bill:last").click(function() {
                 $(this).addClass("form-inline");
-                $("<button>" + "Sign into Law" + "</button>").insertAfter($(this)).addClass("btn btn-success");
-                $("<button>" + "Veto" + "</button>").insertAfter("button.btn-success").addClass("btn btn-danger");
-                $("<button>" + "Read" + "</button>").insertAfter("button.btn-danger").addClass("btn btn-default").attr("id", "read");
+                $("<button class='btn btn-success'>" + "Sign into Law" + "</button>").insertAfter($(this));
+                $("<button class='btn btn-danger'>" + "Veto" + "</button>").insertAfter("button.btn-success");
+                $("<button class='btn btn-default' id='read'>" + "Read" + "</button>").insertAfter("button.btn-danger");
 
                 //show bill when button is clicked
                 $("button#read:last").click(function() {
@@ -107,29 +103,28 @@ $(document).ready(function() {
                 });
             });
         } else {
-            if (bill.billStatus == toSignStatus) {
-                $("#toSign").append("<button>" + bill.billTitle + "</button><br>");
-                $("#toSign button:last").addClass("btn btn-default").attr("id", "sign");
-                $("button#sign:last").click(function() {
-                    $(this).addClass("form-inline");
-                    $("<button>" + "Signed" + "</button>").insertAfter($(this)).addClass("btn btn-success");
-                    $("button.btn-success").click(function() {
-                        var thisBillID = bill.id;
-                        sortedBills.child(thisBillID).update({
-                            "billStatus": signedStatus,
-                        });
+            switch (bill.billStatus) {
+                case toSignStatus:
+                    $("#toSign").append("<button class='btn btn-default' id='sign'>" + bill.billTitle + "</button><br>");
+                    $("button#sign:last").click(function() {
+                        $(this).addClass("form-inline");
+                        $("<button class='btn btn-success'>" + "Signed" + "</button>").insertAfter($(this));
+                        $("button.btn-success").click(function() {
+                            var thisBillID = bill.id;
+                            sortedBills.child(thisBillID).update({
+                                "billStatus": signedStatus,
+                            });
 
-                        window.location.reload();
+                            window.location.reload();
+                        });
                     });
-                });
-            } else if (bill.billStatus == signedStatus) {
-                $("#signed").append("<button>" + bill.billTitle + "</button><br>");
-                $("#signed button:last").addClass("btn btn-default disabled");
-            } else if (bill.billStatus == vetoedStatus) {
-                $("#vetoed").append("<button>" + bill.billTitle + "</button><br>");
-                $("#vetoed button:last").addClass("btn btn-default disabled");
-            } else {
-                return false
+                    break;
+                case signedStatus: 
+                    $("#signed").append("<button class='btn btn-default disabled'>" + bill.billTitle + "</button><br>");
+                    break;
+                case vetoedStatus: 
+                    $("#vetoed").append("<button class='btn btn-default disabled'>" + bill.billTitle + "</button><br>");
+                    break;
             };
         };
     });

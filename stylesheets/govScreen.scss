@@ -15,6 +15,14 @@ h1 {
         width: 40%;
         margin: 20px 4%;
         background-color: $lightGrey;
+        
+        .btn {
+            width: 100%;
+        };
+
+        button#read, .btn-success, .btn-danger {
+            width: 33%;
+        };
 
         .headerWrap {
             padding: 2%;
@@ -46,5 +54,4 @@ h1 {
     .screened .headerWrap {
         background-color: $lightBlue;
     };
-
 };

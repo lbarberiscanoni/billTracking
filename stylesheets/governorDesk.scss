@@ -17,6 +17,14 @@
         width: 40%;
         margin: 20px 5%;
         background-color: $lightGrey;
+
+        button.btn {
+            width: 100%;
+        };
+
+        button#read, button.btn-danger, button.btn-success {
+            width: 33%;
+        };
     
         .sectionWrap {
             padding: 2%;
@@ -44,6 +52,7 @@
                 width: 49.6%;
                 float: left;
                 border: 1px solid white;
+
             };
         };
     };

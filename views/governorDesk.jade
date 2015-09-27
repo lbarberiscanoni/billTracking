@@ -1,28 +1,27 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="../stylesheets/governorDesk.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    .container
-        h1.text-center Governor Desk
-        .row.text-center
-            a(href="../index.html").btn.btn-default BACK
-            a(href="govScreen.html").btn.btn-default Pre-Screening Bills
-        .row
-            .col-md-1
-            .col-md-4#past
-                h2.text-center Done
-                .row#toSign
-                    h3 To Sign
-                .row#signed
+    a(href="../index.html").btn.btn-default BACK
+    a(href="govScreen.html").btn.btn-default Pre-Screening Bills
+    .headerWrap
+        h1 Governor Desk
+    .content
+        #past
+            .sectionWrap
+                h2 Evaluated
+            #toSign
+                h3 To Sign
+            .takenCareOf
+                #signed
                     h3 Signed into Law
-                .row#vetoed
+                #vetoed
                     h3 Vetoed
-            .col-md-6#realTime.text-center
+        #realTime
+            .sectionWrap
                 h2 To Evaluate
-                .row
-            .col-md-1
     script(src="../scripts/governor.js")
