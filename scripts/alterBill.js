@@ -20,7 +20,7 @@ $(document).ready(function() {
         fireData.on("child_added", function(snapshot) {
             var bill = snapshot.val();
             if (bill.school == school) {
-                $("select").append("<option>" + bill.authorID + "</option>");
+                $("select").append("<option>" + bill.author1 + "</option>");
                 
             } else {
                 console.log("false")
@@ -35,7 +35,7 @@ $(document).ready(function() {
             $("select#areaOfChange").addClass("form-control");
             $("select#areaOfChange").append("<option>" + "select what to change" + "</select>");
             
-            billInfo = ["authorID", "billLocation", "billStatus", "division", "school", "billTitle", "section1", "section2", "section3", "section4", "section5"]
+            billInfo = ["author1", "author2", "billLocation", "billStatus", "division", "school", "billTitle", "section1", "section2", "section3", "section4", "section5"]
             for (i = 0; i < billInfo.length; i++) {
                 $("select#areaOfChange").append("<option>" + billInfo[i] + "</option>");
             };
@@ -45,10 +45,12 @@ $(document).ready(function() {
 
                 fireData.on("child_added", function(snapshot) {
                     var bill = snapshot.val();
-                    if (bill.authorID == authorName) {
+                    if (bill.author1 == authorName) {
                         //making a conditional sequence to correspond the value of the change to the particular data key in Firebase
-                        if (areaOfChange == "authorID") {
-                            var currentVersion = bill.authorID;
+                        if (areaOfChange == "author1") {
+                            var currentVersion = bill.author1;
+                        } if (areaOfChange == "author2") {
+                            var currentVersion = bill.author2;
                         } if (areaOfChange == "billLocation") {
                             var currentVersion = bill.billLocation;
                         } if (areaOfChange == "billStatus") {
@@ -79,7 +81,7 @@ $(document).ready(function() {
                         $("<h4>" + "Make the Change:" + "</h4>").insertAfter("p");
 
                         //then let's make an input to change things
-                        if (areaOfChange == "authorID") {
+                        if (areaOfChange == "author1" || areaOfChange == "author2") {
                             $("<input>" + "</input>").insertAfter("h4:last");
                             $("input").attr("id", "alteration");
                             $("input#alteration").attr("type", "text");
@@ -144,11 +146,16 @@ $(document).ready(function() {
                                 var bill = snapshot.val();
                                 var thisBillID = bill.id;
 
-                                if (bill.authorID == authorName) {
-                                    if (areaOfChange == "authorID") {
-                                        var newAuthorID = alteration.replace(/\s/g, "-");
+                                if (bill.author1 == authorName) {
+                                    if (areaOfChange == "author1") {
+                                        var newAuthorID = alteration.replace(" ", "-");
                                         fireData.child(thisBillID).update({
-                                            "authorID": newAuthorID,
+                                            "author1": newAuthorID,
+                                        });
+                                    } else if (areaOfChange == "author2") {
+                                        var newAuthorID = alteration.replace(" ", "-");
+                                        fireData.child(thisBillID).update({
+                                            "author2": newAuthorID,
                                         });
                                     } else if (areaOfChange == "billLocation") {
                                         fireData.child(thisBillID).update({

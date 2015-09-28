@@ -12,11 +12,10 @@ $(document).ready(function() {
 
     $("#makeBill").click(function() {
 
-        //author
+        //authors
+        var author1 = $("#author1").val().toLowerCase().replace(" ", "-");
+        var author2 = $("#author2").val().toLowerCase().replace(" ", "-");
         var school = $("#school").val();
-        var name = $("#name").val();
-        var lastName = $("#lastName").val();
-        var authorID = name + " " + lastName;
         
         //bill title
         var mission = $("#title").val();
@@ -32,7 +31,8 @@ $(document).ready(function() {
         alert("You are about to add [" + billTitle + "]");
         //adding data to the Firebase database
         var bill = fireData.push({
-            authorID,
+            author1,
+            author2,
             school,
             billTitle,
             section1,

@@ -82,7 +82,7 @@ $(document).ready(function() {
             var billStatus = bill.billStatus.split(" ")[0];
             if (bill.school == schoolSelected) {
                 if (billStatus == "on") {
-                    $("#toBeDebated").append("<button>Author: " + bill.authorID + "<br>Title: " + bill.billTitle + "<br>Location: " + bill.billLocation + "</button>");
+                    $("#toBeDebated").append("<button>Authors: " + bill.author1 + " & " + bill.author2 + "<br>Title: " + bill.billTitle + "<br>Location: " + bill.billLocation + "</button>");
                     var thisBill = $("#toBeDebated button:last").addClass("btn btn-default");
                     thisBill.click(function() {
                         searchForBill(bill.billTitle);

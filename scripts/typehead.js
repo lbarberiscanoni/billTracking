@@ -7,7 +7,8 @@ $(document).ready(function() {
         bills.on("child_added", function(snapshot) {
             var billAuthor = snapshot.val();
             if (billAuthor.school == schoolName) {
-                billAuthors.push(billAuthor.authorID);
+                billAuthors.push(billAuthor.author1);
+                billAuthors.push(billAuthor.author2);
                 console.log(billAuthors);
             };
         });
@@ -17,7 +18,7 @@ $(document).ready(function() {
             
             bills.on("child_added", function(snapshot) {
                 person = snapshot.val();
-                if (person.authorID == authorSearched) {
+                if (person.author1 == authorSearched || person.author2 == authorSearched) {
                     $("#message").html("<div class='searchedAuthor'><h3>" + authorSearched.split("-").join(" ") + "'s bill</h3></div><div class='searchedAuthorInfo'><h5> STATUS: " + person.billStatus + "</h5><h5> LOCATION: " + person.billLocation + "</h5></div>");
                     //add a class to change the color of the header depending on the status of the bill
                     if ((person.billStatus).indexOf("on") > -1) {
