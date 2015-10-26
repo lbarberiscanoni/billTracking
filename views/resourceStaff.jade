@@ -1,0 +1,26 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.css")
+
+    // Responsive Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //jQuery
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    
+    //Firebase
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    h1.text-center Resource Staff
+    .row
+        .col-md-3
+        .col-md-6
+            a(href="staffQuestions.html").btn.btn-default Questions
+            a(href="conferenceSchedule.html").btn.btn-default Conference Schedule
+            a(href="announcements.html").btn.btn-default  Announcements
+            a(href="busSchedule.html").btn.btn-default  Bus Schedule
+        .col-md-3

@@ -1,0 +1,37 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.css")
+
+    // Responsive Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //jQuery
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    
+    //Firebase
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    h1.text-center Announcements
+    .row
+        h2.text-center Make New Announcement
+        .row#makeAnnouncements
+            .col-md-2
+            .col-md-8
+                input(type="text" placeholder="Enter the title").form-control#announcementTitle
+                br
+                textarea(rows="10" placeholder="Enter the new announcement").form-control#announcementText
+            .col-md-2
+        br
+        .row
+            .col-md-5
+            .col-md-3
+                button.btn.btn-primary#submit Post Announcement
+            .col-md-4
+    .row
+        #pastAnnouncements
+            h2.text-center Past Announcements
+    script(src="../scripts/announcements.js")

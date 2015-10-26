@@ -1,0 +1,9 @@
+{
+  "firebase": "yig-bill-tracker",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
