@@ -1,0 +1,63 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.css")
+
+    // Responsive Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //jQuery
+    script(src="//code.jquery.com/jquery-1.11.3.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    
+    //Firebase
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    h1.text-center Add Event to Conference Schedule
+        a(href="conferenceSchedule.html").btn.btn-default BACK
+    .row
+        .col-md-4
+        .col-md-4
+            form
+                .form-group
+                    label Name of the Event
+                    input(type="text" placeholder="Name of the Event")#eventName.form-control
+                .form-group
+                    label Day of the Conference
+                    select#eventDay.form-control
+                        option Select a Day
+                        option Wednesday
+                        option Thursday
+                        option Friday
+                        option Saturday
+                .form-group
+                    label Start
+                    input(type="text")#timepicker1.form-control
+                .form-group
+                    label End
+                    input(type="text")#timepicker2.form-control
+                .form-group
+                    label Location
+                    select#location.form-control
+                        option Select a Location
+                        option location A
+                        option location B
+                .form-group
+                    label Address
+                    input(type="text" placeholder="Address of the Event")#address.form-control
+                .form-group
+                    label Event Description
+                    textarea(placeholder="Short Description of the Event" rows="10")#eventDescription.form-control
+                .form-group
+                    label Attire
+                    select#attire.form-control
+                        option Select Attire
+                        option Formal
+                        option Informal
+                .form-group
+                    button.btn.btn-primary.form-control#submit Add Event to Schedule
+        .col-md-4
+    script(src="../scripts/makeEvent.js")
+    script(src="../scripts/bootstrap-timepicker.js")
