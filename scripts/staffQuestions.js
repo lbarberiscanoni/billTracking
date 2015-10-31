@@ -1,4 +1,4 @@
-var listOfQuestions = new Firebase("https://yig-bill-tracker.firebaseio.com/staff-questions")
+var listOfQuestions = new Firebase("https://yig-bill-tracker.firebaseio.com/staffQuestions")
 
 $(document).ready(function() {
     listOfQuestions.on("child_added", function(snapshot) {
@@ -15,10 +15,11 @@ $(document).ready(function() {
                     var answerToTheQuestion = $("#answerToTheQuestion").val();
                     var questionID = snapshot.key();
                     var timeStamp = new Date().getTime(); 
+                    console.log(answerToTheQuestion)
                     listOfQuestions.child(questionID).update({
                         status: "answered",
                         answer: answerToTheQuestion,
-                        answeredTimestamp: timeStamp,
+                        answeredTimestamp: parseInt(timeStamp/1000).toString(),
                     });
                     window.location.reload();
                 } else {
