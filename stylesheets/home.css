@@ -214,11 +214,11 @@ body {
     font-size: 2.5em;
     margin: 250px auto 50px auto; }
   body .nav {
-    width: 66%;
+    width: 86%;
     margin: 0 auto; }
     body .nav .btn.btn-default {
-      padding: 1% 3%;
-      margin: 0 20px;
+      padding: 0.8% 3%;
+      margin: 0 15px;
       font-size: 1em; }
   body .footer {
     font-size: 1.3em;
