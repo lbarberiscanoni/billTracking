@@ -6,7 +6,7 @@ $(document).ready(function() {
         var announcementTitle = $("#announcementTitle").val();
         var announcementText = $("#announcementText").val();
         var timeStamp = new Date().getTime();
-        var timeStamp = parseInt(timeStamp / 1000);
+        var timeStamp = parseInt(timeStamp / 1000).toString();
         listOfAnnouncements.push({
             title: announcementTitle,
             content: announcementText,

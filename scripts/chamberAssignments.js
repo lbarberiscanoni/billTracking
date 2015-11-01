@@ -29,10 +29,11 @@ $(document).ready(function() {
         var billID = bill.id;
         //if the person is already sorted show it but don't let it do anything else
         if (bill.authorLocation == "not yet assigned") {
-            numberOfPeopleToAssign += 1;
-            $("#peopleToBeAssigned div." + bill.school + " .chamberAssignment").append("<button>" + bill.authorID + "</button>");
-            $("#peopleToBeAssigned button").addClass("btn btn-default chamberAssignmentTrigger");
-            $("div#peopleToBeAssigned .chamberAssignmentTrigger:last").click(function() {
+            numberOfPeopleToAssign += 2;
+            $("#peopleToBeAssigned div." + bill.school + " .chamberAssignment").append("<button class='btn btn-default chamberAssignmentTrigger'>" + bill.author1 + "</button>");
+            $("#peopleToBeAssigned div." + bill.school + " .chamberAssignment").append("<button class='btn btn-default chamberAssignmentTrigger'>" + bill.author2 + "</button>");
+            $("div#peopleToBeAssigned .chamberAssignmentTrigger").click(function() {
+                $("select#chamber").remove();
                 $("<select class='form-control' id='chamber'>" + "</select>").insertAfter(this);
                 $("select.form-control:last").append("<option>" + "Assign to Chamber" + "</option>");
 
@@ -63,7 +64,7 @@ $(document).ready(function() {
         var bill = snapshot.val();
         if (i < 15 && bill.authorLocation != "not yet assigned") {
             i += 1;
-            $("div#assigned").append("<button class='btn btn-default assignedDelegate'>Name: " + bill.authorID + "<br>Chamber Assignment: " + bill.authorLocation + "</button>");
+            $("div#assigned").append("<button class='btn btn-default assignedDelegate'>Name: " + bill.author1 + " & " + bill.author2 + "<br>Chamber Assignment: " + bill.authorLocation + "</button>");
         };
     });
 });

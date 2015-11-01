@@ -25,6 +25,9 @@ $(document).ready(function() {
                 $("button#read:last").click(function() {
                     //var billClicked = $("#bill").text();
                     var billClicked = $(".form-inline").text();
+                    var billClicked = billClicked.replace(" {in favor}", "");
+                    var billClicked = billClicked.replace(" {in opposition", "");
+                    console.log(billClicked);
                     sortedBills.on("child_added", function(snapshot) {
                         var bill = snapshot.val();
                         var thisBillID = bill.id;
@@ -44,7 +47,7 @@ $(document).ready(function() {
                         var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
                         var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
                         var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
-                        var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "stylesheets/bootstrap/bootstrap.min.css" + ">";
+                        var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "../stylesheets/bootstrap/bootstrap.min.css" + ">";
                         var bill = snapshot.val();
                         var page = window.open();
                         page.document.write(

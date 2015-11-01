@@ -14,7 +14,7 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 		//Default parameters
 		params = $.extend({
 			hints: [],
-			placeholder: 'Remember to Capitalize the First Letter',
+			placeholder: 'Search For Delegates [ALL LOWER CASE]',
 			width: 200,
 			height: 16,
 			showButton: true,

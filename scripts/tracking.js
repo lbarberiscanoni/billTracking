@@ -111,8 +111,8 @@ $(document).ready(function() {
                                 var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
                                 var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
                                 var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
-                                var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "../../stylesheets/bootstrap/bootstrap.min.css" + ">";
-                                var seeBill = "<script src='../../scripts/seeBill.js'></script>";
+                                var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "../../../stylesheets/bootstrap/bootstrap.min.css" + ">";
+                                var seeBill = "<script src='../../../scripts/seeBill.js'></script>";
                                 var bill = snapshot.val();
                                 var page = window.open();
                                 page.document.write(
