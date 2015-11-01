@@ -41,8 +41,8 @@ $(document).ready(function() {
                     if (j == lol.length - 1) {
                         //let's now get the time stamp for jesus
                         var possibleDates = {"wednesday":"18","thursday":"19","friday":"20","saturday":"21"};
-                        var stringDateStart = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[0]).getTime()/1000);
-                        var stringDateEnd = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[1]).getTime()/1000);
+                        var stringDateStart = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[0]).getTime()/1000).toString();
+                        var stringDateEnd = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[1]).getTime()/1000).toString();
 
                         listOfEventsAtTheConference.child(thisEventID).update({
                             "startTime": lol2[0],
