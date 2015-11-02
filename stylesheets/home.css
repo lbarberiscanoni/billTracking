@@ -212,13 +212,13 @@ body {
     color: white;
     width: 64%;
     font-size: 2.5em;
-    margin: 250px auto 50px auto; }
+    margin: 250px auto 20px auto; }
   body .nav {
-    width: 86%;
+    width: 55%;
     margin: 0 auto; }
     body .nav .btn.btn-default {
       padding: 0.8% 3%;
-      margin: 0 15px;
+      margin: 10px 3%;
       font-size: 1em; }
   body .footer {
     font-size: 1.3em;

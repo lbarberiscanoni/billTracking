@@ -1,7 +1,7 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.css")
+    link(rel="stylesheet", href="../../stylesheets/bootstrap/bootstrap.css")
 
     // Responsive Tags
     meta(charset="utf-8")
@@ -15,12 +15,18 @@ head
     //Firebase
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    h1.text-center Add Event to Conference Schedule
-        a(href="conferenceSchedule.html").btn.btn-default BACK
+    h1.text-center Manage Attorney Rounds
+        a(href="roundAssignments.html").btn.btn-default BACK
     .row
         .col-md-4
         .col-md-4
             form
+                .form-group
+                    label Division
+                    select#division.form-control
+                        option Select a Division
+                        option mock trial
+                        option appeals
                 .form-group
                     label Name of the Event
                     input(type="text" placeholder="Name of the Event")#eventName.form-control
@@ -51,13 +57,7 @@ body
                     label Event Description
                     textarea(placeholder="Short Description of the Event" rows="10")#eventDescription.form-control
                 .form-group
-                    label Attire
-                    select#attire.form-control
-                        option Select Attire
-                        option Formal
-                        option Informal
-                .form-group
                     button.btn.btn-primary.form-control#submit Add Event to Schedule
         .col-md-4
-    script(src="../scripts/makeEvent.js")
-    script(src="../scripts/bootstrap-timepicker.js")
+    script(src="../../scripts/manageRounds.js")
+    script(src="../../scripts/bootstrap-timepicker.js")

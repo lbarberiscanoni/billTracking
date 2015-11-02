@@ -1,7 +1,7 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="../stylesheets/bootstrap/bootstrap.css")
+    link(rel="stylesheet", href="../../stylesheets/bootstrap/bootstrap.css")
 
     // Responsive Tags
     meta(charset="utf-8")
@@ -15,7 +15,11 @@ head
     //Firebase
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    h1.text-center Research Questions
-        a(href="governorDesk.html").btn.btn-default BACK
-    #questions
-    script(src="../scripts/researchQuestions.js")
+    h1.text-center Conference Schedule
+        a(href="../resourceStaff.html").btn.btn-default BACK
+        a(href="../makeEvent.html").btn.btn-default Add Event
+        button.btn.btn-primary#changeSchedule Make Changes
+    .row
+        #schedule
+    script(src="../../scripts/conferenceSchedule.js")
+    script(src="../../scripts/bootstrap-timepicker.js")
