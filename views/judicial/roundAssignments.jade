@@ -20,14 +20,13 @@ body
         a(href="manageRounds.html").btn.btn-default Manage Rounds
         button.btn.btn-primary#changeSchedule Make Changes
     .row
+        .col-md-1
         .col-md-4
+            h2.text-center Trial
+            #trial
+        .col-md-2
         .col-md-4
-            select#division.form-control
-                option Select a Division
-                option mock trial
-                option appeals
-        .col-md-4
-    .row
-        #schedule
+            h2.text-center Appeals
+            #appeals
+        .col-md-1
     script(src="../../scripts/roundAssignments.js")
-    script(src="../../scripts/bootstrap-timepicker.js")
