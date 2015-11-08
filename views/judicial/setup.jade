@@ -2,6 +2,7 @@ doctype html
 head
     title Bill Tracker
     link(rel="stylesheet", href="../../stylesheets/bootstrap/bootstrap.css")
+    link(rel="stylesheet", href="../../stylesheets/autocomplete.css")
 
     // Responsive Tags
     meta(charset="utf-8")
@@ -19,47 +20,64 @@ body
         a(href="../judicialSystem.html").btn.btn-default BACK
     .row
         .col-md-1
-        .col-md-4
-            h2.text-center Add an Attorney
-            form#attorney
-                .form-group
-                    label First Name
-                    input(type="text" placeholder="enter the attorney's first name")#firstName.form-control
-                .form-group
-                    label Last Name
-                    input(type="text" placeholder="enter the attorney's last name")#lastName.form-control
-                .form-group
-                    label Division
-                    select#division.form-control
-                        option Select a Division
-                        option Appeals
-                        option Trial
-                .form-group
-                    label School
-                    select#school.form-control
-                        option Select a School
-                .form-group
-                    label Team Code
-                    input(type="text" placeholder="enter the attorney's team code")#teamCode.form-control
-                .form-group
-                    button#addAttorney.btn.btn-success.form-control Submit
-        .col-md-2
-        .col-md-4
-            h2.text-center Add a Judge
-            form#judge
-                .form-group
-                    label First Name
-                    input(type="text" placeholder="enter the judge's first name")#firstName.form-control
-                .form-group
-                    label Last Name
-                    input(type="text" placeholder="enter the judge's last name")#lastName.form-control
-                .form-group
-                    label Category
-                    select#category.form-control
-                        option Select a Category
-                        option Presider
-                        option Scorer
-                .form-group
-                    button#addJudge.btn.btn-success.form-control Submit
+        .col-md-10
+            .col-md-4
+                h2.text-center Add an Attorney
+                form#attorney
+                    .form-group
+                        label First Name
+                        input(type="text" placeholder="enter the attorney's first name")#firstName.form-control
+                    .form-group
+                        label Last Name
+                        input(type="text" placeholder="enter the attorney's last name")#lastName.form-control
+                    .form-group
+                        label Team Code
+                        select#teamCode.form-control
+                            option Assign the Attorney to a Team
+                    .form-group
+                        button#addAttorney.btn.btn-success.form-control Submit
+            .col-md-4
+                h2.text-center Add a Judge
+                form#judge
+                    .form-group
+                        label First Name
+                        input(type="text" placeholder="enter the judge's first name")#firstName.form-control
+                    .form-group
+                        label Last Name
+                        input(type="text" placeholder="enter the judge's last name")#lastName.form-control
+                    .form-group
+                        label Category
+                        select#category.form-control
+                            option Select a Category
+                            option Presider
+                            option Scorer
+                    .form-group
+                        button#addJudge.btn.btn-success.form-control Submit
+            .col-md-4
+                h2.text-center Add a Team
+                form#team
+                    .form-group
+                        label Team Code
+                        input(type="text" placeholder="enter the team's code")#newTeamCode.form-control
+                    .form-group
+                        label Division
+                        select#division.form-control
+                            option Select a Division
+                            option Appeals
+                            option Trial
+                    .form-group
+                        label School
+                        select#school.form-control
+                            option Select a School
+                    .form-group
+                        button#addTeam.btn.btn-success.form-control Submit
         .col-md-1
+    .row
+        .col-md-4
+        .col-md-4
+            #search-form
+            #message
+        .col-md-4
     script(src="../../scripts/setup.js")
+    script(src="../../scripts/autocomplete_trial.js")
+    script(src="../../scripts/judicialSearch.js")

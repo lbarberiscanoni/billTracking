@@ -3,30 +3,34 @@ var attorneyData = new Firebase("https://yig-bill-tracker.firebaseio.com/attorne
 var judicialData = new Firebase("https://yig-bill-tracker.firebaseio.com/judicialData");
 
 $(document).ready(function() {
+    //let's add the schools as options
     listOfSchools.on("child_added", function(snapshot) {
         var school = snapshot.val();
         $("#school").append("<option>" + school.name + "</option>");
+    });
+
+    //let's add team codes as options
+    attorneyData.on("child_added", function(snapshot) {
+        var team = snapshot.val();
+        $("#teamCode").append("<option>" + team.teamCode + "</option>");
     });
 
     $("#addAttorney").click(function() {
         var firstName = $("#attorney #firstName").val();
         var lastName = $("#attorney #lastName").val();
         var attorneyName = firstName.toLowerCase().replace(" ", "") + "-" + lastName.toLowerCase().replace(" ", "");
-        var division = $("#attorney #division").val();
-        var school = $("#attorney #school").val();
         var teamCode = $("#attorney #teamCode").val();
-        attorneyData.push({
-            appealsScore: "",
-            attorneyScore: "",
-            averageScore: 0,
-            division: division,
-            eloScore: 0,
-            individualName: attorneyName,
-            justiceScore: "",
-            schoolName: school,
-            teamCode: teamCode,
-            witnessScore: "",
-            roundsInfo: { opponent: "0", presidingJudge: "", roundNumber: "0", scoringJudge: "", side: ""},
+        attorneyData.on("child_added", function(snapshot) {
+            var team = snapshot.val();
+            var teamID = snapshot.key();
+            if (team.teamCode == teamCode) {
+                attorneyData.child(teamID).child("attorneyList").push({
+                    attorneyScore: 0,
+                    averageScore: 0,
+                    individualName: attorneyName,
+                    witnessScore: 0,
+                });
+            };
         });
     });
 
@@ -39,16 +43,29 @@ $(document).ready(function() {
             judicialData.push({
                 judgeName: judgeName,
                 category: category,
-                rounds: {con: "", pro: "", roundNumber: 0, scorer: ""},
+                status: "active",
             });
         } else if (category == "Scorer") {
             judicialData.push({
                 judgeName: judgeName,
                 category: category,
-                rounds: {con: "", pro: "", roundNumber: 0, presider: ""},
+                status: "active",
             });
         } else {
             console.log("select either scorer or presider");
         };
+    });
+
+    $("#addTeam").click(function() {
+        var teamCode = $("#newTeamCode").val();
+        var division = $("#division").val();
+        var school = $("#school").val();
+        attorneyData.push({
+            "division": division,
+            "eloScore": 0,
+            "schoolName": school,
+            "teamCode": teamCode,
+            "attorneyList": "",
+        });
     });
 });

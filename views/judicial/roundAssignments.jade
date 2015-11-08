@@ -24,9 +24,17 @@ body
         .col-md-4
             h2.text-center Trial
             #trial
+                table.table.table-bordered
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
         .col-md-2
         .col-md-4
             h2.text-center Appeals
             #appeals
         .col-md-1
+    script(src="../../scripts/matching-algo_trial.js")
     script(src="../../scripts/roundAssignments.js")
