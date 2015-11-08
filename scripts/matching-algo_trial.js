@@ -48,10 +48,11 @@ $(document).ready(function(){
 				while(needsSorting==true) {
 					needsSorting = false;
 					for (var i=0; i<roundsIds.length-1; i++) {
-						if(roundsRaw[roundsIds[i]]['index'] > roundsRaw[roundsIds[i+1]]['index']) {
+						// console.log(Object.keys(roundsRaw));
+						if(roundsRaw[i]['index'] > roundsRaw[i+1]['index']) {
 							temporaryHolder = roundsRaw[roundsIds[i]].index;
-							roundsRaw[roundsIds[i]]['index'] = roundsRaw[roundsIds[i+1]]['index'];
-							roundsRaw[roundsIds[i+1]]['index'] = temporaryHolder;
+							roundsRaw[i]['index'] = roundsRaw[i+1]['index'];
+							roundsRaw[i+1]['index'] = temporaryHolder;
 							needsSorting = true;
 						}
 					}
@@ -61,14 +62,14 @@ $(document).ready(function(){
 				// Loops until it finds two people who can match.
 				for(var i = 0; i < teams.length; i++) {
 					team1 = teams[i][0];
-					// console.log("i: "+i.toString());
+					// // console.log("i: "+i.toString());
 					for (var j=0; j < teams.length; j++) {
 						team2 = teams[j][0];
 						// If the schools are the same break.
 						if(teams[i][1] == teams[j][1]) {
 							continue
 						}
-						// console.log("	j: "+j.toString());
+						// // console.log("	j: "+j.toString());
 						if (j==i) {
 							// Cannot match a team with itself
 							continue;
@@ -77,20 +78,20 @@ $(document).ready(function(){
 						// teams have been together on the past
 						breakTwice = false;
 						for (var k = 0; k < judgesWhoScore.length; k++) {
-							// console.log("		k: "+k.toString());
+							// // console.log("		k: "+k.toString());
 							possibleJudge = judgesWhoScore[k];
 							breakOnce = false;
 							for (var v = 0; v < judgesWhoPreside.length; v ++){
 								presidingJudge = judgesWhoPreside[v];
 								presidingJudgeBreak = false;
 								for (var h = 0; h < rounds.length; h++){
-									// console.log("			h: "+h.toString());
+									// // console.log("			h: "+h.toString());
 									round = rounds[h];
 									if (
 										( round['con'] == team1 && round['pro'] == team2 ) ||
 										( round['con'] == team2 && round['pro'] == team1 )
 										) {
-										// console.log("breaking because those teams have already competed");
+										// // console.log("breaking because those teams have already competed");
 										breakTwice = true;
 										break;
 									} // end of checking if they have competed before
@@ -100,12 +101,12 @@ $(document).ready(function(){
 										round['con'] == team2 || round['pro'] == team2
 										) {
 										if (round['presidingJudge'] == presidingJudge) {
-											// console.log("breaking because of scoring judge");
+											// // console.log("breaking because of scoring judge");
 											presidingJudgeBreak = true;
 											break;
 										} // Yeah. This judge has judged one of the teams before
 										if (round['scoringJudge'] == possibleJudge) {
-											// console.log("breaking because of scoring judge");
+											// // console.log("breaking because of scoring judge");
 											breakOnce = true;
 											break;
 										} // Yeah. This judge has judged one of the teams before
@@ -114,7 +115,7 @@ $(document).ready(function(){
 									// If you have reached this point this means there is nothing
 									// that could hold you from matching these teams with this judge
 									//
-									// console.log(team1+ ", "+team2);
+									// // console.log(team1+ ", "+team2);
 								} // end of looping through rounds
 								if(breakOnce == true) {
 									break;
@@ -212,63 +213,47 @@ $(document).ready(function(){
 
         var numberOfJudgesLoopedThrough = 0;
         window.numberOfJudgesLoopedThrough = numberOfJudgesLoopedThrough;
-        judicialData.on("child_added", function(snapshot) {
-            var judge = snapshot.val();
-            numberOfJudgesLoopedThrough += 1;
-            if (judge.category == "Presider") {
+
+        rawJudicialData = snapshot.val();
+        keysOfData = Object.keys(rawJudicialData);
+
+        for(var i = 0; i < keysOfData.length; i++){
+        	var judge = rawJudicialData[keysOfData[i]];
+        	if (judge.category == "Presider") {
                 judgesWhoPresideFB.push(judge.judgeName);
             } else if (judge.category == "Scorer") {
                 judgesWhoScoreFB.push(judge.judgeName);
             } else { 
-                console.log(judge.judgeName + " does not have a category");
-            };
-            
-            if (numberOfJudgesLoopedThrough == totalNumberOfJudges) {
-                // List of all teams. Modify as you want.
-                // Make sure only those specific strings are used when assigning teams to users.
-                //teamsFB = [ ["team A", "school 1"], ["team B", "school 1"], ["team C", "school 2"] ];
-                teamsFB = []
-                attorneyData.once("value", function(snapshot) {
-                    var totalNumberOfAttorneys = snapshot.numChildren();
-                    window.totalNumberOfAttorneys = totalNumberOfAttorneys;
-                    
-                    var numberOfAttorneysLoopedThrough = 0;
-                    window.numberOfAttorneysLoopedThrough = numberOfAttorneysLoopedThrough;
-                    attorneyData.on("child_added", function(snapshot) {
-                        var team = snapshot.val();
-                        numberOfAttorneysLoopedThrough += 1;
-                        var teamInfo = [team.teamCode, team.schoolName];
-                        teamsFB.push(teamInfo);
-                        if (numberOfAttorneysLoopedThrough == totalNumberOfAttorneys) {
-                            listOfRounds.once("value", function(snapshot) {
-                                var numOfRounds = snapshot.numChildren();
-                                var thisRoundIndex = numOfRounds + 1;
-                                window.thisRoundIndex = thisRoundIndex;
+                // console.log(judge.judgeName + " does not have a category");
+            }
 
-                                var roundInfo = obtainMatch(judgesWhoPresideFB, judgesWhoScoreFB, teamsFB)
-                                var prosecution = roundInfo.pro;
-                                var defense = roundInfo.con;
-                                var presider = roundInfo.presidingJudge;
-                                var scorer = roundInfo.scoringJudge;
-                                console.log(teamsFB);
-                                console.log(judgesWhoPresideFB);
-                                console.log(judgesWhoScoreFB);
-                                console.log(roundInfo);
-
-                                listOfRounds.push({
-                                    pro: prosecution,
-                                    con: defense,
-                                    scoringJudge: scorer,
-                                    presidingJudge: presider,
-                                    roundNumber: 1,
-                                    index: thisRoundIndex,
-                                });
-                                $("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
-                            });
-                        };
-                    });
-                });
-            };
-        });
+            if(i==keysOfData.length-1) {
+            	attorneyData.once("value", function(attorneySnapshot) {
+            		var rawAttorneyData = attorneySnapshot.val();
+            		keysAttorneyData = Object.keys(rawAttorneyData);
+            		teamsFB = []
+            		for (var j = 0; j < keysAttorneyData.length; j++) {
+            			var team = rawAttorneyData[keysAttorneyData[j]];
+            			var teamInfo = [team.teamCode, team.schoolName];
+            			teamsFB.push(teamInfo);
+            		}
+            		listOfRounds.once("value", function(roundsSnapshot) {
+            			var numOfRounds = roundsSnapshot.numChildren();
+              			var thisRoundIndex = numOfRounds + 1;
+              			rawRoundsData = roundsSnapshot.val();
+              			keysRoundData = Object.keys(rawRoundsData);
+              			window.thisRoundIndex = thisRoundIndex;
+              			for (var k = 0; k < keysRoundData.length; k++){
+              				round = rawRoundsData[keysRoundData[k]];
+              				prosecution = round.pro;
+              				defense = round.con;
+              				presider = round.presidingJudge;
+              				scorer = round.scoringJudge;
+              				$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+              			}
+            		});
+            	});
+            }
+        }
     });
 });
