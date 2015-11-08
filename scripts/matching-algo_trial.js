@@ -257,19 +257,12 @@ $(document).ready(function(){
 	*/
 
 	// Adds the rounds to the table.
-	listOfRounds.once("value", function(roundsSnapshot) {
-		var numOfRounds = roundsSnapshot.numChildren();
-		var thisRoundIndex = numOfRounds + 1;
-		rawRoundsData = roundsSnapshot.val();
-		keysRoundData = Object.keys(rawRoundsData);
-		window.thisRoundIndex = thisRoundIndex;
-		for (var k = 0; k < keysRoundData.length; k++){
-			round = rawRoundsData[keysRoundData[k]];
-			prosecution = round.pro;
-			defense = round.con;
-			presider = round.presidingJudge;
-			scorer = round.scoringJudge;
-			$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
-		}
+	listOfRounds.on("child_added", function(roundSnapshot) {
+		round = roundSnapshot.val();
+		prosecution = round.pro;
+		defense = round.con;
+		presider = round.presidingJudge;
+		scorer = round.scoringJudge;
+		$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
 	});
 });
