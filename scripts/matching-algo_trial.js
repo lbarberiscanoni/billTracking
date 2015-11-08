@@ -207,6 +207,8 @@ $(document).ready(function(){
     // the users
     //judgesWhoScoreFB = ["judge 1", "judge 2", "judge 3"];
     judgesWhoScoreFB = [];
+
+    // Set the values of judges who preside and teams from firebase
     judicialData.once("value", function(snapshot) {
         var totalNumberOfJudges = snapshot.numChildren();
         window.totalNumberOfJudges = totalNumberOfJudges;
@@ -237,23 +239,37 @@ $(document).ready(function(){
             			var teamInfo = [team.teamCode, team.schoolName];
             			teamsFB.push(teamInfo);
             		}
-            		listOfRounds.once("value", function(roundsSnapshot) {
-            			var numOfRounds = roundsSnapshot.numChildren();
-              			var thisRoundIndex = numOfRounds + 1;
-              			rawRoundsData = roundsSnapshot.val();
-              			keysRoundData = Object.keys(rawRoundsData);
-              			window.thisRoundIndex = thisRoundIndex;
-              			for (var k = 0; k < keysRoundData.length; k++){
-              				round = rawRoundsData[keysRoundData[k]];
-              				prosecution = round.pro;
-              				defense = round.con;
-              				presider = round.presidingJudge;
-              				scorer = round.scoringJudge;
-              				$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
-              			}
-            		});
             	});
             }
         }
     });
+
+	/*
+	//
+	//
+	//
+	// Possibly call obtainMatch.
+	// obtainMatch(judgesWhoPresideFB, judgesWhoScoreFB, teamsFB);
+	//
+	//
+	//
+	//
+	*/
+
+	// Adds the rounds to the table.
+	listOfRounds.once("value", function(roundsSnapshot) {
+		var numOfRounds = roundsSnapshot.numChildren();
+		var thisRoundIndex = numOfRounds + 1;
+		rawRoundsData = roundsSnapshot.val();
+		keysRoundData = Object.keys(rawRoundsData);
+		window.thisRoundIndex = thisRoundIndex;
+		for (var k = 0; k < keysRoundData.length; k++){
+			round = rawRoundsData[keysRoundData[k]];
+			prosecution = round.pro;
+			defense = round.con;
+			presider = round.presidingJudge;
+			scorer = round.scoringJudge;
+			$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+		}
+	});
 });
