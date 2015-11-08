@@ -1,5 +1,7 @@
 var attorneyData = new Firebase("https://yig-bill-tracker.firebaseio.com/attorneyData");
 var judicialData = new Firebase("https://yig-bill-tracker.firebaseio.com/judicialData");
+var listOfRounds = new Firebase("https://yig-bill-tracker.firebaseio.com/roundsInfo");
+
 $(document).ready(function(){
 	obtainMatch = function(judgesWhoPreside, judgesWhoScore, teams) { 
 		/*
@@ -238,12 +240,31 @@ $(document).ready(function(){
                         var teamInfo = [team.teamCode, team.schoolName];
                         teamsFB.push(teamInfo);
                         if (numberOfAttorneysLoopedThrough == totalNumberOfAttorneys) {
-                            var roundInfo = obtainMatch(judgesWhoPresideFB, judgesWhoScoreFB, teamsFB)
-                            console.log(teamsFB);
-                            console.log(judgesWhoPresideFB);
-                            console.log(judgesWhoScoreFB);
-                            console.log(roundInfo);
-                            $("#trial table").append("<tr><td>" + roundInfo.pro + "</td><td>" + roundInfo.con + "</td><td>" + roundInfo.presidingJudge + "</td><td>" + roundInfo.scoringJudge + "</td></tr>");
+                            listOfRounds.once("value", function(snapshot) {
+                                var numOfRounds = snapshot.numChildren();
+                                var thisRoundIndex = numOfRounds + 1;
+                                window.thisRoundIndex = thisRoundIndex;
+
+                                var roundInfo = obtainMatch(judgesWhoPresideFB, judgesWhoScoreFB, teamsFB)
+                                var prosecution = roundInfo.pro;
+                                var defense = roundInfo.con;
+                                var presider = roundInfo.presidingJudge;
+                                var scorer = roundInfo.scoringJudge;
+                                console.log(teamsFB);
+                                console.log(judgesWhoPresideFB);
+                                console.log(judgesWhoScoreFB);
+                                console.log(roundInfo);
+
+                                listOfRounds.push({
+                                    pro: prosecution,
+                                    con: defense,
+                                    scoringJudge: scorer,
+                                    presidingJudge: presider,
+                                    roundNumber: 1,
+                                    index: thisRoundIndex,
+                                });
+                                $("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                            });
                         };
                     });
                 });
