@@ -117,17 +117,17 @@ $(document).ready(function(){
 									//
 									// // console.log(team1+ ", "+team2);
 								} // end of looping through rounds
-								if(breakOnce == true) {
+								if (breakOnce == true) {
 									break;
 								}
-								if(breakTwice == true) {
+								if (breakTwice == true) {
 									break;
 								}
 								if (presidingJudgeBreak == false) {
 									breakFromAllFors = true;
 									matched = {'pro': team1, 'con': team2, 'scoringJudge': possibleJudge, 'presidingJudge': presidingJudge};
 								}
-								if(breakFromAllFors == true) {
+								if (breakFromAllFors == true) {
 									break;
 								}
 							} // end of looping through the judges who could possibly preside
