@@ -6,9 +6,10 @@ var obtainRound = function(){};
 var sortTeamsForRound = function(){};
 $(document).ready(function(){
 
-
+	// This dictionary holds all the teams and their school for easy lookup.
 	var attorneysAndSchools = {};
 
+	// Fill the dictionary.
 	$.ajax({
 		url: 'https://yig-bill-tracker.firebaseio.com/attorneyData/.json',
 		async: false,
@@ -23,7 +24,7 @@ $(document).ready(function(){
     		}
 		}
 	});
-	    // List of all judges. Make sure those specific strings are used when assigning judges to
+	// List of all judges. Make sure those specific strings are used when assigning judges to
     // the users
     //judgesWhoPresideFB = ["judge 1", "judge 2", "judge 3"];
     judgesWhoPresideFB = [];
@@ -33,7 +34,7 @@ $(document).ready(function(){
     //judgesWhoScoreFB = ["judge 1", "judge 2", "judge 3"];
     judgesWhoScoreFB = [];
 
-    // Set the values of judges who preside and teams from firebase
+    // Set the values of judges who preside and judges who score from firebase
     $.ajax({
 		url: 'https://yig-bill-tracker.firebaseio.com/judicialData/.json',
 		async: false,
@@ -64,7 +65,17 @@ $(document).ready(function(){
 
 
 	sortTeamsForRound = function(roundIndex){
+		/*
+		This function sorts all the teams available for round 'roundNumber' according to their score, from lowest
+		to highest.
+		If it is round zero it obtains all teams and gives them a random sorting.
+		If the round is above zero it obtains each team with the highest score from each match of the
+		previous round and then sorts them.
+		The result is in the format:
+			[   [  teamCode:String,  teamSchool:String  ], ... ]
+		*/
 		var teams = Array();
+		// Check if round is zero. If so return all teams.
 		if(roundIndex == 0) {
 			$.ajax({
 				url: 'https://yig-bill-tracker.firebaseio.com/attorneyData/.json',
@@ -82,13 +93,11 @@ $(document).ready(function(){
 			});
 			return teams;
 		}
+		// If we reach this point this means the round is not zero. Obtain the winning team from each match in the previous
+		// round.
 		$.ajax({
 			url: 'https://yig-bill-tracker.firebaseio.com/roundsInfo/.json',
 			contentType: 'json',
-			// It is important that async is set to false becase that way my code
-			// does not have to worry about variables not being defined.
-			// and also I have to return a value from the function in synchronous time
-			// which would be impossible if set to true.
 			async: false,
 			complete: function(dataR) {
 				data = dataR['responseJSON'];
@@ -96,6 +105,8 @@ $(document).ready(function(){
 				for( var j = 0; j < roundsKeys.length; j++) {
 					round = data[roundsKeys[j]];
 					if(round['roundNumber'] == (roundIndex-1)) {
+						// In order to sort the teams I need the team name and their score therefore
+						// I make an array of two elements. One containing the name and the other the score.
 						if(  parseInt(round['proEndScore']) >  parseInt(round['conEndScore']) ) {
 							teams.push([ round['pro'], round['proEndScore']]);
 						} else {
@@ -108,7 +119,7 @@ $(document).ready(function(){
 				}
 			}
 		});
-		// Bubble sort the index of teams according to their end up score.
+		// Bubble sort the index of teams according to their score.
 		needsSorting = true;
 		while(needsSorting == true) {
 			needsSorting = false;
@@ -123,6 +134,8 @@ $(document).ready(function(){
 		}
 
 		var teamsResult = Array();
+		// I loop through the sorted teams and I lookup their school because that's the format
+		// that obtainMatch wants the teams array.
 		for(var i = 0; i < teams.length; i++) {
 			teamsResult.push([ teams[i][0], attorneysAndSchools[teams[i][0]] ]);
 		}
@@ -136,17 +149,28 @@ $(document).ready(function(){
 		*/
 		matches = Array();
 		teamsToSendToTheAlgorithm = sortTeamsForRound(roundNumber);
+		// I create the teams array with an array that matches the index of 
+		// teamsToSendToTheAlgorithm because is easier to make lookups
+		// in a array of strings instead that in an array of arrays.
+		// this means I could find elements in the teams array and that position
+		// would equally translate in the other array.
 		teams = Array();
 		for (var i = 0; i < teamsToSendToTheAlgorithm.length; i++) {
 			teams.push(teamsToSendToTheAlgorithm[i][0]);
 		}
+		// I iterate 
 		while(teams.length != 0){
+			// If the length of the teams is one then there is an even amount of teams.
+			// This team is not necessarily the team with the lowest score because many
+			// other factors are taken into account for the matching.
+			// Therefore I give this team a 'buy', aka matching with itself.
 			if(teams.length==1) {
 				var match = {'pro': teams[0], 'con': teams[0], 'scoringJudge': judgesWhoScore[0], 'presidingJudge': judgesWhoPreside[0]};
 				teams = [];
 				matches.push(match);
 				break;
 			}
+			// In case there are more than one team, I obtain a match.
 			match = obtainMatch(roundNumber, judgesWhoPreside, judgesWhoScore, teamsToSendToTheAlgorithm);
 			if (match == false) {
 				if (teams.length != 0) {
@@ -157,8 +181,12 @@ $(document).ready(function(){
 					return matches;
 				}
 			}
+			// After I create a match I delete the teams and judges from the original array so the next iteration
+			// does not matches the same teams again.
 			proIndex = teams.indexOf(match['pro']);
 			teams.splice(proIndex, 1);
+			// Since the indexes of teams matches the indexes of teamsToSendToTheAlgorithm I could
+			// just delete the item in the same index.
 			teamsToSendToTheAlgorithm.splice(proIndex, 1);
 			conIndex = teams.indexOf(match['con']);
 			teams.splice(conIndex, 1);
