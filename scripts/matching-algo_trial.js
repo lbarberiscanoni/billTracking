@@ -15,7 +15,6 @@ $(document).ready(function(){
 		method: 'GET',
 		contentType: 'json',
 		complete: function(dataR){
-			// console.log(dataR);
 			var rawAttorneyData  = dataR['responseJSON'];
 			var keysAttorneyData = Object.keys(rawAttorneyData);
 			for (var j = 0; j < keysAttorneyData.length; j++) {
@@ -35,27 +34,33 @@ $(document).ready(function(){
     judgesWhoScoreFB = [];
 
     // Set the values of judges who preside and teams from firebase
-    judicialData.once("value", function(snapshot) {
-        var totalNumberOfJudges = snapshot.numChildren();
-        window.totalNumberOfJudges = totalNumberOfJudges;
+    $.ajax({
+		url: 'https://yig-bill-tracker.firebaseio.com/judicialData/.json',
+		async: false,
+		method: 'GET',
+		contentType: 'json',
+		complete: function(dataR){
+			data = dataR['responseJSON'];
+			var totalNumberOfJudges = data.length;
+	        window.totalNumberOfJudges = totalNumberOfJudges;
 
-        var numberOfJudgesLoopedThrough = 0;
-        window.numberOfJudgesLoopedThrough = numberOfJudgesLoopedThrough;
+	        var numberOfJudgesLoopedThrough = 0;
+	        window.numberOfJudgesLoopedThrough = numberOfJudgesLoopedThrough;
 
-        rawJudicialData = snapshot.val();
-        keysOfData = Object.keys(rawJudicialData);
+	        rawJudicialData = data;
+	        keysOfData = Object.keys(rawJudicialData);
 
-        for(var i = 0; i < keysOfData.length; i++){
-        	var judge = rawJudicialData[keysOfData[i]];
-        	if (judge.category == "Presider") {
-                judgesWhoPresideFB.push(judge.judgeName);
-            } else if (judge.category == "Scorer") {
-                judgesWhoScoreFB.push(judge.judgeName);
-            } else { 
-                // // console.log(judge.judgeName + " does not have a category");
-            }
-        }
-    });
+	        for(var i = 0; i < keysOfData.length; i++){
+	        	var judge = rawJudicialData[keysOfData[i]];
+	        	if (judge.category == "Presider") {
+	                judgesWhoPresideFB.push(judge.judgeName);
+	            } else if (judge.category == "Scorer") {
+	                judgesWhoScoreFB.push(judge.judgeName);
+	            } else { 
+	            }
+	        }
+		}
+	});
 
 
 	sortTeamsForRound = function(roundIndex){
@@ -66,7 +71,6 @@ $(document).ready(function(){
 				async: false,
 				contentType: 'json',
 				complete: function(dataR){
-					// console.log(dataR);
 					var rawAttorneyData = dataR['responseJSON'];
 					keysAttorneyData = Object.keys(rawAttorneyData);
 					for (var j = 0; j < keysAttorneyData.length; j++) {
@@ -130,8 +134,6 @@ $(document).ready(function(){
 		Obtains a possible round matching all judgesWhoPreside and all judgesWhoScore.
 		If the judges and the teams are ordered according to their score then the algorithm is score aware.
 		*/
-		// console.log("length of judges who preside "+judgesWhoPreside.length.toString());
-		// console.log("length of judges who score "+judgesWhoScore.length.toString());
 		matches = Array();
 		teamsToSendToTheAlgorithm = sortTeamsForRound(roundNumber);
 		teams = Array();
@@ -139,7 +141,6 @@ $(document).ready(function(){
 			teams.push(teamsToSendToTheAlgorithm[i][0]);
 		}
 		while(teams.length != 0){
-			// console.log(teams.length);
 			if(teams.length==1) {
 				var match = {'pro': teams[0], 'con': teams[0], 'scoringJudge': judgesWhoScore[0], 'presidingJudge': judgesWhoPreside[0]};
 				teams = [];
@@ -148,9 +149,6 @@ $(document).ready(function(){
 			}
 			match = obtainMatch(roundNumber, judgesWhoPreside, judgesWhoScore, teamsToSendToTheAlgorithm);
 			if (match == false) {
-				// console.log("match not possible---");
-				// console.log(teams);
-				// console.log("end of match");
 				if (teams.length != 0) {
 					return matches;
 					// return false;
@@ -159,7 +157,6 @@ $(document).ready(function(){
 					return matches;
 				}
 			}
-			// console.log(match);
 			proIndex = teams.indexOf(match['pro']);
 			teams.splice(proIndex, 1);
 			teamsToSendToTheAlgorithm.splice(proIndex, 1);
@@ -170,9 +167,7 @@ $(document).ready(function(){
 			judgesWhoPreside.splice(presidingIndex, 1);
 			scoringIndex = judgesWhoScore.indexOf(match['scoringJudge']);
 			judgesWhoScore.splice(scoringIndex, 1);
-			// console.log("faaa hhh"+judgesWhoScore.length.toString());
 			matches.push(match);
-			// console.log(matches);
 		}
 		return matches;
 
@@ -193,8 +188,6 @@ $(document).ready(function(){
 		// Whenever I found a match. I set the value of this variable to true so I can exit subsequent 
 		// Iterations of the loops.
 		breakFromAllFors = false;
-		// console.log("judges who score:");
-		// console.log(judgesWhoScore);
 
 		// List of all rounds. To be retrieved from firebase
 		rounds = Array();
@@ -226,7 +219,6 @@ $(document).ready(function(){
 				while(needsSorting==true) {
 					needsSorting = false;
 					for (var i=0; i<roundsIds.length-1; i++) {
-						// // console.log(Object.keys(roundsRaw));
 						if(roundsRaw[i]['index'] > roundsRaw[i+1]['index']) {
 							temporaryHolder = roundsRaw[roundsIds[i]].index;
 							roundsRaw[i]['index'] = roundsRaw[i+1]['index'];
@@ -240,14 +232,12 @@ $(document).ready(function(){
 				// Loops until it finds two people who can match.
 				for(var i = 0; i < teams.length; i++) {
 					team1 = teams[i][0];
-					// // // console.log("i: "+i.toString());
 					for (var j=0; j < teams.length; j++) {
 						team2 = teams[j][0];
 						// If the schools are the same break.
 						if(teams[i][1] == teams[j][1]) {
 							continue
 						}
-						// // // console.log("	j: "+j.toString());
 						if (j==i) {
 							// Cannot match a team with itself
 							continue;
@@ -256,20 +246,17 @@ $(document).ready(function(){
 						// teams have been together on the past
 						breakTwice = false;
 						for (var k = 0; k < judgesWhoScore.length; k++) {
-							// // // console.log("		k: "+k.toString());
 							possibleJudge = judgesWhoScore[k];
 							breakOnce = false;
 							for (var v = 0; v < judgesWhoPreside.length; v ++){
 								presidingJudge = judgesWhoPreside[v];
 								presidingJudgeBreak = false;
 								for (var h = 0; h < rounds.length; h++){
-									// // // console.log("			h: "+h.toString());
 									round = rounds[h];
 									if (
 										( round['con'] == team1 && round['pro'] == team2 ) ||
 										( round['con'] == team2 && round['pro'] == team1 )
 										) {
-										// // // console.log("breaking because those teams have already competed");
 										breakTwice = true;
 										break;
 									} // end of checking if they have competed before
@@ -279,12 +266,10 @@ $(document).ready(function(){
 										round['con'] == team2 || round['pro'] == team2
 										) {
 										if (round['presidingJudge'] == presidingJudge) {
-											// // // console.log("breaking because of scoring judge");
 											presidingJudgeBreak = true;
 											break;
 										} // Yeah. This judge has judged one of the teams before
 										if (round['scoringJudge'] == possibleJudge) {
-											// // // console.log("breaking because of scoring judge");
 											breakOnce = true;
 											break;
 										} // Yeah. This judge has judged one of the teams before
@@ -293,7 +278,6 @@ $(document).ready(function(){
 									// If you have reached this point this means there is nothing
 									// that could hold you from matching these teams with this judge
 									//
-									// // // console.log(team1+ ", "+team2);
 								} // end of looping through rounds
 								if(breakOnce == true) {
 									break;
@@ -381,8 +365,8 @@ $(document).ready(function(){
 	//
 	//
 	//
-	// Possibly call obtainMatch.
-	// obtainMatch(judgesWhoPresideFB, judgesWhoScoreFB, teamsFB);
+	// Possibly call obtainRound.
+	// obtainRound(0, judgesWhoPresideFB.slice(), judgesWhoScoreFB.slice())
 	//
 	//
 	//
