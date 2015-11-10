@@ -244,8 +244,13 @@ $(document).ready(function(){
 				//using bubble sort, according to their key 'index'
 				needsSorting = true;
 				// Bubble Sort
+        
+                if(roundsRaw.length==0){
+                    needsSorting = false;
+                }
 				while(needsSorting==true) {
 					needsSorting = false;
+                    
 					for (var i=0; i<roundsIds.length-1; i++) {
 						if(roundsRaw[i]['index'] > roundsRaw[i+1]['index']) {
 							temporaryHolder = roundsRaw[roundsIds[i]].index;
@@ -400,14 +405,80 @@ $(document).ready(function(){
 	//
 	//
 	*/
+    $("#getRound").click(function() {
+        $("#trial table").empty();
+        $("#trial table").append("<tr class='active'><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
-	// Adds the rounds to the table.
-	listOfRounds.on("child_added", function(roundSnapshot) {
-		round = roundSnapshot.val();
-		prosecution = round.pro;
-		defense = round.con;
-		presider = round.presidingJudge;
-		scorer = round.scoringJudge;
-		$("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
-	});
+        var pairTeams = function() {
+            // run the function to make the pairings
+            var matchedRoundsInfo = obtainRound(roundNumber, judgesWhoPresideFB.slice(), judgesWhoScoreFB.slice());
+            console.log(matchedRoundsInfo);
+            for (loopOfRounds = 0; loopOfRounds < matchedRoundsInfo.length; loopOfRounds++) {
+                console.log(roundNumber);
+                console.log(indexNumber);
+                console.log(matchedRoundsInfo[loopOfRounds]);
+                var proSide = matchedRoundsInfo[loopOfRounds].pro;
+                var currentScore_pro = 0;
+                var conSide = matchedRoundsInfo[loopOfRounds].con;
+                var currentScore_con = 0;
+                var presidingJudgeForThisRound = matchedRoundsInfo[loopOfRounds].presidingJudge;
+                var scoringJudgeForThisRound = matchedRoundsInfo[loopOfRounds].scoringJudge;
+                var newIndexNumber = indexNumber + 1;
+                var newRoundNumber = roundNumber + 1;
+
+                attorneyData.on("child_added", function(snapshot) {
+                    var teamBeingSearched = snapshot.val();
+                    if (teamBeingSearched.teamCode == proSide) {
+                        currentScore_pro = teamBeingSearched.eloScore;
+                    } else if (teamBeingSearched.teamCode == conSide) {
+                        currentScore_con = teamBeingSearched.eloScore;
+                    };
+                });
+
+                //let's push that data
+                var pushRoundInfo = function(){
+                    listOfRounds.push({
+                        pro: proSide,
+                        proScoreBefore: currentScore_pro,
+                        proScoreAfter: 0,
+                        con: conSide,
+                        conScoreBefore: currentScore_con,
+                        conScoreAfter: 0,
+                        presidingJudge: presidingJudgeForThisRound,
+                        scoringJudge: scoringJudgeForThisRound,
+                        status: "to do",
+                        index: newIndexNumber,
+                        roundNumber: newRoundNumber,
+                    });
+                };
+                pushRoundInfo();
+            };
+
+            // Adds the rounds to the table.
+            listOfRounds.on("child_added", function(roundSnapshot) {
+                round = roundSnapshot.val();
+                prosecution = round.pro;
+                defense = round.con;
+                presider = round.presidingJudge;
+                scorer = round.scoringJudge;
+                if (round.status == "done") {
+                    $("#trial table").append("<tr class='success'><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                } else {
+                    $("#trial table").append("<tr><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                };
+            });
+        };
+        
+        // find the round and index number
+        var getRoundAndIndexNumbers = function() {
+            listOfRounds.limitToLast(1).on("child_added", function(snapshot) {
+                var lastRound = snapshot.val();
+                var roundNumber = lastRound.roundNumber + 1;
+                window.roundNumber = roundNumber;
+                var indexNumber = lastRound.index + 1;
+                window.indexNumber = indexNumber;
+                pairTeams();
+            });
+        };
+    });
 });
