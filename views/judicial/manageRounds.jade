@@ -18,46 +18,23 @@ body
     h1.text-center Manage Attorney Rounds
         a(href="roundAssignments.html").btn.btn-default BACK
     .row
+        .col-md-5
+        .col-md-2
+            label Round Number
+            select#roundNumber.form-control
+                option round 0
+                option round 1
+                option round 2
+                option round 3
+                option round 4
+                option round 5
+                option round 6
+        .col-md-5
+    br
+    .row
         .col-md-4
         .col-md-4
-            form
-                .form-group
-                    label Division
-                    select#division.form-control
-                        option Select a Division
-                        option mock trial
-                        option appeals
-                .form-group
-                    label Name of the Event
-                    input(type="text" placeholder="Name of the Event")#eventName.form-control
-                .form-group
-                    label Day of the Conference
-                    select#eventDay.form-control
-                        option Select a Day
-                        option Wednesday
-                        option Thursday
-                        option Friday
-                        option Saturday
-                .form-group
-                    label Start
-                    input(type="text")#timepicker1.form-control
-                .form-group
-                    label End
-                    input(type="text")#timepicker2.form-control
-                .form-group
-                    label Location
-                    select#location.form-control
-                        option Select a Location
-                        option location A
-                        option location B
-                .form-group
-                    label Address
-                    input(type="text" placeholder="Address of the Event")#address.form-control
-                .form-group
-                    label Event Description
-                    textarea(placeholder="Short Description of the Event" rows="10")#eventDescription.form-control
-                .form-group
-                    button.btn.btn-primary.form-control#submit Add Event to Schedule
+            #roundsInfo
         .col-md-4
     script(src="../../scripts/manageRounds.js")
     script(src="../../scripts/bootstrap-timepicker.js")
