@@ -209,8 +209,8 @@ $(document).ready(function(){
 	// false	 -	of type boolean
 	//
 		*/ 
-		// Matched contains an array of strings with the possible matching in the folowing format
-		// [ team1, team2, scoringJudge ]
+		// Matched contains an dictionary with the resulting possible matching in the folowing format
+		// {'pro': team1, 'con': team2, 'scoringJudge': possibleJudge, 'presidingJudge': presidingJudge};				
 		matched = {};
 
 		// Whenever I found a match. I set the value of this variable to true so I can exit subsequent 
