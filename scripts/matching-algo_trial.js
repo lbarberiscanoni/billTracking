@@ -407,9 +407,11 @@ $(document).ready(function(){
 	*/
     $("#getRound").click(function() {
         $("#trial table").empty();
+        console.log("wadup");
         $("#trial table").append("<tr class='active'><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
         var pairTeams = function() {
+			var newRoundNumber = roundNumber;
             // run the function to make the pairings
             var matchedRoundsInfo = obtainRound(roundNumber, judgesWhoPresideFB.slice(), judgesWhoScoreFB.slice());
             console.log(matchedRoundsInfo);
@@ -424,9 +426,8 @@ $(document).ready(function(){
                 var presidingJudgeForThisRound = matchedRoundsInfo[loopOfRounds].presidingJudge;
                 var scoringJudgeForThisRound = matchedRoundsInfo[loopOfRounds].scoringJudge;
                 var newIndexNumber = indexNumber + 1;
-                var newRoundNumber = roundNumber + 1;
 
-                attorneyData.on("child_added", function(snapshot) {
+                attorneyData.once("child_added", function(snapshot) {
                     var teamBeingSearched = snapshot.val();
                     if (teamBeingSearched.teamCode == proSide) {
                         currentScore_pro = teamBeingSearched.eloScore;
@@ -471,14 +472,22 @@ $(document).ready(function(){
         
         // find the round and index number
         var getRoundAndIndexNumbers = function() {
-            listOfRounds.limitToLast(1).on("child_added", function(snapshot) {
+            listOfRounds.limitToLast(1).once("child_added", function(snapshot) {
                 var lastRound = snapshot.val();
-                var roundNumber = lastRound.roundNumber + 1;
-                window.roundNumber = roundNumber;
+                console.log(parseInt(lastRound.roundNumber));
+                var roundNumber = parseInt(lastRound.roundNumber);
+                // if(roundNumber == 0) {
+                // 	roundNumber = -1;
+                // }
+                window.roundNumber = roundNumber + 1;
                 var indexNumber = lastRound.index + 1;
                 window.indexNumber = indexNumber;
+                console.log(indexNumber);
+                console.log(roundNumber);
                 pairTeams();
             });
         };
+
+        getRoundAndIndexNumbers();
     });
 });
