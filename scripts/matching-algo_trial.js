@@ -30,7 +30,7 @@ $("#trial table").empty();
                         scorer = round.scoringJudge;
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table").append("<tr class='success'><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table").append("<tr class='success'><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             } else {
                                 $("#trial table").append("<tr><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             };
@@ -512,7 +512,7 @@ $("#trial table").empty();
                         scorer = round.scoringJudge;
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table").append("<tr class='success'><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table").append("<tr class='success'><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             } else {
                                 $("#trial table").append("<tr><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             };
