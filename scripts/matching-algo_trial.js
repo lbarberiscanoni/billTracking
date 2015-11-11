@@ -109,8 +109,10 @@ $(document).ready(function(){
 						// I make an array of two elements. One containing the name and the other the score.
 						if(  parseInt(round['proEndScore']) >  parseInt(round['conEndScore']) ) {
 							teams.push([ round['pro'], round['proEndScore']]);
+							teams.push([ round['con'], round['conEndScore'] ]);
 						} else {
 							teams.push([ round['con'], round['conEndScore'] ]);
+							teams.push([ round['pro'], round['proEndScore']]);
 						}
 					}
 					else { 
@@ -234,9 +236,10 @@ $(document).ready(function(){
 				roundsIds = Object.keys(data);
 				roundsRaw = Array();
 				for (var i=0; i<roundsIds.length; i++) {
-					if(data[roundsIds[i]]['roundNumber'] == roundNumber) {
-						roundsRaw.push(data[roundsIds[i]]);
-					}
+					// if(data[roundsIds[i]]['roundNumber'] ) {
+					// 	roundsRaw.push(data[roundsIds[i]]);
+					// }
+					roundsRaw.push(data[roundsIds[i]]);
 				}
 				roundsOrdered = Array();
 
