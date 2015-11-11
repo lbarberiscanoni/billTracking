@@ -425,7 +425,7 @@ $(document).ready(function(){
                 var currentScore_con = 0;
                 var presidingJudgeForThisRound = matchedRoundsInfo[loopOfRounds].presidingJudge;
                 var scoringJudgeForThisRound = matchedRoundsInfo[loopOfRounds].scoringJudge;
-                var newIndexNumber = indexNumber + 1;
+                var newIndexNumber = indexNumber + loopOfRounds;
 
                 attorneyData.once("child_added", function(snapshot) {
                     var teamBeingSearched = snapshot.val();
