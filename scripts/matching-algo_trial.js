@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 $("#trial table").empty();
         console.log("wadup");
-        $("#trial table").append("<tr class='active'><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
+        $("#trial table").append("<tr class='active'><td>Round ID</td><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
    var indexForAsync = 0;
         $.ajax({
@@ -28,11 +28,13 @@ $("#trial table").empty();
                         defense = round.con;
                         presider = round.presidingJudge;
                         scorer = round.scoringJudge;
+                        roundNumber = round.roundNumber
+                        roundNumber = "round" + roundNumber.toString();
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table").append("<tr class='success'><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='success amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             } else {
-                                $("#trial table").append("<tr><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             };
                             ROUND_IN_TABLE.push(parseInt(round.indexNumber));
                         } // end of checkinf if the item is in the table
@@ -510,11 +512,13 @@ $("#trial table").empty();
                         defense = round.con;
                         presider = round.presidingJudge;
                         scorer = round.scoringJudge;
+                        roundNumber = round.roundNumber;
+                        roundNumber = "round" + roundNumber.toString();
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table").append("<tr class='success'><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='success'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             } else {
-                                $("#trial table").append("<tr><td>" + (++indexForAsync).toString() + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
                             };
                             ROUND_IN_TABLE.push(parseInt(round.indexNumber));
                         } // end of checkinf if the item is in the table
@@ -546,10 +550,56 @@ $("#trial table").empty();
     $("#getRound").click(function() {
         $("#trial table").empty();
         console.log("wadup");
-        $("#trial table").append("<tr class='active'><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
+        $("#trial table").append("<tr class='active'><td>Round ID</td><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
         getRoundAndIndexNumbers();
+    });
 
+    $("#changeRoundAssignments").click(function() {
+        var statusOfChange = $(this).text();
+        if (statusOfChange == "Make Changes") {
+            $(this).text("Submit Changes");
+            $(".amendable").attr("contenteditable", "true");
+        } else if (statusOfChange == "Submit Changes") {
+            var fuck = $(".amendable").parent().html().split("<td>");
+            fuck.splice(0, 6);
 
+            //get the info for all rounds into a list
+            var fuckList = []
+            for (fu = 1; fu < fuck.length; fu++) {
+                if (fu % 5 == 0) {
+                    var yo = '<tr class="amendable" contenteditable="true">';
+                    var bitch = fuck[fu].replace(yo, "").replace("</td>", "").replace("</tr>", "");
+                    fuckList.push(bitch);
+                } else {
+                    fuckList.push(fuck[fu].replace("</td>", "").replace("</tr>", ""));
+                };
+            };
+
+            //create arrays of 5 to essentially make an object for every round
+            var fuckList2 = [];
+            var fuLoopsToDo = fuckList.length / 5;
+            for (fu2 = 0; fu2 < fuLoopsToDo; fu2++) {
+                var lolFuck = [fuckList[0], fuckList[1], fuckList[2], fuckList[3], fuckList[4]]
+                fuckList2.push(lolFuck);
+                console.log(fuckList2);
+                console.log(fu2);
+                fuckList.splice(5);
+            };
+            
+            //update the data in the correct place
+            for (ab = 0; ab < fuckList2.length; ab++) {
+                var changedRound = fuckList2[ab];
+                listOfRounds.child(changedRound[0]).update({
+                    pro: changedRound[1],
+                    con: changedRound[2],
+                    presidingJudge: changedRound[3],
+                    scoringJudge: changedRound[4],
+                });
+            };
+            window.location.reload();
+        } else {
+            console.log("error in the status of change");
+        };
     });
 });

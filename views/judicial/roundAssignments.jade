@@ -18,24 +18,87 @@ body
     h1.text-center Attorney Round Assignments
         a(href="../judicialSystem.html").btn.btn-default BACK
         a(href="manageRounds.html").btn.btn-default Manage Rounds
-        button.btn.btn-primary#changeSchedule Make Changes
+        button.btn.btn-primary#changeRoundAssignments Make Changes
         button.btn.btn-default#getRound Get Round
     .row
-        .col-md-1
-        .col-md-4
-            h2.text-center Trial
+        h2.text-center Trial Rounds
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 1
             #trial
-                table.table.table-bordered
+                table.table.table-bordered#round0
                     tr.active
                         td Prosecution
                         td Defense
                         td Presiding Judge
                         td Scorer
                         td Room
-        .col-md-2
-        .col-md-4
-            h2.text-center Appeals
-            #appeals
-        .col-md-1
+        .col-md-3
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 2
+            #trial
+                table.table.table-bordered#round1
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
+        .col-md-3
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 3
+            #trial
+                table.table.table-bordered#round2
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
+        .col-md-3
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 4
+            #trial
+                table.table.table-bordered#round3
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
+        .col-md-3
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 5
+            #trial
+                table.table.table-bordered#round4
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
+        .col-md-3
+    .row
+        .col-md-3
+        .col-md-6
+            button.btn.btn-default.form-control Round 6
+            #trial
+                table.table.table-bordered#round5
+                    tr.active
+                        td Prosecution
+                        td Defense
+                        td Presiding Judge
+                        td Scorer
+                        td Room
+        .col-md-3
     script(src="../../scripts/matching-algo_trial.js")
     script(src="../../scripts/roundAssignments.js")

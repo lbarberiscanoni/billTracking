@@ -58,6 +58,7 @@ $(document).ready(function() {
                                     conScoreAfter: newScore_defense,
                                     status: "done",
                                 });
+                                window.location.reload();
                             });
                         };
                         if (totalScore_prosecution > totalScore_defense) {
@@ -72,7 +73,7 @@ $(document).ready(function() {
                     });
                 });
             } else {
-                alert("no rounds available");
+                console.log("no rounds available");
             };
         });
     });
