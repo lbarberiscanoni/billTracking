@@ -1,10 +1,28 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="stylesheets/home.css")
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script("https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    h1.text-center Support
-
+    h1.text-center Welcome to SC YIG App's Support Page
+    .container
+        .row
+            h2.text-center#emailCount
+            h2.text-center Don't get left behind!
+        .row
+            .col-md-3
+            .col-md-6
+                label Email Sign Up
+                input(type="text", placeholder="Enter your email address").form-control#emailAddress
+            .col-md-3
+        br
+        .row
+            .col-md-4
+            .col-md-4
+                button.btn.btn-success.form-control#submit Get the Mobile App
+            .col-md-4
+        .row
+            #responseMessage
+    script(src="scripts/support.js")

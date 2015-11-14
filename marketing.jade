@@ -1,9 +1,42 @@
 doctype html
 head
     title Bill Tracker
-    link(rel="stylesheet", href="stylesheets/home.css")
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script("https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
-    h1.text-center Marketing
+    h1.text-center Welcome to the Youth in Government Bill Tracking app
+    p.text-center a Lorenzo Barberis Canonico and Jesus Castaneda production
+    .container
+        .row
+            h2.text-center Purpose
+            .row
+                .col-md-3
+                .col-md-6
+                    p.text-center This app enables conference directors, resource staffers, clerks, delegates and attorneys to keep track of all the information for the the Youth in Government conference.
+                .col-md-3
+        .row 
+            h2.text-center Tutorial
+            .row
+                .col-md-4
+                .col-md-4
+                    video(src="assets/billTrackingAppDemo.mp4")
+                .col-md-4
+        .row
+            h2.text-center Technology used
+            .row
+                .col-md-4
+                .col-md-4
+                    .col-md-6
+                        ul
+                            li JavaScript and jQuery
+                            li Sass & Bootstrap
+                    .col-md-6
+                        ul
+                            li Jade
+                            li Swift
+                            li Firebase
+                .col-md-4
+
+
