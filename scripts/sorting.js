@@ -51,7 +51,8 @@ $(document).ready(function() {
                 $("select:last").addClass("committee btn btn-default");
                 $("select.committee").append("<option>" + "Select a Committee" + "</option>");
 
-                committeList = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation"];
+                truthValue = 0 + (division == "Upper");
+                committeList = [["A", "B", "C", "D", "E", "F"],["PA", "PB", "PC", "PD", "PE", "PF", "PG"]][truthValue];
                 for (var i = 0; i < committeList.length; i++) {
                     $("select.committee").append("<option>" + committeList[i] + "</option>");
                 };

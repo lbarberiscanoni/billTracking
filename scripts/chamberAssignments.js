@@ -37,7 +37,7 @@ $(document).ready(function() {
                 $("<select class='form-control' id='chamber'>" + "</select>").insertAfter(this);
                 $("select.form-control:last").append("<option>" + "Assign to Chamber" + "</option>");
 
-                chamberList = ["Criminal Justice", "Education", "Environmental", "General Issues", "Healthcare and Human Services", "Transportation", "Premier House", "Premier Senate", "House", "Senate"];
+                chamberList = ["A", "B", "C", "D", "E", "F", "PA", "PB", "PC", "PD", "PE", "PF", "PG", "Premier House", "Premier Senate", "House", "Senate"];
                 for (var i = 0; i < chamberList.length; i++) {
                     $("select.form-control:last").append("<option>" + chamberList[i] + "</option>");
                 };

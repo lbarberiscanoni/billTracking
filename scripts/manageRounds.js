@@ -1,4 +1,5 @@
 var listOfRounds = new Firebase("https://yig-bill-tracker.firebaseio.com/roundsInfo");
+var listOfAttorneyTeams = new Firebase("https://yig-bill-tracker.firebaseio.com/attorneyData");
 
 $(document).ready(function() {
     $("#roundNumber").change(function() {
@@ -48,17 +49,49 @@ $(document).ready(function() {
                         var showOutcome = function(winner) {
                             $("<h3 class='text-center'>Check the scores one last time</h3><h4 class='text-center'>Prosecution [" + totalScore_prosecution + "] vs Defense [" + totalScore_defense + "]</h4>" + "<blockquote class='text-center'>" + winner + "won the round</blockquote><div><div class='col-md-3'></div><button class='btn btn-primary col-md-6' id='submitScores'>Submit Scores</button><div class='col-md-3'></div></div>").insertAfter("#calcScores");
                             $("#submitScores").click(function() {
-                                var oldScore_prosecution = round.proScoreBefore;
-                                var newScore_prosecution = oldScore_prosecution + totalScore_prosecution;
-                                var oldScore_defense = round.conScoreBefore;
-                                var newScore_defense = oldScore_defense + totalScore_defense;
+                                var updateTeamScoresAndRoundInfo = function(callback) {
+                                    var oldScore_prosecution = round.proScoreBefore;
+                                    var proSidePostRound = round.pro;
+                                    var newScore_prosecution = oldScore_prosecution + totalScore_prosecution;
+                                    var oldScore_defense = round.conScoreBefore;
+                                    var conSidePostRound = round.con;
+                                    var newScore_defense = oldScore_defense + totalScore_defense;
 
-                                listOfRounds.child(roundID).update({
-                                    proScoreAfter: newScore_prosecution,
-                                    conScoreAfter: newScore_defense,
-                                    status: "done",
-                                });
-                                window.location.reload();
+                                    listOfRounds.child(roundID).update({
+                                        proScoreAfter: newScore_prosecution,
+                                        conScoreAfter: newScore_defense,
+                                        status: "done",
+                                    });
+
+                                    console.log(proSidePostRound);
+                                    console.log(conSidePostRound);
+                                    listOfAttorneyTeams.once("value", function(snapshot) {
+                                        var numberOfTeamsToLoopThrough = snapshot.numChildren();
+                                        var numberOfAttorneyTeamsLoopedThrough = 0;
+                                        listOfAttorneyTeams.on("child_added", function(snapshot) {
+                                            var teamBeingLoopedOver = snapshot.val();
+                                            var teamBeingLoopedOverID = snapshot.key();
+                                            if (teamBeingLoopedOver.teamCode == proSidePostRound) {
+                                                console.log("found pro team");
+                                                listOfAttorneyTeams.child(teamBeingLoopedOverID).update({
+                                                    "eloScore": newScore_prosecution,
+                                                });
+                                            } else if (teamBeingLoopedOver.teamCode == conSidePostRound) {
+                                                console.log("found con team");
+                                                listOfAttorneyTeams.child(teamBeingLoopedOverID).update({
+                                                    "eloScore": newScore_defense,
+                                                });
+                                            } else {
+                                                console.log("nothing");
+                                            };
+                                            numberOfAttorneyTeamsLoopedThrough += 1;
+                                            if (numberOfAttorneyTeamsLoopedThrough = numberOfTeamsToLoopThrough) {
+                                                window.location.reload();
+                                            };
+                                        });
+                                    });
+                                };
+                                updateTeamScoresAndRoundInfo();
                             });
                         };
                         if (totalScore_prosecution > totalScore_defense) {
