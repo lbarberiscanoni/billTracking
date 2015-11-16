@@ -1,13 +1,26 @@
 doctype html
 head
     title Bill Tracker
+    link(rel="stylesheet", href="stylesheets/bootstrap/bootstrap.css")
     link(rel="stylesheet", href="stylesheets/home.css")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script("https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
     .headerWrap
         h1 Welcome to South Carolina Youth in Government
+    #loginForm
+        .row
+            .col-md-3
+            .col-md-6
+                input(type="text" placeholder="Enter Your User Password").form-control#userPassword
+            .col-md-3
+        br
+        .row
+            .col-md-4
+            .col-md-4
+                button.btn.btn-default.form-control#submit Enter Password
+            .col-md-4
     .nav
         a(href="views/director.html").btn.btn-default DIRECTOR
         a(href="views/advisor.html").btn.btn-default ADVISOR
@@ -22,3 +35,4 @@ body
             | production & 
             a(href="http://www.alyweir.com" target="blank") Aly Weir 
             | design
+    script(src="scripts/userLogin.js")

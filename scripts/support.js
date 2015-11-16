@@ -25,7 +25,7 @@ $(document).ready(function() {
                             emailList.push({
                                 "emailAddress": emailAddress,
                             });
-                            $("#responseMessage").html("<h3 class='text-center'>Congrats! Check your email for the link to download the app!");
+                            $("#responseMessage").html("<h3 class='text-center'>Congrats! Check your email TOMORROW for the link to download the app!");
                         };
                     };
                 });
