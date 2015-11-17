@@ -1,0 +1,497 @@
+HS_PS_BILLS FILE
+
+{'school': 'J.L. Mann High School', 'title': 'Motorcycle Helmet Law', 'text': '<h3>Section</h3>1: An act to make riding a motorcycle illegal without the use of a helmet. There has been a safety problem in South Carolina with motorcycle accidents. Our bill is to help the safety of a motorcyclist and save many lives. This bill will make the safety of a rider much greater than it was before. <h3>Section</h3> 2: More than 80 percent of motorcyclist crashes result in injury or death to the rider. The statistics show that helmets reduce the risk of death to a motorcyclist by 37 percent. Helmets also have been statistically shown to reduce head injury by 69 percent to the rider. The United States saved $3 billion dollars due to the helmet use in 2010 due to less deaths and crashes to clean up.  Also, if all riders would have worn helmets, the United States could have saved an addition $1.4 billion dollars in 2010. However, helmets do not reduce visibility or impair hearing. (iihs.org) <h3>Section</h3> 3: This bill will not have to have much of a fund. The only fund would be that riders would have to buy helmets at their own expense. If a rider chooses not to wear a helmet then the rider will be breaking the law and possibly face future tickets, fines, and/or jail time. <h3>Section</h3> 4: This bill will be enforced by law enforcement in South Carolina. The offense of not wearing a helmet while riding a motorcycle would be a ticket enforced by police officers. The result of not following this law could result in heavy fines and possibly prison time. The first time will result in a $500 fine. The second offense would result in another $500 fine and 30 days in prison. Any other offenses after this will result in jail time determined by a judge. <h3>Section</h3> 5: This bill will go into effect once signed by the governor at the date of June 8th, 2016.', 'number': 'PS30', 'sponsor': 'Vignesh Rajmohan and Cameron Murr', 'committee': 'PB', 'authors': 'Heath Schoen Sam Fuqua', 'originates': 'Premier Senate'}
+
+
+{'school': 'J.L. Mann High School', 'title': 'An Act to Teach High School Students About Domestic Violence', 'text': '<h3>Section</h3>1: All public schools will be required to introduce a three part domestic violence curriculum within grade ninth to twelfth year, during a health or PE class. Domestic Violence is a pattern of behavior used to establish power and control over another person through fear and intimidation, often including the threat or use of violence. Other terms for domestic violence include intimate partner violence, battering, relationship abuse, spousal abuse, or family violence. <h3>Section</h3> 2: The purpose of this bill is to educate students about domestic violence in order to reduce the domestic violence rate. Safe Harbor, a supporter of this bill, is a special program in South Carolina for victims of domestic violence, helping, sheltering, counseling, and supporting them. Currently, there is no policy for a curriculum for domestic violence, which is why it needs to be taught among the teenagers. <h3>Section</h3> 3: The curriculum for the three part domestic violence curriculum will be provided by the state department of education. The domestic violence curriculum will be taught through the health and physical education classes, when the student takes a health or physical education class. The curriculum will be taught for two weeks to prevent interruption of other gym priorities. Students should learn in the curriculum to tell an adult if domestic violence occurs, know what domestic violence is, and ways to prevent it from happening. <h3>Section</h3> 4: Domestic Violence is a continuous growing problem in the state of South Carolina, and it must be addressed to our teenagers to help decrease the percentage. South Carolina is the second state in the nation with the highest percentage of men killing women. <h3>Section</h3> 5: The domestic violence curriculum provided by the state department and the program Safe Harbor. The classes will equal three one hour units which will be taught one hour for three consecutive days. If students take this class, who are not in a PE or Health class, they will be allowed to have special privileges, with the guidelines of the students school. Although this is not a required grade to graduate, it is a required grade to pass a PE or health class. Also, learning about domestic violence is a must among teenagers, and it will help benefit their knowledge and decrease the domestic violence rate. <h3>Section</h3> 6: This bill shall go into effect August 18th, 2016 upon the passage and signature of the Youth Governor.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st', 'number': 'PS28', 'sponsor': 'Robert Shumaker and Brady Johnson', 'committee': 'PG', 'authors': 'Rachel Begley, Allie Hall, Anna McGowan', 'originates': 'Premier Senate'}
+
+
+
+{'school': 'J.L. Mann High School', 'title': 'An Act to REQUIRE ALL TRAFFIC ENFORCEMENT VEHICLES TO BE MARKED', 'text': "<h3>Section</h3>1: All traffic enforcement officers cars will be required to be marked so that any civilian will without a doubt be able to identify the officer. Any police officer assigned to traffic enforcement will be required to have a fully marked car. The side doors and the hood of the police car need to bear the agency's badge or the city seal, as well as emergency telephone numbers. This will not affect law enforcement such as detectives. <h3>Section</h3> 2: The purpose of this bill is to help with traffic flow and the continuous issue of speeding on busy roads. When civilians are able to identify a police officer on the road, they tend to slow down. This will help cut the amount of wrecks caused by speeding. <h3>Section</h3> 3: The required markings of each car will be provided by money gathered from state highway taxes. <h3>Section</h3> 4: Requiring marked cars will not only help to identify officers, but will cut down on the amount of civilians speeding. A representative of the state will follow up on their assigned city police department to confirm the upholding of the law. Reprimand for not upholding the law will be determined by the representative. <h3>Section</h3> 5: When signed into law, this bill will go into effect on January 1, 2016.", 'number': 'PS26', 'sponsor': 'Jonathan Gundana and Wilson Pate', 'committee': 'PE', 'authors': 'Seth Begley, Eric Sassi', 'originates': 'Premier Senate'}
+
+An Act to Provide Free Higher Education and Educate the Workforce
+
+
+
+
+A BILL TO BE ENTITLED
+ 
+An Act to Set an Age to Retake Drivers License Test
+ 
+BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
+ 
+Section 1: The current state restrictions for driving privileges are based upon physical ability to drive.
+ 
+Section 2: A restriction on your driver license limits when you can drive or requires that you meet specific conditions when you drive. Thus, requiring elders to retake their drivers test at 65 years of age.
+ 
+Section 3: As adult’s age they are at higher risk of getting into car accidents more often than younger kids like teenagers. If elders do not have any kind of assistance with their medical conditions then they are given a restricted license based on their age. If they’re between the ages of 60 and 65, then they’re restricted license will require them to have a legal driver in the car with them. If they are 70 or older without assistance, they aren’t allowed to drive.
+ 
+Section 4: If this bill is passed, it will allow the state to improve safety wise as well as our daily lives there will be less of a risk. It will also help economically because there will be less money that the citizens themselves will have to pay There will also be less insurance money that will need to be paid, and finally the state won’t have to pay to have the damage on the roads fixed.
+ 
+Section 5: Revenue from this tax would fund:
+	•	The making of drivers licenses in South Carolina cities.
+	•	The use of alternate ways to transport the elders that are not able to drive. For example, they would fund buses, taxis, and car rentals
+	•	Would help lower the cost of renewing a driver's license for someone over 60 years of age.
+
+Section 6: If this bill is passed, it will go into effect January 1, 2016.
+
+
+
+
+
+
+BILL ORIGINATES IN: Premier State
+BILL NUMBER: PS49
+RECOMMENDED FOR COMMITTEE: PG
+AUTHORS: Liz Funderburk and Katie Young
+BILL SPONSOR:
+SCHOOL/CLUB: Mauldin High School
+
+A BILL TO BE ENTITLTED
+
+An Act to Increase the Number of College Graduates
+
+BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA
+
+Section 1: The current GPA required for a college student to maintain the LIFE scholarship is 3.0, would be decreased to 2.5.
+
+Section 2: The lowered GPA of 2.5 would allow more students to graduate from college that would otherwise consider dropping out of college when they lose their scholarship. This will increase the amount of citizens in South Carolina getting their degree and getting higher paying jobs.
+
+Section 3: Many schools in the state of South Carolina do not properly prepare students for college. South Carolina landed 37 spots on the list of the top 100 worst schools in the Nation. When students that attend these schools that don’t properly equip them with the skills and knowledge to be successful begin college, they quickly lose the 3.0 GPA that got them the scholarship. These hardworking students are then in danger of losing the $2,500 scholarship given to them for their good grades. Without this scholarship, many students have to   out of college because they no longer have the finances to pay for college. By lowering the GPA to 2.5 we give these students a little room to make mistakes and get the feel for a college workload. More students will be able to keep the scholarship this way which will increase the number of college graduates in the state of South Carolina. This would increase the number of functioning members in society; these graduates will be paying money to the government rather than receive a check from the government every month.
+
+Section 4: The benefit from this tax would be:
+	•	The number of college dropouts would decrease.
+	•	Increase the number of people receiving college degrees and working higher paying jobs.
+	•	Fewer people working minimum wage jobs and receiving welfare.
+
+Section 5: When signed into law, the GPA requirement will go into effect for the 2016-17 schoolyear.
+ 
+
+
+
+<h3>Section</h3>1: The number of homeless shelters will increase and the quality will improve. <h3>Section</h3> 2: An estimated 5,000 to 13,000 people are homeless in South Carolina. This  number does not include those on the verge of becoming homeless or in need of basic  necessities to sustain life. There are not enough adequate homeless shelters to provide  resources to help meet the basic needs of these people. <h3>Section</h3> 3: Each city in South Carolina with a minimum population of 14,000 is required  to open and establish a minimum of 1 shelter in the next 5 years. These shelters will  be established within a 10 mile radius of the citys central downtown area to ensure  accessibility. The bill will be funded with the assistance of McKinney-Vento Homeless  Assistance Grants, along with grants from The Substance Abuse and Mental Health  Services Administration of the U.S. Department of Health and Human Services and  financial aid from United Way of America. Services that will be provided include:   Overnight shelter in a safe environment   Nutritious meals   Public showers and toiletries   Access to beneficial resources such as rehab programs, government assistance/welfare programs, job training and job placement assistance, and access to transitional housing opportunities <h3>Section</h3> 4:  After the enactment of this bill, the chronic homeless population will  decrease due to the accessibility of newer shelters and the living condition of those in  need of these services will be improved. <h3>Section</h3> 5: When signed into law, the planning and development of new shelters will  begin January 1, 2016.    BILLS ORIGNATES IN: Premier Senate BILL NUMBER: PS52 RECOMMENDED FOR COMMITTE: PC AUTHORS: James Waters and Aditya Pradhan BILL SPONSOR: Connor Westmoreland SCHOOL/CLUB: Mauldin High School        A BILL TO BE ENTITLED  An Act to Support Worker Benefits  BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA <h3>Section</h3> 1: Currently there is no tax deduction for businesses who offer worker benefits, which compensations are given to workers which they dont have to pay for. A 5% tax reduction is needed to help benefit these businesses. <h3>Section</h3> 2: Workers require insurance and medical care on a daily basis <h3>Section</h3> 3: A tax deduction on businesses will help them spend more money including improving the benefits and encouraging other businesses to give worker benefits <h3>Section</h3> 4: This tax would benefit:   Businesses who have worker benefits   Workers themselves   Medical companies and clinics who provide healthcare for the businesses <h3>Section</h3> 5: When signed into law, the first reduction will take place on January 1, 2016.
+
+
+
+An Act to Increase the Number of Homeless Shelters
+
+An Act to Require Job Training for Welfare Recipients
+
+**************************************************
+school:		Mauldin High School
+**************************************************
+
+**************************************************
+title:		An Act to reduce the cost of immigration documentation  BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE  OF SOUTH CAROLINA  Section 1:  The current immigration documentation costs approximately $2,000 per person this would be lowered to $1,000 per person.                           Section  2: The average income of a unauthorized immigrant is $36,000 per year  person with a household of two working parents and three children the annual         expenses of living would be approximately $58,627 per year allowing only             $13,373 of extra revenue a year and with documentation costs of $2,000 per person that would make the costs of documentation $10,000, which is a            unreasonable amount. Thus, by January 1, 2016 the cost of documentation           would be decreased to $1,000 per person making it a more reasonable amount         for immigrants.                                      Section 3:  This would allow the immigrants to afford U.S. citizenship thus decreasing the number of illegal immigrants.                              Section 4:  The decrease in documentation costs will allow immigrants to afford U.S citizenship and decrease the number of non taxpaying illegal immigrants.This would allow illegal immigrants that were not paying taxes because they            were unauthorized citizens to pay taxes every year thus adding the                  government funds to pay for this reduction in document costs.  Section 5: When signed into law, the first decrease will take place on January 1, 2016    SOUTH CAROLINA YMCAYOUTH IN GOVERNMENT28th Annual Model LegislatureNovember 18th- 21st  Bill originates in: Premier SenateBill number: PS71Recommended for Committee: PBAuthors : Abigail McGovern, Heddy McGrey, Katie Goad                    Bill sponsor : School/Club : Shannon Forest Christian School  A BILL TO BE ENTITLED An Act to Enable a Mentorship Program for Welfare Recipients
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: South  Carolina corporations  will be offered tax incentives to start a mentorship program for eligible welfare recipients. For a corporation to be granted permission by the state to start a mentorship program, they must sign a contract and be subjected to random state audits. If the standards are not met, corporations will be required to pay back these tax breaks and additional fines. For welfare recipients, this mentorship program will provide them with on-the-job training, teach them the importance of work ethic, and help them contribute to the economy. <h3>Section</h3> 2: South Carolina is one of eleven states to have more people living off of welfare than those currently employed. This mentorship program will enable people to rejoin the workforce, lower unemployment rates, and reduce welfare costs. <h3>Section</h3> 3: Allowing workers back into the workforce will :  A. Lower the unemployment rate. The current South Carolina unemployment rate is 6.3%. B. Lowering the number of people on welfare.C. Encourage people to get back to work. <h3>Section</h3> 4: This bill, when signed into law, will be enacted on January 1st, 2016.   SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS70
+**************************************************
+
+**************************************************
+sponsor:		Randall Hampton
+**************************************************
+
+**************************************************
+committee:		PG
+**************************************************
+
+**************************************************
+authors:		Min-Seo Song and Connor Mosser
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+
+
+
+{'school': 'Pickens County Career & Technology Center', 'title': 'An Act to Allow Sibling Rights in Blended Families', 'text': '<h3>Section</h3>1:   The current law states that siblings that share non biological parents are not allowed to see their brother or sister following a divorce. <h3>Section</h3> 2: The new law would state that children with non-biological parents would have sibling rights and would be able to see their brother or sister under the following circumstances:   The child is old enough to understand the situation   Recommended Age:  Approximately 10-12 years old   Would have to be evaluated on a case by case basis   Supervised visits would be available, but not required if the older silbing demonstrates responsibility.   Ex: In order to have unsupervised visits with a sibling, neither child can have an abusive background (drug, sexual, physical, mental, and verbal). Neither sibling can be diagnosed with a mental illness. <h3>Section</h3> 3: Siblings that are old enough to drive would be allowed to transport the child.  The child could also be transported by a friend or another family member.  DSS would coordinate the visit provided all parties were found to be responsible.  (No abuse, drug, alcohol, criminal background.  No mental illness)   If concerns were found, visits would be held under the supervision of a DSS officer at the DSS office, park, restaurant, ect., but at the request of a child (age 12 & meeting requirements) visits could be scheduled. <h3>Section</h3> 4: Currently in the state of South Carolina, there are many families affected by divorce and/or living with a blended family.  Thousands of children are placed into foster care each year.  This bill is needed because in the case of divorce, blended family siblings have no rights to see their brother/sisters when the non-biological parent will not allow it. <h3>Section</h3> 5: When signed into law, the first visitations will take place on January 1, 2016.   SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th  21st   Bill ORIGINATES IN: Premier Senate BILL NUMBER: PS73 RECCOMENDED FOR COMMITTEE: PD AUTHORS: Jonathon Monts and Jeff Woodward BILL SPONSOR: Jake Valente SCHOOL/CLUB: St. Josephs Catholic School  A BILL TO BE ENTITLED  An Act to Prohibit Mentally Unstable Citizens from Owning a Firearm.  BE IT HEREBY ENACTED BY THE MODEL LEGISLATIVE OF SOUTH CAROLINA <h3>Section</h3> 1: Firearms need to be restricted from those who cannot responsibly own and store a firearm safely. <h3>Section</h3> 2: When a person is buying or being given a firearm, that person will have to be evaluated by a psychologist or physician. People that are not mentally stable will not be able to own a firearm. If a person is living with someone who is not allowed to own a firearm due to mental instability, that person will not be able to store a firearm on the property. However, that person can store the firearm at another location. If a mentally unstable person is inheriting or being given a firearm, that firearm will have to go to another family member. <h3>Section</h3> 3: This act will cut down the likelihood of any accidents happening where the mentally unstable person accidentally or intentionally shoots someone else or himself/herself. <h3>Section</h3> 4: This will be put into effect on January 1, 2016. People who own firearms prior to January 1, 2016 will not have to go through a mental exam. If someone is classified as mentally unstable after that date, then he/she will have to transfer all firearms to someone who is mentally stable. If someone is classified as mentally unstable after January 1, 2016 and is living with someone who has a firearm that was bought before that date, then the firearm will have to be moved off property.     SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th  21st, 2015', 'number': 'PS72', 'sponsor': ' ', 'committee': 'PC', 'authors': 'Kassidy Gardner & Faith Harrison', 'originates': 'Premier'}
+
+
+
+
+
+{'school': 'Wade Hampton', 'title': 'Saving Families Act', 'text': "<h3>Section</h3>1: The United States federal government said it would like to accept more refugees in the following years. This program will outline a set of guidelines to create safe envrronments for these refugees to stay. <h3>Section</h3> 2:  In this program , citizens who agree to house a refugee, or a family of refugees will be considered a host family, and will receive $13.70 a day per adult, and $6.85 a day per child to provide the necessities needed for the refugee(s) . <h3>Section</h3> 3: In the saving families program, it will provide the necessities to refugees. Citizens of South Carolina can volunteer to house a refugee , or a family of refugees. The citizens who agree to house and provide for the refugees will receive $13.70 a day per adult, and $6.85 a day per child. That totals to $2500 for a six month period per adult, and $1250 for a six month period per child. The United States State Department is allowing 85,000 refugees in 2016 entrance into the United States, and last year 2050 refugees located to South Carolina, so based on these numbers this program helps to increase the number of refugees located in South Carolina to 3000 refugees in 2016 and future years. The employees needed to run this program will be hired and paid for by the South Carolina Department of Human Services. The money host families are given to provide for the refugees will be funded by the South Carolina lottery. To become a host family the citizen will have to go through an extensive background check, and prove they have healthy living conditions, necessary transportation , and financial stability. A host family will be provided government money for six months, and are expected to house, and care for the refugee(s) for six months, after that amount of time it is up to the family whether or not to continue care for the refugees. A prospective host family must also go through 14 hours of training, where they will learn what is expected of them, and what specific care they need to provide. <h3>Section</h3> 4: This program will promote legal immigration  to  the  United  States, and create a sense of community  in South Carolina.  This state will promote legal immigration by creating a safe and easy way for refugees to come to South Carolina, and to help them acclimate to America 's society by living with Americans. The intent of this program is to be run by the counties of South Carolina, and just to be funded by the government. <h3>Section</h3> 5: When signed into law, the saving families program will begin on January 1, 2016 SOUTH CAROLINA YMCA  YOUTH IN GOVERNMENT 26th Annual Model Legislature  November 19th-21st, 2015", 'number': 'PS78', 'sponsor': ' ', 'committee': 'PC', 'authors': 'Schultz/ Knobel', 'originates': 'Premier Senate'}
+
+
+
+
+
+
+
+**************************************************
+school:		Wade Hampton High School  POST-SUPER BOWL HOLIDAY An Act to Establish the Monday Following the Super Bowl as a Public Holiday BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA  Section 1: The public schools and workplaces of South Carolina will recognize the Monday immediately following Super Bowl Sunday as a public holiday, and therefore not having mandatory attendance.  Section 2: The NFL Super Bowl is one of the most watched televised sporting events globally. Following the Super Bowl, workplaces undergo unplanned absences from their employees, making the costs for those absences about 50% more expensive than those of planned absences. Any employees that do end up present at their workplace the Monday after the Super Bowl end up incredibly distracted from work, either because of discussing the events of the night before, or being hungover. Students that stay up late and go to school the next day will be sleep deprived, and also most likely to discuss the game. Hence, they will not be able to mentally focus on any of their subjects.  Section 3: Making the Monday following the Super Bowl into a public holiday will prevent any more costs for absences at the workplace. Research shows that out of 147.4 million American workers, 1.5 million are expected to call in sick on Super Bowl Monday , and 4.4 million could go in late. There would also be close to a loss of $170 million in productivity. These drawbacks would affect every state within North America. If the following Monday were made a public holiday, then the problem of unorganized and distracted work and school environments would be avoided, especially considering the already great loss of productivity.  Section 4: When signed into law, it will officially go into effect on the Monday following the next Super Bowl and continue to be in effect for every following post-Super Bowl Monday.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+title:		Senate BILL NUMBER: PS79 RECOMMENDED FOR COMMITTEE: PD AUTHORS:  Alex Diaz and Tommy Khuu SCHOOL/CLUB: Wade Hampton High School  POST-SUPER BOWL HOLIDAY An Act to Establish the Monday Following the Super Bowl as a Public Holiday
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: The public schools and workplaces of South Carolina will recognize the Monday immediately following Super Bowl Sunday as a public holiday, and therefore not having mandatory attendance. <h3>Section</h3> 2: The NFL Super Bowl is one of the most watched televised sporting events globally. Following the Super Bowl, workplaces undergo unplanned absences from their employees, making the costs for those absences about 50% more expensive than those of planned absences. Any employees that do end up present at their workplace the Monday after the Super Bowl end up incredibly distracted from work, either because of discussing the events of the night before, or being hungover. Students that stay up late and go to school the next day will be sleep deprived, and also most likely to discuss the game. Hence, they will not be able to mentally focus on any of their subjects. <h3>Section</h3> 3: Making the Monday following the Super Bowl into a public holiday will prevent any more costs for absences at the workplace. Research shows that out of 147.4 million American workers, 1.5 million are expected to call in sick on Super Bowl Monday , and 4.4 million could go in late. There would also be close to a loss of $170 million in productivity. These drawbacks would affect every state within North America. If the following Monday were made a public holiday, then the problem of unorganized and distracted work and school environments would be avoided, especially considering the already great loss of productivity. <h3>Section</h3> 4: When signed into law, it will officially go into effect on the Monday following the next Super Bowl and continue to be in effect for every following post-Super Bowl Monday.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS79
+**************************************************
+
+**************************************************
+sponsor:		TES IN:  Senate BILL NUMBER: PS79 RECOMMENDED FOR COMMITTEE: PD AUTHORS:  Alex Diaz and Tommy Khuu
+**************************************************
+
+**************************************************
+committee:		PD
+**************************************************
+
+**************************************************
+authors:		Alex Diaz and Tommy Khuu SCHOOL/CLUB: Wade Hampton High School  POST-SUPER BOWL HOLIDAY An Act to Establish the Monday Following the Super Bowl as a Public Holiday BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA  Section 1: The public schools and workplaces of South Carolina will recognize the Monday immediately following Super Bowl Sunday as a public holiday, and therefore not having mandatory attendance.  Section 2: The NFL Super Bowl is one of the most watched televised sporting events globally. Following the Super Bowl, workplaces undergo unplanned absences from their employees, making the costs for those absences about 50% more expensive than those of planned absences. Any employees that do end up present at their workplace the Monday after the Super Bowl end up incredibly distracted from work, either because of discussing the events of the night before, or being hungover. Students that stay up late and go to school the next day will be sleep deprived, and also most likely to discuss the game. Hence, they will not be able to mentally focus on any of their subjects.  Section 3: Making the Monday following the Super Bowl into a public holiday will prevent any more costs for absences at the workplace. Research shows that out of 147.4 million American workers, 1.5 million are expected to call in sick on Super Bowl Monday , and 4.4 million could go in late. There would also be close to a loss of $170 million in productivity. These drawbacks would affect every state within North America. If the following Monday were made a public holiday, then the problem of unorganized and distracted work and school environments would be avoided, especially considering the already great loss of productivity.  Section 4: When signed into law, it will officially go into effect on the Monday following the next Super Bowl and continue to be in effect for every following post-Super Bowl Monday.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+originates:		Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		Wade Hampton High School  Jobs for Veterans  An act to guarantee all veterans a job when returning from war    Section 1: Many veterans returning from war will end up jobless after fighting for our freedom.  Section 2: There is a huge need for veterans to have jobs because when they get back to the states they can't find ajob and can't support their family.  Section 3: Veterans returning from war have a hard time finding jobs. Ifa company hires a veteran they will get 5% taken off their taxes at the end of the year. For this incentive many people will want to hire veterans because it lowers the taxes that the businesses have to pay.  Section 4: A. It will keep veterans off the street. B. It will make more people want to be a marine because many are scared they won't have a job when they get back home. C. It's the right thing to do for someone who has paid for your freedom.  Section 5: When signed into a law, it is active January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+title:		Premier Senate BILL NUMBER: PS80 RECOMMENDED FOR COMMITTEE: PE AUTHORS: John Tyler Thompson and Jackson Elgin SCHOOL/CLUB: Wade Hampton High School  Jobs for Veterans  An act to guarantee all veterans a job when returning from war    Section 1: Many veterans returning from war will end up jobless after fighting for our freedom.  Section 2: There is a huge need for veterans to have jobs because when they get back to the states they can't find ajob and can't support their family.  Section 3: Veterans returning from war have a hard time finding jobs. Ifa company hires a veteran they will get 5% taken off their taxes at the end of the year. For this incentive many people will want to hire veterans because it lowers the taxes that the businesses have to pay.  Section 4: A. It will keep veterans off the street. B. It will make more people want to be a marine because many are scared they won't have a job when they get back home. C. It's the right thing to do for someone who has paid for your freedom.  Section 5: When signed into a law, it is active January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: Many veterans returning from war will end up jobless after fighting for our freedom. <h3>Section</h3> 2: There is a huge need for veterans to have jobs because when they get back to the states they can't find ajob and can't support their family. <h3>Section</h3> 3: Veterans returning from war have a hard time finding jobs. Ifa company hires a veteran they will get 5% taken off their taxes at the end of the year. For this incentive many people will want to hire veterans because it lowers the taxes that the businesses have to pay. <h3>Section</h3> 4: A. It will keep veterans off the street. B. It will make more people want to be a marine because many are scared they won't have a job when they get back home. C. It's the right thing to do for someone who has paid for your freedom. <h3>Section</h3> 5: When signed into a law, it is active January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS80
+**************************************************
+
+**************************************************
+sponsor:		TES IN: Premier Senate BILL NUMBER: PS80 RECOMMENDED FOR COMMITTEE: PE AUTHORS: John Tyler Thompson and Jackson Elgin
+**************************************************
+
+**************************************************
+committee:		PE
+**************************************************
+
+**************************************************
+authors:		John Tyler Thompson and Jackson Elgin SCHOOL/CLUB: Wade Hampton High School  Jobs for Veterans  An act to guarantee all veterans a job when returning from war    Section 1: Many veterans returning from war will end up jobless after fighting for our freedom.  Section 2: There is a huge need for veterans to have jobs because when they get back to the states they can't find ajob and can't support their family.  Section 3: Veterans returning from war have a hard time finding jobs. Ifa company hires a veteran they will get 5% taken off their taxes at the end of the year. For this incentive many people will want to hire veterans because it lowers the taxes that the businesses have to pay.  Section 4: A. It will keep veterans off the street. B. It will make more people want to be a marine because many are scared they won't have a job when they get back home. C. It's the right thing to do for someone who has paid for your freedom.  Section 5: When signed into a law, it is active January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		Southside High School
+**************************************************
+
+**************************************************
+title:		An Act to Alter Requirements for a Beginner's Permit and Driver's Licenses
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>I: South Carolinas Department of Motor Vehicles will be affected, and state roads and highways will be impacted. <h3>Section</h3> II: Out of all males between the ages of 15-20, who had been involved in fatal crashes in 2012, 37% were speeding at the time of the crash and 25% had been drinking. South Carolina is ranked as the state with the highest fatality rate on the road. In addition, fatal crashes are the leading cause of death for US teens. Clearly, many young drivers are unlawful and unqualified to drive safely. Therefore it is necessary to keep unqualified drivers off the road and keep the road safe for qualified drivers. <h3>Section</h3> III: A law shall be enacted that replaces certain 2015 requirements with new 2016 requirements for driving privileges, while still preserving all 2015 requirements not altered below.   The knowledge test, required for a Beginner Permit, will be replaced by eight hours of classroom drivers education which includes a test at the end of the course.   The requirement of eight hours of classroom time for a Conditional License or Special-Restricted License shall be eliminated, since such training should already have been completed for the Beginner Permit.   The requirement of a total of 6 hours will be increased to 10 hours of driving time with a certified driving instructor in order for a person to obtain a Conditional License or Special-Restricted License.   As of 2015, a person must wait two weeks if he/she fails the road skills test once or twice. This new act will require a person to wait 30 days after the first or second failed attempt on the road skills test.   As of 2015, a person must wait 60 days if he/she fails the road skills test after the first or second attempt. This new act will require a person to wait 180 days if the person fails after the first or second attempt.   As of 2015, a person can obtain full driving privileges if he/she has had a Conditional License for one year and has not had any traffic offenses. With this new act, a person must retake the road skills test after obtaining Conditional or Special-Restricted privileges regardless of whether the person has already had a Conditional or Special-Restricted License for a year. <h3>Section</h3> IV: Only the most qualified drivers will be allowed on South Carolina roads. The least qualified drivers will be kept off of the roads, which could reduce fatality on the road. <h3>Section</h3> V: When signed into law, no one will obtain a permit or license after 2015 without completing the new requirements listed above.   South Carolina YMCA Youth In Government 27th Annual Model Legislature November 18th-21st, 2015  BILL ORIGINATES  IN: Premier Senate BILL NUMBER: PS83 RECOMMENDED FOR COMMITTEE: PB AUTHORS: Anna Grace Gowens and Ellen Spiers BILL SPONSOR: SCHOOL/CLUB: Greenville High School  A BILL TO BE ENTITLED  An Act to Make CPR Training a High School Graduation Requirement   BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA <h3>Section</h3> 1:  There is no current law stating that CPR is a graduation requirement.  This bill will make it a requirement by the 2017 school year. <h3>Section</h3> 2:  When signed into law, this bill will add CPR training to the list of graduation requirements in South Carolina. <h3>Section</h3> 3: CPR- Cardiopulmonary Resuscitation- is an emergency procedure in which circulation of oxygen and blood are restored.  In a cardiac emergency, immediate CPR doubles and sometimes triples a victims chance of survival. <h3>Section</h3> 4:  The effect of this bill would be to save lives, and to prepare and educate students on medical emergencies. <h3>Section</h3> 5:  When signed into law, this bill will go into effect in the 2017 school year.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS82
+**************************************************
+
+**************************************************
+sponsor:		
+**************************************************
+
+**************************************************
+committee:		PG
+**************************************************
+
+**************************************************
+authors:		Vishal Jindal, Rita Ni, and Sarah Sultan SCHOOL/CLUB: Southside High School  A BILL TO BE ENTITLED  An Act to Alter Requirements for a Beginner's Permit and Driver's Licenses  BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA  Section I: South Carolinas Department of Motor Vehicles will be affected, and state roads and highways will be impacted.  Section II: Out of all males between the ages of 15-20, who had been involved in fatal crashes in 2012, 37% were speeding at the time of the crash and 25% had been drinking. South Carolina is ranked as the state with the highest fatality rate on the road. In addition, fatal crashes are the leading cause of death for US teens. Clearly, many young drivers are unlawful and unqualified to drive safely. Therefore it is necessary to keep unqualified drivers off the road and keep the road safe for qualified drivers.  Section III: A law shall be enacted that replaces certain 2015 requirements with new 2016 requirements for driving privileges, while still preserving all 2015 requirements not altered below.   The knowledge test, required for a Beginner Permit, will be replaced by eight hours of classroom drivers education which includes a test at the end of the course.   The requirement of eight hours of classroom time for a Conditional License or Special-Restricted License shall be eliminated, since such training should already have been completed for the Beginner Permit.   The requirement of a total of 6 hours will be increased to 10 hours of driving time with a certified driving instructor in order for a person to obtain a Conditional License or Special-Restricted License.   As of 2015, a person must wait two weeks if he/she fails the road skills test once or twice. This new act will require a person to wait 30 days after the first or second failed attempt on the road skills test.   As of 2015, a person must wait 60 days if he/she fails the road skills test after the first or second attempt. This new act will require a person to wait 180 days if the person fails after the first or second attempt.   As of 2015, a person can obtain full driving privileges if he/she has had a Conditional License for one year and has not had any traffic offenses. With this new act, a person must retake the road skills test after obtaining Conditional or Special-Restricted privileges regardless of whether the person has already had a Conditional or Special-Restricted License for a year.  Section IV: Only the most qualified drivers will be allowed on South Carolina roads. The least qualified drivers will be kept off of the roads, which could reduce fatality on the road.  Section V: When signed into law, no one will obtain a permit or license after 2015 without completing the new requirements listed above.   South Carolina YMCA Youth In Government 27th Annual Model Legislature November 18th-21st, 2015  BILL ORIGINATES  IN: Premier Senate BILL NUMBER: PS83 RECOMMENDED FOR COMMITTEE: PB AUTHORS: Anna Grace Gowens and Ellen Spiers
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		NEXT High School
+**************************************************
+
+**************************************************
+title:		An Act to Provide Funding for Bike Lanes
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1:  Bike lanes would drastically decrease the amounts of deaths in america. <h3>Section</h3> 2: In 2013 over 4,735 deaths were caused due to pedestrian/motor crashes and 48,000 injuries, that was around 12 deaths per day. <h3>Section</h3> 3: The cost of bicycle injury and death is around $4 billion per year. <h3>Section</h3> 4: One mile of protected bike lane is 100 times cheaper than one mile of roadway, it costs around $445,000 per mile of protected bike lane, and $571 million per mile of roadway. <h3>Section</h3> 5: By making 8,988 miles of protected bike lane per year it would be around the same price as the $4 billion sunk into bike and pedestrian/motor crash deaths and injuries per year. <h3>Section</h3> 6: There are no protected bike lanes here in South Carolina. <h3>Section</h3> 7: In the US there are about 8,656,070 miles of road, in South Carolina there is about 41,000 miles of road. <h3>Section</h3> 8: If we create 41,000 miles of protected bike lane it would cost around $18,245,000,000 with a South Carolina population of around 4,832,482, if every month the taxpayers put in an extra $10 it would take around 30 years to finish all the protected bike lanes, and make South Carolina a better place. <h3>Section</h3> 9: When signed into law, the construction of bike lanes and taxes will begin after January 1, 2016. SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS94
+**************************************************
+
+**************************************************
+sponsor:		None
+**************************************************
+
+**************************************************
+committee:		PC
+**************************************************
+
+**************************************************
+authors:		Nashon Henry, Sully Amick
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		NEXT High School
+**************************************************
+
+**************************************************
+title:		An Act to Improve Domestic Violence Shelters
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: If domestic violence shelters dont have programs to help victims become independent, they will be given 90 days to improve. <h3>Section</h3> 2: Funds will be allocated to shelters in order for them to create programs to benefit the health of victims. <h3>Section</h3> 3: Domestic violence shelters that dont improve within their time limit will be warned, and must improve and meet South Carolina standards for shelters.    After the warning the executive director of the domestic violence shelter will be fined $2000.00 if the improvement is not made.    If the domestic violence shelter executive director hasnt done the improvements after the fine, he/she will be terminated and replaced. <h3>Section</h3> 4: A unimproved domestic violence shelter limits the possibility of victims becoming independent. Shelters get packed with people every day so those victims who have been there for a while need to get mentally and financially independent, so they can go out in the world and be successful. <h3>Section</h3> 5: We are asking the government to send 1 million dollars to each domestic violence shelter in South Carolina that don't have all the programs to benefit the victims in the shelter. For example (Things we need in everyday life that support us in a healthy lifestyle. ) <h3>Section</h3> 6:The funding for the money to help the domestic violence shelters will come from the cigarettes and beer beverages taxes, also programs that support domestic violence to stop will help also. <h3>Section</h3> 7: When signed into law, the first shelter inspections will begin after January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS96
+**************************************************
+
+**************************************************
+sponsor:		 
+**************************************************
+
+**************************************************
+committee:		PE
+**************************************************
+
+**************************************************
+authors:		Jarquayla Robinson, Caroline Bridwell
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+**************************************************
+school:		A.C. Flora High School
+**************************************************
+
+**************************************************
+title:		An Act to require motorcyclists to wear helmets
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: South Carolina requires motorcycle drivers and/or passengers who are under the age of 21 to wear helmets, we plan to require everyone regardless of their age to wear helmets. <h3>Section</h3> 2:  This bill will be treated the same as South Carolinas seatbelt laws meaning that drivers will be ticketed for passengers not wearing a helmet ages 14 and younger. Passengers not wearing a helmet age 15 and older will be ticketed directly. <h3>Section</h3> 3:  The first three offenses will be written a ticket of $25, $50, and $100. Once you have reached your third offense each ticket will be $75 each. <h3>Section</h3> 4:  When signed into law, the first enforcement of this bill will take place on January 1, 2016.  SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS102
+**************************************************
+
+**************************************************
+sponsor:		Gressette/Latham (Premier House)
+**************************************************
+
+**************************************************
+committee:		PF
+**************************************************
+
+**************************************************
+authors:		Kiera Jefferson & Lilly Aiken
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		Cougar New Tech Colleton County High School
+**************************************************
+
+**************************************************
+title:		Allowing Cellular Devices  An Act to Provide Better Cell Service in Schools
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1:  Currently, the majority of schools in South Carolina do not allow students to use cellular devices in class. We will be enacting a law to permit the use of mobile devices in schools during certain time periods. <h3>Section</h3> 2:  We will be lifting the ban of phones in school and eliminate the blockage of service during independent and group work to help students. <h3>Section</h3> 3:  Though some may argue this will decrease student interaction and engagement in class, it will actually increase student involvement and push them to work more. It will reduce the amount of students being written up and kicked out of class for using their mobile devices, which provides them more time in class. <h3>Section</h3> 4:  Lifting the ban and allowing service will:    Assist students with contacting parents in case of an emergency and access information on their devices.   Allow students and faculty to use learning tools that involve mobile devices.   Reduce the amount of mobile devices being taken and students receiving referrals for using them.   Provide students with a set time in each class period (independent work, group work, and the any time not used for assessments or instruction) to use their phones and allow them immunity from referrals relating to device usage during that time. <h3>Section</h3> 5: When signed into law, the bill will begin enforcement the 2016-2017 school year. SOUTH CAROLINA YMCA YOUTH IN GOVERNMENT 28th Annual Model Legislature November 18th- 21st
+**************************************************
+
+**************************************************
+number:		PS107
+**************************************************
+
+**************************************************
+sponsor:		 
+**************************************************
+
+**************************************************
+committee:		PF
+**************************************************
+
+**************************************************
+authors:		Kayla White, India Akins, Caprina Smith, Karrington Blakeney
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		Wade Hampton High School   ABILLTOBEENTITLED  AnActtoImplementMoreBikeLanes  BEITHEREBY ENACTEDBYTHEYMCAMODELLEGISLATUREOFSOUTH CAROLINA  SectionI:BikelaneswouldbeimplementedonallpublicroadsinSouthCarolinaexcludinghighways(majorandminor)andfreewaysinordertoreducethedangerofthecyclistandthe driver. SectionII:Ifenacted,thenumberoffatalitiesandinjurieseachyearwouldbesignificantlyreduced,aswellasconveniencingdriversandcyclists.Bikelaneswouldmakethecyclistfeelsafer,andmakedriversmoreawareoftheirpresence. SectionIII:BikelaneswouldbeincorporatedontoSouthCarolinapublicroadstoensmethesafetyofseveraldifferentmethodsoftransportation.Bikelaneswouldreducepollution,promoteahealthylifestyle,andmakethepresenceofcyclistsmoreeminenttodrivers. SectionIV:Ifthisproposalisenacted,thenumberofdeathsandfatalitiescausedbybicycleaccidentswouldplummet.Globalwarmingwoulddecreaseduetolesspollutionbeingemitted,andboththedriverandcyclistwouldfeelsaferonourroads.  South Carolina YMCA Youth in Government 28thAnnual Model Legislature November 1821, 2015
+**************************************************
+
+**************************************************
+title:		remier SenateBILL NUMBER:PS111RECOMMENDED FOR COMMITTEE: PEAUTHORS: Morgan Sweatt and Madeline HeibleSCHOOL/CLUB: Wade Hampton High School   ABILLTOBEENTITLED  AnActtoImplementMoreBikeLanes  BEITHEREBY ENACTEDBYTHEYMCAMODELLEGISLATUREOFSOUTH CAROLINA  SectionI:BikelaneswouldbeimplementedonallpublicroadsinSouthCarolinaexcludinghighways(majorandminor)andfreewaysinordertoreducethedangerofthecyclistandthe driver. SectionII:Ifenacted,thenumberoffatalitiesandinjurieseachyearwouldbesignificantlyreduced,aswellasconveniencingdriversandcyclists.Bikelaneswouldmakethecyclistfeelsafer,andmakedriversmoreawareoftheirpresence. SectionIII:BikelaneswouldbeincorporatedontoSouthCarolinapublicroadstoensmethesafetyofseveraldifferentmethodsoftransportation.Bikelaneswouldreducepollution,promoteahealthylifestyle,andmakethepresenceofcyclistsmoreeminenttodrivers. SectionIV:Ifthisproposalisenacted,thenumberofdeathsandfatalitiescausedbybicycleaccidentswouldplummet.Globalwarmingwoulddecreaseduetolesspollutionbeingemitted,andboththedriverandcyclistwouldfeelsaferonourroads.  South Carolina YMCA Youth in Government 28thAnnual Model Legislature November 1821, 2015
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>I:BikelaneswouldbeimplementedonallpublicroadsinSouthCarolinaexcludinghighways(majorandminor)andfreewaysinordertoreducethedangerofthecyclistandthe driver. <h3>Section</h3> II:Ifenacted,thenumberoffatalitiesandinjurieseachyearwouldbesignificantlyreduced,aswellasconveniencingdriversandcyclists.Bikelaneswouldmakethecyclistfeelsafer,andmakedriversmoreawareoftheirpresence. <h3>Section</h3> III:BikelaneswouldbeincorporatedontoSouthCarolinapublicroadstoensmethesafetyofseveraldifferentmethodsoftransportation.Bikelaneswouldreducepollution,promoteahealthylifestyle,andmakethepresenceofcyclistsmoreeminenttodrivers. <h3>Section</h3> IV:Ifthisproposalisenacted,thenumberofdeathsandfatalitiescausedbybicycleaccidentswouldplummet.Globalwarmingwoulddecreaseduetolesspollutionbeingemitted,andboththedriverandcyclistwouldfeelsaferonourroads.  South Carolina YMCA Youth in Government 28thAnnual Model Legislature November 1821, 2015
+**************************************************
+
+**************************************************
+number:		PS111
+**************************************************
+
+**************************************************
+sponsor:		TES IN:Premier SenateBILL NUMBER:PS111RECOMMENDED FOR COMMITTEE: PEAUTHORS: Morgan Sweatt and Madeline Heible
+**************************************************
+
+**************************************************
+committee:		PE
+**************************************************
+
+**************************************************
+authors:		Morgan Sweatt and Madeline HeibleSCHOOL/CLUB: Wade Hampton High School   ABILLTOBEENTITLED  AnActtoImplementMoreBikeLanes  BEITHEREBY ENACTEDBYTHEYMCAMODELLEGISLATUREOFSOUTH CAROLINA  SectionI:BikelaneswouldbeimplementedonallpublicroadsinSouthCarolinaexcludinghighways(majorandminor)andfreewaysinordertoreducethedangerofthecyclistandthe driver. SectionII:Ifenacted,thenumberoffatalitiesandinjurieseachyearwouldbesignificantlyreduced,aswellasconveniencingdriversandcyclists.Bikelaneswouldmakethecyclistfeelsafer,andmakedriversmoreawareoftheirpresence. SectionIII:BikelaneswouldbeincorporatedontoSouthCarolinapublicroadstoensmethesafetyofseveraldifferentmethodsoftransportation.Bikelaneswouldreducepollution,promoteahealthylifestyle,andmakethepresenceofcyclistsmoreeminenttodrivers. SectionIV:Ifthisproposalisenacted,thenumberofdeathsandfatalitiescausedbybicycleaccidentswouldplummet.Globalwarmingwoulddecreaseduetolesspollutionbeingemitted,andboththedriverandcyclistwouldfeelsaferonourroads.  South Carolina YMCA Youth in Government 28thAnnual Model Legislature November 1821, 2015
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
+
+
+
+
+
+
+
+
+
+
+**************************************************
+school:		Legacy Charter
+**************************************************
+
+**************************************************
+title:		 
+**************************************************
+
+**************************************************
+text:		<h3>Section</h3>1: The requirements to adopt from the Humane Society are only that potential owners bring a collar, leash, pet carrier, and money.  If you rent a house or apartment, you must have proof that you can have a pet. <h3>Section</h3> 2: Background checks will be required for anyone who wants to adopt from the Humane Society. If records include any criminals acts involving animals, the person will not be allow adopt. <h3>Section</h3> 3: The Humane Society will begin to run criminal background checks on potential owners after January 1, 2016.
+**************************************************
+
+**************************************************
+number:		PS117
+**************************************************
+
+**************************************************
+sponsor:		 
+**************************************************
+
+**************************************************
+committee:		PE
+**************************************************
+
+**************************************************
+authors:		Erin Russell and Serenity Dotson
+**************************************************
+
+**************************************************
+originates:		Premier Senate
+**************************************************
