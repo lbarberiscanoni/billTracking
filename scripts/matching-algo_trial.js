@@ -474,14 +474,22 @@ $("#trial table").empty();
             var currentScore_con = 0;
             var presidingJudgeForThisRound = matchedRoundsInfo[loopOfRounds].presidingJudge;
             var scoringJudgeForThisRound = matchedRoundsInfo[loopOfRounds].scoringJudge;
-            var newIndexNumber = window.indexNumber + 1;
-            window.indexNumber = newIndexNumber;
-            attorneyData.once("child_added", function(snapshot) {
+// 
+//             var newIndexNumber = window.indexNumber + 1;
+//             window.indexNumber = newIndexNumber;
+//             attorneyData.once("child_added", function(snapshot) {
+// 
+            var newIndexNumber = indexNumber + loopOfRounds;
+
+            attorneyData.on("child_added", function(snapshot) {
+// 
                 var teamBeingSearched = snapshot.val();
                 if (teamBeingSearched.teamCode == proSide) {
                     currentScore_pro = teamBeingSearched.eloScore;
+                    window.currentScore_pro = currentScore_pro;
                 } else if (teamBeingSearched.teamCode == conSide) {
                     currentScore_con = teamBeingSearched.eloScore;
+                    window.currentScore_con = currentScore_con;
                 };
             });
 
@@ -556,6 +564,7 @@ $("#trial table").empty();
             pairTeams();
         });
     };
+    //display the new rounds
     $("#getRound").click(function() {
         $("#trial table").empty();
         // console.log("wadup");
@@ -564,6 +573,7 @@ $("#trial table").empty();
         getRoundAndIndexNumbers();
     });
 
+    //amending rounds
     $("#changeRoundAssignments").click(function() {
         var statusOfChange = $(this).text();
         if (statusOfChange == "Make Changes") {

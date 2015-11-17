@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $("#committees").click(function() {
         $("#chamberSelection").empty();
-        committeesList = ["criminal-justice", "education", "environmental", "general-issues", "healthcare-and-human-services", "transportation"];
+        committeesList = ["upper_a", "upper_b", "upper_c", "upper_d", "upper_e", "upper_f", "premier_a", "premier_b", "premier_c", "premier_d", "premier_e", "premier_f", "premier_g"];
         for (var i = 0; i < committeesList.length; i++) {
             $("#chamberSelection").append("<a>" + committeesList[i] + "</a>");
             $("#chamberSelection a:last").attr("href", "chambers/committees/" + committeesList[i] + ".html").addClass("btn btn-default");
