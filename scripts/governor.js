@@ -47,8 +47,9 @@ $(document).ready(function() {
                         var jquery1 = "<script src=" + "//code.jquery.com/jquery-1.11.3.min.js" + "></script>";
                         var jquery2 = "<script src=" + "//code.jquery.com/jquery-migrate-1.2.1.min.js" + "></script>";
                         var firebase = "<script src=" + "https://cdn.firebase.com/js/client/2.2.6/firebase.js" + "></script>";
-                        var bootstrap = "<link rel=" + "stylesheet" + " , href=" + "../stylesheets/bootstrap/bootstrap.min.css" + ">";
+                        var bootstrap = "<link rel='stylesheet', href='../../stylesheets/bootstrap/bootstrap.min.css'>";
                         var bill = snapshot.val();
+                        var billText = bill.billText
                         var page = window.open();
                         page.document.write(
                             "<!DOCTYPE html><html><head>" + 
@@ -59,20 +60,7 @@ $(document).ready(function() {
                             "<h3 class=" + "text-center" + ">" + "BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA" + "</h3>" +
                             "<div class=" + "container" + ">" +
                             "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 1" + "</h4>" + 
-                            "<p>" + bill.section1 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 2" + "</h4>" + 
-                            "<p>" + bill.section2 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 3" + "</h4>" + 
-                            "<p>" + bill.section3 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 4" + "</h4>" + 
-                            "<p>" + bill.section4 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 5" + "</h4>" + 
-                            "<p>" + "When signed into law, the bill will first take place on " + bill.section5 + "</p></div>" +
+                            "<p>" + billText.replace("[n]", "<br>") + "</p></div>" +
                             "</div></div></body></html>"
                         );
                     });

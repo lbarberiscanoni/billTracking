@@ -34,53 +34,60 @@ $(document).ready(function() {
 
             $("div#toSort .billInfoTrigger:last").click(function() {
                 var billClickedNow = $(this);
+                var division = 0;
                 
                 //create an option to put a bill either in Upper or Premier
                 $("<div>" + "</div>").insertAfter(this).addClass("division");
                 $("div.division").append("<button class='btn btn-default upper'>" + "Upper" + "</button>");
+                $("<select class='committee btn btn-default'>" + "</select>").insertAfter("div.division");
+                $("select.committee").append("<option>" + "Select a Committee" + "</option>");
+
                 $(".upper").click(function(){
-                    window.division = "Upper";
+                    sortToACommittee("Upper")
                 });
                 $("div.division").append("<button class='btn btn-default premier'>" + "Premier" + "</button>");
                 $(".premier").click(function() {
-                    window.divison = "Premier";
+                    sortToACommittee("Premier")
                 });
                     
-                //create an option to sort the bill to the right committee
-                $("<select>" + "</select>").insertAfter("div.division");
-                $("select:last").addClass("committee btn btn-default");
-                $("select.committee").append("<option>" + "Select a Committee" + "</option>");
+                var sortToACommittee = function(division) {
+                    $("select.committee").remove();
+                    $("<select class='committee btn btn-default'>" + "</select>").insertAfter("div.division");
+                    $("select.committee").append("<option>" + "Select a Committee" + "</option>");
+                    $("button.submit").remove();
+                    //create an option to sort the bill to the right committee
 
-                truthValue = 0 + (division == "Upper");
-                committeList = [["A", "B", "C", "D", "E", "F"],["PA", "PB", "PC", "PD", "PE", "PF", "PG"]][truthValue];
-                for (var i = 0; i < committeList.length; i++) {
-                    $("select.committee").append("<option>" + committeList[i] + "</option>");
-                };
+                    truthValue = 0 + (division == "Upper");
+                    committeList = [["PA", "PB", "PC", "PD", "PE", "PF", "PG"],["A", "B", "C", "D", "E", "F"]][truthValue];
+                    for (var i = 0; i < committeList.length; i++) {
+                        $("select.committee").append("<option>" + committeList[i] + "</option>");
+                    };
 
 
-                $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee").addClass("btn btn-default submit");
+                    $("<button>" + "Place Bill in Committee" + "</button>").insertAfter("select.committee").addClass("btn btn-default submit");
 
-                $("button.submit").click(function() {                    
-                    var committee = $("select.committee").val()
-                    var billClicked = billClickedNow.text();
-                    sortedBills.on("child_added", function(snapshot) {
-                        var bill = snapshot.val();
-                        var thisBillID = bill.id;
+                    $("button.submit").click(function() {                    
+                        var committee = $("select.committee").val()
+                        var billClicked = billClickedNow.text();
+                        sortedBills.on("child_added", function(snapshot) {
+                            var bill = snapshot.val();
+                            var thisBillID = bill.id;
 
-                        if (billClicked == bill.billTitle) {
-                            alert("You are moving [" + billClicked + "] in [" + committee + "]" + " in the [" + division + "] division");
+                            if (billClicked == bill.billTitle) {
+                                alert("You are moving [" + billClicked + "] in [" + committee + "]" + " in the [" + division + "] division");
 
-                            sortedBills.child(thisBillID).update({
-                                "billLocation": committee,
-                                "billStatus": "on the docket",
-                                "division": division,
-                            });
-                        };
+                                sortedBills.child(thisBillID).update({
+                                    "billLocation": committee,
+                                    "billStatus": "on the docket",
+                                    "division": division,
+                                });
+                            };
+                        });
+                        $(this).siblings("button").prop("disabled", "true");
+
+                        window.location.reload();
                     });
-                    $(this).siblings("button").prop("disabled", "true");
-
-                    window.location.reload();
-                });
+                };
             });
         } else {
             numberOfBillsSorted += 1;

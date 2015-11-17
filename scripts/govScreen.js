@@ -45,23 +45,9 @@ $(document).ready(function() {
                             "</head><body>" +
                             "<div class=" + "container" + ">" + 
                             "<h1 class=" + "text-center" + ">" + bill.billTitle + "</h1>" +
-                            "<h3 class=" + "text-center" + ">" + "BE IT HEREBY ENACTED BY THE YMCA MODEL LEGISLATURE OF SOUTH CAROLINA" + "</h3>" +
                             "<div class=" + "container" + ">" +
                             "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 1" + "</h4>" + 
-                            "<p>" + bill.section1 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 2" + "</h4>" + 
-                            "<p>" + bill.section2 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 3" + "</h4>" + 
-                            "<p>" + bill.section3 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 4" + "</h4>" + 
-                            "<p>" + bill.section4 + "</p></div>" +
-                            "<div class=" + "row" + ">" +
-                            "<h4>" + "Section 5" + "</h4>" + 
-                            "<p>" + "When signed into law, the bill will first take place on " + bill.section5 + "</p></div>" +
+                            "<p>" + bill.billText + "</p></div>" +
                             "</div></div></body></html>"
                         );
                     });

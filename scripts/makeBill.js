@@ -27,6 +27,7 @@ $(document).ready(function() {
         var section3 = $("#section3").val();
         var section4 = $("#section4").val();
         var section5 = $("#section5").val();
+        var billText = "<h3>Section 1</h3>" + section1 + "<h3>Section 2</h3>" + section2 + "<h3>Section 3</h3>" + section3 + "<h3>Section 4</h3>" + section4 + "<h3>This bill will go into effect starting on " + section5 + "</h3>";
 
         alert("You are about to add [" + billTitle + "]");
         //adding data to the Firebase database
@@ -35,11 +36,7 @@ $(document).ready(function() {
             author2,
             school,
             billTitle,
-            section1,
-            section2,
-            section3,
-            section4,
-            section5,
+            billText,
             authorLocation: "not yet assigned",
             billLocation: "not yet sorted",
             billStatus: "not yet sorted",
