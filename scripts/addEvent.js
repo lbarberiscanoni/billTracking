@@ -24,19 +24,46 @@ $(document).ready(function() {
         var stringDateEnd = (new Date("2015/11/"+possibleDates[dayString]+" "+timeStringEnd).getTime()/1000).toString();
         //JESUS MOTHERFUCKERS
         //now let's push the data into a new event on the schedule
-        listOfEventsAtTheConference.push({
-            eventName: eventName,
-            division: division,
-            dayOfTheConference: eventDay,
-            startTime: eventStart,
-            endTime: eventEnd,
-            startTimestamp: stringDateStart,
-            endTimestamp: stringDateEnd,
-            locationName: eventLocation,
-            locationAddress: eventLocation,
-            description: eventDescription,
-        });
+        if (division == "both") {
+            listOfEventsAtTheConference.push({
+                eventName: eventName,
+                division: "appeals",
+                dayOfTheConference: eventDay,
+                startTime: eventStart,
+                endTime: eventEnd,
+                startTimestamp: stringDateStart,
+                endTimestamp: stringDateEnd,
+                locationName: eventLocation,
+                locationAddress: eventLocation,
+                description: eventDescription,
+            });
 
+            listOfEventsAtTheConference.push({
+                eventName: eventName,
+                division: "mock trial",
+                dayOfTheConference: eventDay,
+                startTime: eventStart,
+                endTime: eventEnd,
+                startTimestamp: stringDateStart,
+                endTimestamp: stringDateEnd,
+                locationName: eventLocation,
+                locationAddress: eventLocation,
+                description: eventDescription,
+            });
+        } else {
+            listOfEventsAtTheConference.push({
+                eventName: eventName,
+                division: division,
+                dayOfTheConference: eventDay,
+                startTime: eventStart,
+                endTime: eventEnd,
+                startTimestamp: stringDateStart,
+                endTimestamp: stringDateEnd,
+                locationName: eventLocation,
+                locationAddress: eventLocation,
+                description: eventDescription,
+            });
+        };
         alert("success");
     });
 });
