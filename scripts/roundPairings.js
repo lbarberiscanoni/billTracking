@@ -1,6 +1,5 @@
 var listOfRounds = new Firebase("https://yig-bill-tracker.firebaseio.com/roundsInfo");
 $(document).ready(function() {
-    alert("hello");
     listOfRounds.on("child_added", function(snapshot) {
         var roundInfo = snapshot.val();
         console.log(roundInfo);
