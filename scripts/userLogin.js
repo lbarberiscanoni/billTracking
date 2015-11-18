@@ -12,13 +12,13 @@ $(document).ready(function() {
                 var userLoggedInto = userInfo.user;
                 switch(userLoggedInto) {
                     case "clerk":
-                        window.location = currentURL + "/views/clerk.html";
+                        window.location = currentURL + "views/clerk.html";
                         break;
                     case "director":
                         $(".nav").show();
                         break;
                     case "advisor":
-                        window.location = currentURL + "/views/advisor.html";
+                        window.location = currentURL + "views/advisor.html";
                         break;
                     case "resource staff":
                         $(".nav").show();
@@ -29,10 +29,10 @@ $(document).ready(function() {
                         $(".nav a:nth-of-type(5)").remove();
                         break;
                     case "governor":
-                        window.location = currentURL + "/views/governor/governorDesk.html";
+                        window.location = currentURL + "views/governor/governorDesk.html";
                         break;
                     case "attorney":
-                        window.location = currentURL + "/views/judicialSystem.html";
+                        window.location = currentURL + "views/judicialSystem.html";
                         break;
                 }; 
             };
