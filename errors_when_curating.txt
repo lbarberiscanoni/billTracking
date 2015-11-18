@@ -1,0 +1,3 @@
+ASSIGN committee
+nobody for sponsor
+none for sponsor

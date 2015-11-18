@@ -11,7 +11,7 @@ $(document).ready(function() {
     var attorneysAndSchools = {};
 
 $("#trial table").empty();
-        console.log("wadup");
+        // console.log("wadup");
         $("#trial table").append("<tr class='active'><td>Round ID</td><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
    var indexForAsync = 0;
@@ -23,18 +23,19 @@ $("#trial table").empty();
                     rounds = dataR['responseJSON'];
                     roundKeys = Object.keys(rounds);
                     for (var j = 0; j < roundKeys.length; j++) {
+                        // console.log(rounds.roundNumber);
                         round = rounds[roundKeys[j]];
                         prosecution = round.pro;
                         defense = round.con;
                         presider = round.presidingJudge;
                         scorer = round.scoringJudge;
-                        roundNumber = round.roundNumber
+                        roundNumber = round.roundNumber;
                         roundNumber = "round" + roundNumber.toString();
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table#" + roundNumber).append("<tr class='success amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='success amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td><td>"+(j+1).toString()+"</td></tr>");
                             } else {
-                                $("#trial table#" + roundNumber).append("<tr class='amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='amendable'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td><td>"+(j+1).toString()+"</td></tr>");
                             };
                             ROUND_IN_TABLE.push(parseInt(round.indexNumber));
                         } // end of checkinf if the item is in the table
@@ -211,8 +212,11 @@ $("#trial table").empty();
                 break;
             }
             // In case there are more than one team, I obtain a match.
+            // console.log(teams.length);
             match = obtainMatch(roundNumber, judgesWhoPreside, judgesWhoScore, teamsToSendToTheAlgorithm);
             if (match == false) {
+                console.log("no maaaatch was possible");
+                console.log(teams);
                 if (teams.length != 0) {
                     return matches;
                     // return false;
@@ -293,7 +297,9 @@ $("#trial table").empty();
 
                             for (var i = 0; i < roundsIds.length - 1; i++) {
                                 if (roundsRaw[i]['index'] > roundsRaw[i + 1]['index']) {
-                                    temporaryHolder = roundsRaw[roundsIds[i]].index;
+                                    // console.log("cannot read index of undefined for: ");
+                                    // console.log(data[roundsIds[i]]);
+                                    temporaryHolder = roundsRaw[i].index;
                                     roundsRaw[i]['index'] = roundsRaw[i + 1]['index'];
                                     roundsRaw[i + 1]['index'] = temporaryHolder;
                                     needsSorting = true;
@@ -434,6 +440,7 @@ $("#trial table").empty();
                 matched[team2Status] = team2;
                 return matched;
             } else {
+                // console.log("a match was not possible");
                 return false;
             }
         } // End of obtain match
@@ -453,23 +460,29 @@ $("#trial table").empty();
 
 
     var pairTeams = function() {
-        var newRoundNumber = roundNumber;
+        var newRoundNumber = window.roundNumber;
         // run the function to make the pairings
         var matchedRoundsInfo = obtainRound(roundNumber, judgesWhoPresideFB.slice(), judgesWhoScoreFB.slice());
-        console.log(matchedRoundsInfo);
+        // console.log(matchedRoundsInfo);
         for (loopOfRounds = 0; loopOfRounds < matchedRoundsInfo.length; loopOfRounds++) {
-            console.log(roundNumber);
-            console.log(indexNumber);
-            console.log(matchedRoundsInfo[loopOfRounds]);
+            console.log(window.roundNumber);
+            console.log(window.indexNumber);
+            // console.log(matchedRoundsInfo[loopOfRounds]);
             var proSide = matchedRoundsInfo[loopOfRounds].pro;
             var currentScore_pro = 0;
             var conSide = matchedRoundsInfo[loopOfRounds].con;
             var currentScore_con = 0;
             var presidingJudgeForThisRound = matchedRoundsInfo[loopOfRounds].presidingJudge;
             var scoringJudgeForThisRound = matchedRoundsInfo[loopOfRounds].scoringJudge;
+// 
+//             var newIndexNumber = window.indexNumber + 1;
+//             window.indexNumber = newIndexNumber;
+//             attorneyData.once("child_added", function(snapshot) {
+// 
             var newIndexNumber = indexNumber + loopOfRounds;
 
             attorneyData.on("child_added", function(snapshot) {
+// 
                 var teamBeingSearched = snapshot.val();
                 if (teamBeingSearched.teamCode == proSide) {
                     currentScore_pro = teamBeingSearched.eloScore;
@@ -498,7 +511,7 @@ $("#trial table").empty();
             };
             pushRoundInfo();
         };
-
+        window.roundNumber += 1;
 
         var indexForAsync = 0;
         $.ajax({
@@ -518,9 +531,9 @@ $("#trial table").empty();
                         roundNumber = "round" + roundNumber.toString();
                         if (ROUND_IN_TABLE.indexOf(parseInt(round.indexNumber)) == -1) {
                             if (round.status == "done") {
-                                $("#trial table#" + roundNumber).append("<tr class='success'><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr class='success'><td>sdss11" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>sdsdsdsd" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td><td>"+j.toString()+"</td></tr>");
                             } else {
-                                $("#trial table#" + roundNumber).append("<tr><td>" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>" + presider + "</td><td>" + scorer + "</td></tr>");
+                                $("#trial table#" + roundNumber).append("<tr><td>1212" + roundKeys[j] + "</td><td>" + prosecution + "</td><td>" + defense + "</td><td>sdsdsdsdsd" + presider + "</td><td>" + scorer + "</td><td>"+j.toString()+"</td></tr>");
                             };
                             ROUND_IN_TABLE.push(parseInt(round.indexNumber));
                         } // end of checkinf if the item is in the table
@@ -533,8 +546,10 @@ $("#trial table").empty();
     }; // end of function pairTeams();
 
     // find the round and index number
+    window.roundNumber = -1;
     var getRoundAndIndexNumbers = function() {
-        listOfRounds.limitToLast(1).once("child_added", function(snapshot) {
+        console.log("getRoundAndIndexNumbers");
+        listOfRounds.orderByChild("index").limitToLast(1).once("child_added", function(snapshot) {
             var lastRound = snapshot.val();
             console.log(parseInt(lastRound.roundNumber));
             var roundNumber = parseInt(lastRound.roundNumber);
@@ -544,15 +559,15 @@ $("#trial table").empty();
             window.roundNumber = roundNumber + 1;
             var indexNumber = lastRound.index + 1;
             window.indexNumber = indexNumber;
-            console.log(indexNumber);
-            console.log(roundNumber);
+            // console.log(indexNumber);
+            // console.log(roundNumber);
             pairTeams();
         });
     };
     //display the new rounds
     $("#getRound").click(function() {
         $("#trial table").empty();
-        console.log("wadup");
+        // console.log("wadup");
         $("#trial table").append("<tr class='active'><td>Round ID</td><td>Prosecution</td><td>Defense</td><td>Presiding Judge</td><td>Scorer</td><td>Room</td></tr>");
 
         getRoundAndIndexNumbers();
@@ -580,14 +595,15 @@ $("#trial table").empty();
                 };
             };
 
+
             //create arrays of 5 to essentially make an object for every round
             var fuckList2 = [];
             var fuLoopsToDo = fuckList.length / 5;
             for (fu2 = 0; fu2 < fuLoopsToDo; fu2++) {
                 var lolFuck = [fuckList[0], fuckList[1], fuckList[2], fuckList[3], fuckList[4]]
                 fuckList2.push(lolFuck);
-                console.log(fuckList2);
-                console.log(fu2);
+                // console.log(fuckList2);
+                // console.log(fu2);
                 fuckList.splice(5);
             };
             
@@ -603,7 +619,7 @@ $("#trial table").empty();
             };
             window.location.reload();
         } else {
-            console.log("error in the status of change");
+            // console.log("error in the status of change");
         };
     });
 });
