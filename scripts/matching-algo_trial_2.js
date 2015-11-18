@@ -615,13 +615,31 @@ $("#trial table").empty();
                 for (f = 0; f < specRound.childElementCount; f++) {
                     if (f == 5) {
                         var aba = specRound.childNodes[f];
-                        var roomCodeForThisRound = aba.value;
+                        var abc = aba.firstChild;
+                        roomCodeForThisRound = abc.value;
                         specRoundInfo.push(roomCodeForThisRound);
                     } else {
                         specRoundInfo.push(specRound.childNodes[f].textContent);
                     };
                 };
                 console.log(specRoundInfo);
+                
+                //let's update each round
+                var specRoundID = specRoundInfo[0];
+                var specRound_proTeam = specRoundInfo[1];
+                var specRound_conTeam = specRoundInfo[2];
+                var specRound_judge = specRoundInfo[3];
+                var specRound_scorer = specRoundInfo[4];
+                var specRound_roomCode = specRoundInfo[5];
+
+                listOfRounds.child(specRoundID).update({
+                    con: specRound_conTeam,
+                    pro: specRound_proTeam,
+                    roomCode: specRound_roomCode,
+                    scoringJudge: specRound_scorer,
+                    presidingJudge: specRound_judge,
+                });
+                window.location.reload();
             };
         } else {
             // console.log("error in the status of change");

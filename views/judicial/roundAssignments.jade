@@ -16,12 +16,16 @@ head
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
 body
     h1.text-center Attorney Round Assignments
-        a(href="../judicialSystem.html").btn.btn-default BACK
-        a(href="manageRounds.html").btn.btn-default Manage Rounds
-        a(href="manualRoundInput.html").btn.btn-default Manually Input Rounds
-        button.btn.btn-primary#changeRoundAssignments Make Changes
-        button.btn.btn-primary#startOver Start Over
-        button.btn.btn-default#getRound Get Round
+    .row
+        .col-md-3
+        .col-md-6
+            a(href="../judicialSystem.html").btn.btn-default BACK
+            a(href="manageRounds.html").btn.btn-default Manage Rounds
+            a(href="manualRoundInput.html").btn.btn-default Manually Input Rounds
+            button.btn.btn-primary#changeRoundAssignments Make Changes
+            button.btn.btn-primary#startOver Start Over
+            button.btn.btn-default#getRound Get Round
+        .col-md-3
     .row
         h2.text-center Trial Rounds
     .row
