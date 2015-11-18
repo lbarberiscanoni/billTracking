@@ -22,21 +22,6 @@ body
         .col-md-1
         .col-md-10
             .col-md-4
-                h2.text-center Add an Attorney
-                form#attorney
-                    .form-group
-                        label First Name
-                        input(type="text" placeholder="enter the attorney's first name")#firstName.form-control
-                    .form-group
-                        label Last Name
-                        input(type="text" placeholder="enter the attorney's last name")#lastName.form-control
-                    .form-group
-                        label Team Code
-                        select#teamCode.form-control
-                            option Assign the Attorney to a Team
-                    .form-group
-                        button#addAttorney.btn.btn-success.form-control Submit
-            .col-md-4
                 h2.text-center Add a Judge
                 form#judge
                     .form-group
@@ -71,6 +56,21 @@ body
                             option Select a School
                     .form-group
                         button#addTeam.btn.btn-success.form-control Submit
+            .col-md-4
+                h2.text-center Add an Attorney
+                form#attorney
+                    .form-group
+                        label First Name
+                        input(type="text" placeholder="enter the attorney's first name")#firstName.form-control
+                    .form-group
+                        label Last Name
+                        input(type="text" placeholder="enter the attorney's last name")#lastName.form-control
+                    .form-group
+                        label Team Code
+                        select#teamCode.form-control
+                            option Assign the Attorney to a Team
+                    .form-group
+                        button#addAttorney.btn.btn-success.form-control Submit
         .col-md-1
     .row
         .col-md-4
