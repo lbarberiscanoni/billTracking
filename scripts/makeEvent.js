@@ -1,9 +1,16 @@
+var listOfLocations = new Firebase("https://yig-bill-tracker.firebaseio.com/annotations");
 var listOfEventsAtTheConference = new Firebase("https://yig-bill-tracker.firebaseio.com/conferenceSchedule");
 
 $(document).ready(function() {
     //first let's add the time to the form
     $("#timepicker1").timepicker();
     $("#timepicker2").timepicker();
+
+    //adding locations
+    listOfLocations.on("child_added", function(snapshot) {
+        var locationInDB = snapshot.val();
+        $("#location").append("<option>" + locationInDB.title + "</option>");
+    });
 
     $("#submit").click(function() {
         //let's get the info for the new event
@@ -12,7 +19,7 @@ $(document).ready(function() {
         var eventStart = $("#timepicker1").val();
         var eventEnd = $("#timepicker2").val();
         var eventLocation = $("#location").val();
-        var eventAddress = $("#address").val();
+        var eventAddress = "check map";
         var eventDescription = $("#eventDescription").val();
         var eventAttire = $("#attire").val();
         //JESUS WAS HERE

@@ -42,11 +42,7 @@ body
                     label Location
                     select#location.form-control
                         option Select a Location
-                        option location A
-                        option location B
-                .form-group
-                    label Address
-                    input(type="text" placeholder="Address of the Event")#address.form-control
+                        option Other
                 .form-group
                     label Event Description
                     textarea(placeholder="Short Description of the Event" rows="10")#eventDescription.form-control
@@ -54,8 +50,9 @@ body
                     label Attire
                     select#attire.form-control
                         option Select Attire
+                        option Business Attire
+                        option Casual
                         option Formal
-                        option Informal
                 .form-group
                     button.btn.btn-primary.form-control#submit Add Event to Schedule
         .col-md-4

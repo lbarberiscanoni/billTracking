@@ -24,51 +24,42 @@ $(document).ready(function() {
             for (i = 0; i < allEvents.length; i++) {
                 var thisEventClasses = allEvents[i].className;
                 var thisEventID = thisEventClasses.split(" ")[1]
-                var contentsOfThisRow = $("tr.amendable." + thisEventID)[0].innerText;
-                console.log(contentsOfThisRow.length);
-                var sho = [];
-                for (at = 0; at < contentsOfThisRow.length; at++) {
-                    sho.push(contentsOfThisRow[at]);
+                console.log($("tr.amendable." + thisEventID));
+                var contentsOfThisRow = $("tr.amendable." + thisEventID)[0];
+                var newEventInfo = [];
+                for (at = 0; at < contentsOfThisRow.childElementCount; at++) {
+                    var sas = contentsOfThisRow.childNodes[at].innerText;
+                    console.log(sas);
+                    newEventInfo.push(sas);
                 };
-                console.log(sho);
-
+                console.log(newEventInfo);
                 //getting the day of the conference to use for the time stamp just for Jesus
                 var bam = $("tr." + thisEventID).parent().parent().parent().html();
                 var bam1 = bam.toString().split("<tbody");
                 var bam1 = bam1[0].split("table-bordered");
                 var dayOfTheConference = bam1[1].replace('">', '').replace(" ", "");
+                console.log(dayOfTheConference);
 
-                var lol = contentsOfThisRow.split("><");
-                var lol2 = [];
-                for (j = 0; j < lol.length; j++) {
-                    var a = lol[j].replace("<td>", "").replace("</td>", "");
-                    var b = a.replace("</td", "").replace("td>", "");
-                    var c = b.replace("/td<", "");
-                    lol2.push(c);
-                    if (j == lol.length - 1) {
-                        console.log("lol 2");
-                        console.log(lol2);
-                        //let's now get the time stamp for jesus
-                        var possibleDates = {"wednesday":"18","thursday":"19","friday":"20","saturday":"21"};
-                        var stringDateStart = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[0]).getTime()/1000).toString();
-                        var stringDateEnd = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ lol2[1]).getTime()/1000).toString();
+                //let's now get the time stamp for jesus
+                var possibleDates = {"wednesday":"18","thursday":"19","friday":"20","saturday":"21"};
+                var stringDateStart = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ newEventInfo[0]).getTime()/1000).toString();
+                var stringDateEnd = (new Date("2015/11/"+possibleDates[dayOfTheConference.toLowerCase()]+" "+ newEventInfo[1]).getTime()/1000).toString();
 
-                        var updateCalendar = function() {
-                            listOfEventsAtTheConference.child(thisEventID).update({
-                                "startTime": lol2[0],
-                                "startTimestamp": stringDateStart,
-                                "endTime": lol2[1],
-                                "endTimestamp": stringDateEnd,
-                                "eventName": lol2[2],
-                                "locationName": lol2[3],
-                                "locationAddress": lol2[4],
-                                "description": lol2[5],
-                                "attire": lol2[6],
-                            });
-                        };
-                        //window.location.reload();
-                    };
+                var updateCalendar = function() {
+                    listOfEventsAtTheConference.child(thisEventID).update({
+                        "startTime": newEventInfo[0],
+                        "startTimestamp": stringDateStart,
+                        "endTime": newEventInfo[1],
+                        "endTimestamp": stringDateEnd,
+                        "eventName": newEventInfo[2],
+                        "locationName": newEventInfo[3],
+                        "locationAddress": newEventInfo[4],
+                        "description": newEventInfo[5],
+                        "attire": newEventInfo[6],
+                    });
                 };
+                updateCalendar();
+                window.location.reload();
             };
         };
     });
