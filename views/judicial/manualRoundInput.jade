@@ -1,0 +1,82 @@
+doctype html
+head
+    title Bill Tracker
+    link(rel="stylesheet", href="../../stylesheets/bootstrap/bootstrap.css")
+
+    // Responsive Tags
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    //jQuery
+    script(src="http://code.jquery.com/jquery-1.11.3.min.js")
+    script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+    
+    //Firebase
+    script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
+body
+    h1.text-center Manual Round Input
+    .container
+        .row
+            .col-md-3
+            .col-md-6
+                label Round Number
+                select.form-control#roundNumber
+                    option 0
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+            .col-md-3
+        br
+        .row
+            .col-md-2
+            .col-md-4
+                label Prosecution
+                select.form-control#prosecution
+            .col-md-4
+                label Defense
+                select.form-control#defense
+            .col-md-2
+        br
+        .row
+            .col-md-2
+            .col-md-4
+                label Presiding Judge
+                select.form-control#presidingJudge
+            .col-md-4
+                label Scoring Judge
+                select.form-control#scoringJudge
+            .col-md-2
+        br
+        .row
+            .col-md-3
+            .col-md-6
+                label Room Number
+                select.form-control#roomNumber
+                    option 1
+                    option 2
+                    option 3
+                    option 4
+                    option 5
+                    option 6
+                    option 7
+                    option 8
+                    option 9
+                    option 10
+                    option 11
+                    option 12
+                    option 13
+                    option 14
+                    option 15
+            .col-md-3
+        br
+        .row
+            .col-md-3
+            .col-md-6
+                button.btn.btn-primary.form-control#submitRound Submit Round
+            .col-md-3
+        br
+        .row#confirmationMessage
+    script(src="../../scripts/manualRoundInput.js")

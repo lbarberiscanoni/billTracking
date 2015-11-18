@@ -607,43 +607,22 @@ $("#trial table").empty();
                 $(".roomCode select").append("<option>Room " + roomNumber.toString() + "</option>");
             };
         } else if (statusOfChange == "Submit Changes") {
-            var fuck = $(".amendable").parent().html().split("<td>");
-            fuck.splice(0, 6);
-
-            //get the info for all rounds into a list
-            var fuckList = []
-            for (fu = 1; fu < fuck.length; fu++) {
-                if (fu % 5 == 0) {
-                    var yo = '<tr class="amendable" contenteditable="true">';
-                    var bitch = fuck[fu].replace(yo, "").replace("</td>", "").replace("</tr>", "");
-                    fuckList.push(bitch);
-                } else {
-                    fuckList.push(fuck[fu].replace("</td>", "").replace("</tr>", ""));
+            var allRoundsRow = $(".amendable");
+            console.log(allRoundsRow);
+            for (t = 0; t < allRoundsRow.length; t++) {
+                var specRound = allRoundsRow[t];
+                var specRoundInfo = [];
+                for (f = 0; f < specRound.childElementCount; f++) {
+                    if (f == 5) {
+                        var aba = specRound.childNodes[f];
+                        var roomCodeForThisRound = aba.value;
+                        specRoundInfo.push(roomCodeForThisRound);
+                    } else {
+                        specRoundInfo.push(specRound.childNodes[f].textContent);
+                    };
                 };
+                console.log(specRoundInfo);
             };
-
-
-            //create arrays of 5 to essentially make an object for every round
-            var fuckList2 = [];
-            var fuLoopsToDo = fuckList.length / 6;
-            for (fu2 = 0; fu2 < fuLoopsToDo; fu2++) {
-                var lolFuck = [fuckList[0], fuckList[1], fuckList[2], fuckList[3], fuckList[4], fuckList[5]]
-                fuckList2.push(lolFuck);
-                // console.log(fu2);
-                fuckList.splice(5);
-            };
-            
-            //update the data in the correct place
-            for (ab = 0; ab < fuckList2.length; ab++) {
-                var changedRound = fuckList2[ab];
-                listOfRounds.child(changedRound[0]).update({
-                    pro: changedRound[1],
-                    con: changedRound[2],
-                    presidingJudge: changedRound[3],
-                    scoringJudge: changedRound[4],
-                });
-            };
-            window.location.reload();
         } else {
             // console.log("error in the status of change");
         };
