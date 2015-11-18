@@ -31,6 +31,9 @@ $(document).ready(function() {
                     case "governor":
                         window.location = currentURL + "/views/governor/governorDesk.html";
                         break;
+                    case "attorney":
+                        window.location = currentURL + "/views/judicialSystem.html";
+                        break;
                 }; 
             };
         });
