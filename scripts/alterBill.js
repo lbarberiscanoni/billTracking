@@ -45,6 +45,7 @@ $(document).ready(function() {
 
                 fireData.on("child_added", function(snapshot) {
                     var bill = snapshot.val();
+                    var billID = snapshot.key();
                     if (bill.author1 == authorName) {
                         //making a conditional sequence to correspond the value of the change to the particular data key in Firebase
                         if (areaOfChange == "author1") {
@@ -96,8 +97,9 @@ $(document).ready(function() {
                                 $("select#alteration").append("<option>" + chambers[i] + "</option>");
                             };
                         } else if (areaOfChange == "billStatus") {
+                            alert(billID);
                             alert("for now we do not let you change a bill's status from here");
-                            window.location.reload();
+                            //window.location.reload();
                         } else if (areaOfChange == "division") {
                             $("<select>" + "</select>").insertAfter("h4:last");
                             $("select:last").attr("id", "alteration");
