@@ -9,7 +9,7 @@ $(document).ready(function() {
                 answeringState = $(this).text();
                 if (answeringState == "Answer Question") {
                     $(this).text("Submit Answer");
-                    var bro = $("#answerQuestion").parent().parent().parent();
+                    var bro = $(this).parent().parent().parent();
                     $("<tr><td colspan='3'><textarea rows='4' cols='65' id='answerToTheQuestion'></textarea></td></tr>").insertBefore(bro);
                 } else if (answeringState == "Submit Answer") {
                     var answerToTheQuestion = $("#answerToTheQuestion").val();
