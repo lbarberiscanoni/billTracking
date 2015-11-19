@@ -8,7 +8,7 @@ $(document).ready(function() {
     };
 
     //let's add events to the correct day based on earliest start time
-    listOfEventsAtTheConference.orderByChild("startTime").on("child_added", function(snapshot) {
+    listOfEventsAtTheConference.orderByChild("startTimestamp").on("child_added", function(snapshot) {
         var event = snapshot.val();
         //let's append a tr with the values in the correct place
         $("table." + event.dayOfTheConference).append("<tr class='amendable " + snapshot.key() + "'><td>" + event.startTime + "</td><td>" + event.endTime + "</td><td>" + event.eventName + "</td><td>" + event.locationName + "</td><td>" + event.locationAddress + "</td><td>" + event.description + "</td><td>" + event.attire + "</td></tr>");
