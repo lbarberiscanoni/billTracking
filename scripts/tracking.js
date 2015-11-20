@@ -142,7 +142,7 @@ $(document).ready(function() {
                 };
             } else {
                 if (bill.billStatus == passStatus) {
-                    $("div.billList").append("<button class'btn btn-default disabled'>" + bill.billTitle + "</button><br>");
+                    $("div.billList").append("<button class='btn btn-default disabled'>" + bill.billTitle + "</button><br>");
                     $("button:last").append(document.createTextNode(" [passed]"));
                 } else {
                     return false
