@@ -2,6 +2,7 @@ doctype html
 head
     title Alter Bill
     link(rel="stylesheet", href="../../stylesheets/bootstrap/bootstrap.min.css")
+    link(rel="stylesheet", href="../../stylesheets/autocomplete.css")
     script(src="https://cdn.firebase.com/js/client/2.2.6/firebase.js")
     script(src="//code.jquery.com/jquery-1.11.3.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
@@ -9,6 +10,29 @@ body
     .container
         h1.text-center Make Changes to a Bill
             a(href="../director.html").btn.btn-default HOME
-        select.form-control#school
-            option Select a School
+        .row
+            .col-md-4
+            .col-md-4
+                label Search By
+                select.form-control#searchParameter
+                    option Select a Parameter
+                    option Author
+                    option Bill Title 
+            .col-md-4
+        br
+        .row
+            #searchBar
+        .row
+            .col-md-3
+            .col-md-6
+                #searchResults
+                    table.table.table-bordered
+            .col-md-3
+        .row
+            .col-md-4
+            .col-md-4
+                button.btn.btn-primary.form-control#change Make Changes
+            .col-md-4
+    script(src="../../scripts/billAlterationSearch.js")
     script(src="../../scripts/alterBill.js")
+    script(src="../../scripts/autocomplete_alterations.js")
